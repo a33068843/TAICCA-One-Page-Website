@@ -1,8 +1,17 @@
-// body {
-//   font-family: 'Noto Sans TC', sans-serif;
-//   letter-spacing: 0.03em;
-//   overflow-y: scroll;
-// }
+.widthLimit {
+  width: 100%;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+body {
+  font-family: source-han-sans-traditional, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  // letter-spacing: 0.03em;
+  // overflow-y: scroll;
+}
 // i {
 //   display: flex;
 //   justify-content: center;
