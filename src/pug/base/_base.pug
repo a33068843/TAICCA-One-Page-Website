@@ -1,0 +1,25 @@
+include _header
+//- include _footer
+
+<!DOCTYPE html>
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")
+		meta(name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, width=device-width")
+		title TAICCA
+		//- 網站標題圖樣
+		//- link(rel="shortcut icon" type="image/x-icon" href="../images/titleIcon.png")
+		//- 字體的 CDN
+		//- 引用 CSS
+		link(href="../css/index.css", rel="stylesheet")
+		link(href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css", rel="stylesheet")
+		block css
+	body
+		+header(pageTitle)
+		block content
+		//- +footer()
+		//- 引用 JS
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js")
+		script(src="./js/index.js" type="text/javascript")
+		block js

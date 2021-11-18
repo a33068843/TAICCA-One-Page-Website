@@ -1,0 +1,56 @@
+// body {
+//   font-family: 'Noto Sans TC', sans-serif;
+//   letter-spacing: 0.03em;
+//   overflow-y: scroll;
+// }
+// i {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+// button {
+//   border: none;
+//   background-color: $primary-lightGreen;
+//   border-radius: 5px;
+// }
+// a {
+//   text-decoration: none;
+// }
+// .content {
+//   min-height: calc(100vh - $footer-height);
+// }
+// .widthLimit {
+//   width: 100%;
+//   max-width: 1200px;
+//   margin-left: auto;
+//   margin-right: auto;
+// }
+// .content {
+//   padding: 80px 45px 0px;
+// }
+// .breadcrumbs {
+//   margin: 60px 5px 30px;
+
+//   li {
+//     font-size: 16px;
+//     font-weight: 400;
+//     line-height: 28px;
+//     display: inline;
+//     color: $text-gray;
+
+//     &::after {
+//       content: '/';
+//       padding: 0 8px;
+//     }
+//     &:last-child {
+//       &::after {
+//         content: '';
+//         padding: 0;
+//       }
+//     }
+//   }
+//   a {
+//     color: $primary-green-100;
+//     text-decoration: none;
+//   }
+// }
