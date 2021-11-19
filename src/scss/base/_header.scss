@@ -5,6 +5,7 @@ nav {
   position: fixed;
   display: flex;
   align-items: center;
+  z-index: 2;
 
   a {
     text-decoration: none;
@@ -16,6 +17,12 @@ nav {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding: 0 132px 0 119px;
+    transition: .3s;
+
+    @include size(desktopM) {
+      padding: 0 40px;
+    }
 
     &_logo {
       width: 105px;
@@ -38,10 +45,14 @@ nav {
       cursor: pointer;
     }
     &_download {
+      width: 143px;
       height: 66px;
       background-color: $black;
       color: $white;
       padding: 20px 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       cursor: pointer;
 
       span {

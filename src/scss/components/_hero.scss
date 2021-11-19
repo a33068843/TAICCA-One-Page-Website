@@ -1,0 +1,208 @@
+@use "sass:math";
+$desktopW: 1506px;
+$desktopH: 1056px;
+// $media-desktop-M: 1280;
+// $media-desktop-S: 1080;
+// $media-pad-L: 1024;
+// $media-pad-M: 920;
+// $media-pad-S: 768;
+// $media-phone: 576;
+// $media-phone-M: 375;
+
+@mixin obj($w,$h,$x,$y){
+  width: #{ math.div($w, $desktopH) * 100%};
+  position: absolute;
+  top: #{ math.div($y, $desktopH) * 100%};
+  left: #{ math.div($x, $desktopW) * 100%};
+  &:before{
+    content: '';
+    display: block;
+    padding-top: #{ math.div($h, $w) * 100%};
+  }
+}
+@mixin putL($w, $h, $x, $y){
+  width: $w;
+  height: $h;
+  position: absolute;
+  top: $y;
+  left: $x;
+}
+@mixin putR($w, $h, $x, $y){
+  width: $w;
+  height: $h;
+  position: absolute;
+  top: $y;
+  right: $x;
+}
+// @mixin objm($w,$x,$y){
+//   @include mobile{
+//     width: #{ $w / $canvasWm * 100%};
+//     top: #{ $y / $canvasHm * 100%};
+//     left: #{ $x / $canvasWm * 100%};
+//   }
+// }
+.hero {
+  position: relative;
+  max-width: $media-desktop-L;
+  height: 854px;
+  margin: auto;
+  z-index: -1;
+
+  .map {
+    @include putL(844px, 413px, 50%, 36px);
+    transform: translateX(-50%);
+    background: url(../images/world_map.png) no-repeat;
+  }
+  .blurCircle {
+    @include putL(619px, 804px, 0px, 538px);
+    background: url(../images/obj_blur_circle.png) no-repeat;
+  }
+  .circleC {
+    @include putL(531.62px, 531.62px, 556px, 322px);
+    background: url(../images/obj_center_circle.png) no-repeat;
+  }
+  .line1 {
+    @include putL(61.29px, 60.49px, 1018.5px, 330px);
+    background: url(../images/obj_center_line1.png) no-repeat;
+  }
+  .line2 {
+    @include putL(150.91px, 150.91px, 469.5px, 780px);
+    background: url(../images/obj_center_line2.png) no-repeat;
+  }
+  .triangle2 {
+    @include putL(22px, 23px, 513px, 580px);
+    background: url(../images/triangle_02.png) no-repeat;
+  }
+  .triangle3 {
+    @include putL(34px, 39px, 805px, 568px);
+    background: url(../images/triangle_03.png) no-repeat;
+  }
+  .rectL1 {
+    @include putL(357px, 329px, 0px, 0px);
+    background: url(../images/obj_left_top.png) no-repeat;
+  }
+  .arrow1 {
+    @include putL(243px, 256px, 50px, 36px);
+    background: url(../images/obj_arrow_1.png) no-repeat;
+  }
+  .rectL2 {
+    @include putL(427px, 477px, 0px, 329px);
+    background: url(../images/obj_left.png) no-repeat;
+  }
+  .rectL3 {
+    @include putL(70px, 477px, 357px, 329px);
+    background: url(../images/obj_left2.png) no-repeat;
+  }
+  .rectL4 {
+    @include putL(428px, 184px, 0px, 806px);
+    background: url(../images/obj_left_bottom.png) no-repeat;
+  }
+  .taiwan {
+    @include putL(80px, 122px, 395px, 449px);
+    background: url(../images/obj_Taiwan.png) no-repeat;
+  }
+  .TW {
+    @include putL(100.5px, 48px, 248px, 629px);
+    background: url(../images/obj_TW.png) no-repeat;
+  }
+  .halfCircle {
+    @include putL(178.5px, 357px, 110px, 328px);
+    background: url(../images/obj_left_half_circle.png) no-repeat;
+  }
+  .taiccaBox {
+    @include putL(146px, 146px, 37px, 428.62px);
+    background: url(../images/taicca.png) no-repeat;
+  }
+  .rectR1 {
+    @include putL(352px, 854px, 1088px, 0px);
+    background: url(../images/obj_right_top.png) no-repeat;
+  }
+  .rectR2 {
+    @include putL(352px, 469px, 1088px, 385px);
+    background: url(../images/obj_right.png) no-repeat;
+  }
+  .circleR5 {
+    @include putL(42px, 23px, 1159px, 47px);
+    background: url(../images/obj_right_circle5.png) no-repeat;
+  }
+  .circleR4 {
+    @include putL(65.66px, 35.22px, 1147px, 95.87px);
+    background: url(../images/obj_right_circle4.png) no-repeat;
+  }
+  .circleR3 {
+    @include putL(83.49px, 44.1px, 1138px, 153.14px);
+    background: url(../images/obj_right_circle3.png) no-repeat;
+  }
+  .circleR2 {
+    @include putL(115px, 62px, 1123px, 219px);
+    background: url(../images/obj_right_circle2.png) no-repeat;
+  }
+  .circleR1 {
+    @include putL(167px, 167px, 1097px, 308.96px);
+    background: url(../images/obj_right_circle1.png) no-repeat;
+  }
+  .circleDollar {
+    @include putL(40px, 80px, 1161px, 348px);
+    background: url(../images/obj_right_dollar.png) no-repeat;
+  }
+  .arrow2 {
+    @include putL(168px, 160px, 1099px, 518px);
+    background: url(../images/obj_arrow_2.png) no-repeat;
+  }
+  .rectT1 {
+    @include putL(561px, 36px, 527px, 0px);
+    background: url(../images/obj_top_01.png) no-repeat;
+  }
+  .rectT2 {
+    @include putL(523px, 39px, 527px, 36px);
+    background: url(../images/obj_top_02.png) no-repeat;
+  }
+  .circle1 {
+    @include putL(38px, 38px, 1050px, 36px);
+    background: url(../images/obj_top_03.png) no-repeat;
+  }
+  .text1 {
+    @include putL(fit-content, auto, 374px, 144px);
+    font-size: 26px;
+    font-weight: 700;
+  }
+  .text2 {
+    @include putL(fit-content, auto, 374px, 175px);
+    font-size: 20px;
+    line-height: 38px;
+  }
+  .text3 {
+    @include putL(177px, 18px, 900px, 141px);
+    background: url(../images/obj_text1.png) no-repeat;
+  }
+  .text4 {
+    @include putL(140px, 17px, 900px, 170px);
+    background: url(../images/obj_text2.png) no-repeat;
+  }
+  .downloadBox {
+    @include putL(fit-content, auto, 377px, 250px);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+
+    .triangle1 {
+      width: 12px;
+      height: 13px;
+      background: url(../images/triangle_01.png) no-repeat;
+    }
+  }
+  // .rect2 {
+  //   @include obj(427px, 477px, 0px, 700px);
+  //   background: url(../images/obj_left.png) no-repeat center / contain;
+  // }
+  // .rect3 {
+  //   @include obj(352px, 854px, 1088px, 0px);
+  //   background: url(../images/obj_right_top.png) no-repeat center / contain;
+  // }
+  // .rect4 {
+  //   @include obj(352px, 469px, 1088px, 385px);
+  //   background: url(../images/obj_right.png) no-repeat center / contain;
+  // }
+}

@@ -8,3 +8,9 @@
 // 全域 & Navbar 樣式
 @import "base/_global.scss";
 @import "base/_header.scss";
+
+// 元件頁樣式
+@import "components/_hero.scss";
+
+// 頁面樣式
+@import "pages/_home.scss";
