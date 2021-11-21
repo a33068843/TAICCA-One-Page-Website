@@ -7,9 +7,6 @@ nav {
   align-items: center;
   z-index: 2;
 
-  a {
-    text-decoration: none;
-  }
   .menu {
     @extend .widthLimit;
     height: 100%;
@@ -43,6 +40,11 @@ nav {
     &_item {
       padding: 21px 18px;
       cursor: pointer;
+      transition: .2s;
+
+      &:hover {
+        opacity: 0.8;
+      }
     }
     &_download {
       width: 143px;
@@ -54,7 +56,11 @@ nav {
       justify-content: center;
       align-items: center;
       cursor: pointer;
+      transition: .3s;
 
+      &:hover {
+        background-color: $primary;
+      }
       span {
         font-size: 18px;
       }

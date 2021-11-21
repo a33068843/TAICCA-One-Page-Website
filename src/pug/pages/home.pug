@@ -9,8 +9,9 @@ block append js
 block content
   .content
     +hero()
-    .container_about
-      .title ABOUT
+    .container_about#js_triggerAbout(name="about")
+      a.target#anchorAbout
+      .title#aboutTitle ABOUT
       .title_bottom_line
       //- .desc
       //-   .desc_wrapper.light
@@ -42,7 +43,8 @@ block content
             | 2.國際合資或合製<br>
             | 3.國際通路<br>
             | 4.自籌達七成
-    .container_MOU
+    .container_MOU#js_triggerMOU
+      a.target#anchorMOU
       .desc
         .desc_title MOU
         .desc_text 你想成為文策院合作夥伴嗎？<br>
@@ -50,28 +52,29 @@ block content
         .desc_subtitle 從第一哩路到最後一桶金
         .desc_detail 成為文策院合作夥伴後，可同時申請「內容開發專案計畫：劇本開發支持」及「國際合作投資專案計畫」，每一合作夥伴每年申請並通過之企劃案，合計以10案為限。
         .desc_buttonWrapper
-          .buttonBox
+          a.buttonBox(href="https://taicca.surveycake.biz/s/O0zP3" target="_blank")
             .icon
-            a.text MOU 夥伴意願調查
-          .buttonBox
+            .text MOU 夥伴意願調查
+          a.buttonBox(href="https://drive.google.com/drive/u/1/folders/1_xXY82FXh8G8dKcTOLIzWo21v_ChqATw" target="_blank")
             .icon
-            a.text 應備文件及證明事項
+            .text 應備文件及證明事項
         .desc_bottom_line
         .desc_detail 合作備忘錄期限為簽約後到次年年底，如有特殊情形可以提出延長申請，經本院評估視情況延展。
       .cards
-        .card.black
+        .card#aboutCard.black
           .card_title 最後一桶金
           .card_text 國際合作投資專案計畫
           .card_text 本頁面方案
-        .card
+        .card#aboutCard
           .card_title 第一哩路
           .card_text 內容開發專案計畫：劇本開發支持
           .icon
-    .container_application
-      .sideTitle INTRO
-      .taiwan
+    .container_application.applyA#js_triggerApplyA
+      a.target#anchorApply
+      .sideTitle#applyTitle INTRO
+      .taiwan#applyTaiwan
       .halfCircle
-      .arrow
+      div
       .title 申請項目
       .subTitleBox
         .icon
@@ -81,7 +84,7 @@ block content
         .blockBox
           .smallBox
             .text A
-          .largeBox
+          .largeBox#applyLargeCardA
             .title 製作投資
             .subtitle 為全案製作總預算的
             .number 30%
@@ -92,14 +95,16 @@ block content
             .text 美金<span class="number">30</span>萬元
             .bottom_line
             .text 賞金一次到位
-          .mediumBox
+          .mediumBox#applyMediumCardA
             .text 以同一製作投資專案申請並獲得文化部或其所屬、受其監督機關(構)製作項目之補助者，不得申請本製作投資支持。
+    .container_application.applyB#js_triggerApplyB
+      .arrow#applyArrow
       .card.Bcard
         .shadowTitle 替代方案
         .blockBox
           .smallBox
             .text B
-          .largeBox
+          .largeBox#applyLargeCardB
             .title 行銷支持
             .subtitle 為全案製作總預算的
             .number 30%
@@ -111,18 +116,18 @@ block content
             .bottom_line
             .text 分期支持：<br>
               | 第一期50%、第二期50%
-          .mediumBox
+          .mediumBox#applyMediumCardB
             ul
               li.text 同一製作投資專案已獲得文化部或其所屬、受監督機關(構)製作項目之補助者，方得申請本行銷支持。
               li.text 若同一行銷專案申請已獲得文化部或其所屬、受其監督機關(構)行銷項目之獎補助者，不得重複申請本行銷支持。
               li.text 同一專案不得同時申請製作投資及行銷支持。
-    .container_criteria
-      .sideTitle Criteria
-      .halfCircle5
-      .halfCircle4
-      .halfCircle3
-      .halfCircle2
-      .halfCircle1
+    .container_criteria#js_triggerCriteria
+      .sideTitle#criteriaTitle Criteria
+      .halfCircle5#criteriaC5
+      .halfCircle4#criteriaC4
+      .halfCircle3#criteriaC3
+      .halfCircle2#criteriaC2
+      .halfCircle1#criteriaC1
       .title 必要條件
       .cards
         .card.black
@@ -132,7 +137,7 @@ block content
           .bottom_line
           .optionText A 製作投資
           .optionText B 行銷支持
-        .card
+        .card#criteriaCard
           .title 國際影視通路
           .text 3 項至少符合 1 項
           .descWrapper
@@ -148,7 +153,7 @@ block content
           .bottom_line
           .optionText A 製作投資
           .optionText B 行銷支持
-        .card.gray
+        .card.gray#criteriaCard
           .title 自籌資金已達七成
           .descWrapper
             .descBox
@@ -159,15 +164,18 @@ block content
               .desc 帳戶金流證明（申請人須提供國內外經會計師確認為有公信力銀行之銀行對帳單/帳戶證明），申請人之自籌款（即總預算70%）已進入或將進入該帳戶，並應同意本院每季（或月）自行或委託會計師事務所執行查核工作
           .bottom_line
           .optionText A 製作投資
-    .container_element
-      .primaryBlock
+    .container_element#js_triggerElement
       .grayBlock
+      .primaryBlock
       .blurCircle
-      .icon
+      .backgroundCircle
+      .icon#elementIcon
       .TW
+      .sideTitle#elementTitle Taiwanese<br>Elements
       .descWrapper
         .titleBox
-          .icon
+          .circle
+            img(src="../images/icon_tw.png")
           .title 台灣元素
         .descBox
           .subtitleBox
@@ -175,13 +183,13 @@ block content
             .subtitle 3 項至少須符合 1 項
           .itemsBox
             .item
-              img
+              img(src="../images/icon_team.png")
               .text 主創團隊
             .item
-              img
+              img(src="../images/icon_story.png")
               .text 故事
             .item
-              img
+              img(src="../images/icon_language.png")
               .text 語言
         .descBox
           .subtitleBox
@@ -189,17 +197,133 @@ block content
             .subtitle 3 項至少須符合 1 項
           .itemsBox
             .item
-              .icon
+              img(src="../images/icon_actor.png")
               .text 主要演員
             .item
-              .icon
-              .text 拍攝場警
+              img(src="../images/icon_photo.png")
+              .text 拍攝場景
             .item
-              .icon
+              img(src="../images/icon_editor.png")
               .text 後期製作
-    .container_a
-    .container_a
-    div ABC
-    div ABC
-    div ABC
-    div(style="font-size: 50px;") ABC
+    .container_download#js_triggerDownload
+      .whiteBlock
+      .primaryBlock
+      .grayBlock
+      .bigArrow#downloadArrow
+      .contentWrapper
+        .sideTitle Download
+        .descWrapper
+          .leftWrapper
+            .text 已成為 MOU 夥伴者，請依撰寫說明提供企劃書（含附件）中文正本一式四份及電子檔一份，並寄回以下聯絡窗口。
+            .buttonWrapper
+              a.buttonBox#downloadButton1(href="https://drive.google.com/drive/u/1/folders/1F86-Cxp09OTD89k_6JW9t_4tQamQqRwZ" target="_blank")
+                img(src="../images/icon_page1.png")
+                .text 企劃書撰寫說明
+                .arrow
+              a.buttonBox#downloadButton2(href="https://drive.google.com/drive/u/1/folders/1fdzS_bk9n89lYoGv7A9tt-R2dkFB4B1K" target="_blank")
+                img(src="../images/icon_page2.png")
+                .text 授權書與聲明書範本
+                .arrow
+          .rightWrapper
+            iframe#js_googleSlide(src="https://docs.google.com/presentation/d/e/2PACX-1vQyQJWqCDp9CPoHVvqYYBPS1Gf8d8gB8EqPI7Mw52uH1-apDiHDwnj05GM0XyAxdfZhpyUR0YYco_EH/embed?start=false&loop=false&delayms=3000" frameborder="0" width="1440" height="839" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true")
+            .buttonWrapper
+              .buttonBox#js_toggleFullScreen
+                img(src="../images/icon_fullScreen.png")
+                .text 放大顯示
+              a.buttonBox(href="https://drive.google.com/file/d/1GB8gNwgzV2oKFxzp48Dla9EAy1ChHqtF/view?usp=sharing" target="_blank")
+                img(src="../images/icon_download.png")
+                .text 下載簡報
+    .container_news#js_triggerNews
+      a.target#anchorNews
+      .blurCircle#newsBlurCircle
+      .sideTitle News
+      .newsWrapper
+        .title 相關報導與聯結
+        .newsBox
+          .news
+            .news_dateBox
+              .news_month 10月
+              .news_day 15
+            .news_year 2022
+            .news_title 《人選之人—造浪者》開拍 從內容孵化到製作投資 文策院與產業一起為臺劇造浪
+          .news
+            .news_dateBox
+              .news_month 10月
+              .news_day 8
+            .news_year 2021
+            .news_title 文策院攜手金馬、北影與雄影 力挺新銳導演與優秀團隊持續創作、進入國際市場
+          .news
+            .news_dateBox
+              .news_month 2月
+              .news_day 3
+            .news_year 2021
+            .news_title 文策院攜手國內影視產製公司 宣示百部影視台流造浪
+          .news
+            .news_dateBox
+              .news_month 1月
+              .news_day 27
+            .news_year 2021
+            .news_title 為台流鋪第一哩路 文策院編劇提案大會 熱烈參與投拍更多台灣原創故事
+        .readMoreButton
+          .text 顯示更多
+    .container_partner
+      a.target#anchorPartner
+      .sideTitle
+      .titleWrapper
+        .line
+        .title 合作夥伴
+        .line
+      .partnerWrapper
+        img(src="../images/partner_taipei.png")
+        img(src="../images/partner_taipeiFF.png")
+        img(src="../images/partner_kaohsiungFF.png")
+    .container_contact#js_triggerContact
+      a.target#anchorContact
+      .topPrimaryBlock
+      .bottomPrimaryBlock
+      .halfCircle4#contactCircle4
+      .halfCircle3#contactCircle3
+      .halfCircle2#contactCircle2
+      .halfCircle1#contactCircle1
+      .arrow#contactArrow
+      .circleBlank#contactCircleBlank
+      .taicca#contactTaicca
+      .taiwan
+      .text1
+      .text2
+      .topWrapper
+        .title Contact
+        .subtitle 聯絡我們
+        .detailWrapper
+          .detailBox
+            .text 聯絡窗口
+            .text coproduction@taicca.tw
+          .detailBox
+            .text 聯絡電話
+            .text (02) 2745-8186 分機 316 或 325
+          .detailBox
+            .text 服務時間
+            .text 週一至週五 09:30-12:30、14:00-18:00
+        .iconWrapper
+          img(src="../images/icon_facebook.png")
+          img(src="../images/icon_twitter.png")
+          img(src="../images/icon_email.png")
+      .map
+      .bottomWrapper
+        .textWrapper
+          .text 105402 台北市松山區民生東路三段158號5樓
+          .text 5F, No. 158, Sec 3, Minsheng E. Rd., Songshan Dist., Taipei City 105402, Taiwan
+          .text TEL (02) 2745-8186 FAX (02) 2749-2436
+        .text-contact 聯繫我們
+        .buttonWrapper
+          .buttonBox
+            img(src="../images/icon_facebook.png")
+          .buttonBox
+            img(src="../images/icon_twitter.png")
+          .buttonBox
+            img(src="../images/icon_email.png")
+        .buttonSubscribe
+          .text 訂閱電子報
+        .textWrapper
+          .text-underline 隱私權及安全政策宣示
+          .text Copyright © 2020 TAICCA (Taiwan Creative Content Agency). All rights reserved.
