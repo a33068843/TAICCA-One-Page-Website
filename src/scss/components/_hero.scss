@@ -9,38 +9,24 @@ $desktopH: 1056px;
 // $media-phone: 576;
 // $media-phone-M: 375;
 
-@mixin obj($w,$h,$x,$y){
-  width: #{ math.div($w, $desktopH) * 100%};
-  position: absolute;
-  top: #{ math.div($y, $desktopH) * 100%};
-  left: #{ math.div($x, $desktopW) * 100%};
-  &:before{
-    content: '';
-    display: block;
-    padding-top: #{ math.div($h, $w) * 100%};
-  }
-}
 @mixin putL($w, $h, $x, $y){
   width: $w;
   height: $h;
   position: absolute;
-  top: $y;
-  left: $x;
+  inset: $y auto auto $x;
 }
 @mixin putR($w, $h, $x, $y){
   width: $w;
   height: $h;
   position: absolute;
-  top: $y;
-  right: $x;
+  inset: $y $x auto auto;
 }
-// @mixin objm($w,$x,$y){
-//   @include mobile{
-//     width: #{ $w / $canvasWm * 100%};
-//     top: #{ $y / $canvasHm * 100%};
-//     left: #{ $x / $canvasWm * 100%};
-//   }
-// }
+@mixin xyL($x, $y) {
+  inset: $y auto auto $x;
+}
+@mixin xyR($x, $y) {
+  inset: $y $x auto auto;
+}
 .fixMap {
   @include putL(844px, 413px, 50%, 100px);
   position: fixed;
@@ -48,11 +34,22 @@ $desktopH: 1056px;
   background: url(../images/world_map.png) no-repeat;
   z-index: -1;
 }
+
+.hero * {
+  transition: .1s;
+}
 .hero {
   position: relative;
   max-width: $media-desktop-L;
   height: 854px;
   margin: auto;
+
+  @include size(desktopS) {
+    height: 770px;
+  }
+  @include size(padS) {
+    height: 640px;
+  }
 
   .map {
     @include putL(844px, 413px, 50%, 36px);
@@ -60,135 +57,570 @@ $desktopH: 1056px;
     background: url(../images/world_map.png) no-repeat;
   }
   .blurCircle {
-    @include putL(619px, 804px, 0px, 538px);
-    background: url(../images/obj_blur_circle.png) no-repeat;
+    @include putL(804px, 804px, -188px, 593px);
+    background: url(../images/obj_blur_circle.png) no-repeat center / contain;
+    @include size(desktopS) {
+      @include putL(757px, 757px, -224px, 579px);
+    }
+    @include size(padS) {
+      @include putL(800px, 800px, -30px, 388px);
+    }
   }
   .circleC {
     @include putL(531.62px, 531.62px, 556px, 322px);
-    background: url(../images/obj_center_circle.png) no-repeat;
+    background: url(../images/obj_center_circle.png) no-repeat center / contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    @include size(desktopM) {
+      @include putL(462px, 462px, 560px, 342px);
+    }
+    @include size(desktopS) {
+      @include putL(384px, 384px, 420px, 360px);
+    }
+    @include size(padL) {
+      @include xyL(420px, 340px);
+    }
+    @include size(padM) {
+      @include putL(328px, 328px, 387px, 352px);
+    }
+    @include size(padS) {
+      @include putL(307px, 307px, 283px, 348px);
+    }
+    @include size(phone) {
+      @include putL(243px, 243px, 204px, 315px);
+    }
   }
   .line1 {
     @include putL(61.29px, 60.49px, 1018.5px, 330px);
-    background: url(../images/obj_center_line1.png) no-repeat;
-    transform-origin: -199px 255px;
+    background: url(../images/obj_center_line1.png) no-repeat center / contain;
+    transform-origin: -340% 420%;
+    @include size(desktopM) {
+      @include putL(53px, 53px, 960.5px, 350px);
+    }
+    @include size(desktopS) {
+      @include putL(44px, 44px, 760px, 367px);
+    }
+    @include size(padL) {
+      @include xyL(760px, 347px);
+    }
+    @include size(padM) {
+      @include xyL(704px, 341px);
+    }
+    @include size(padS) {
+      @include putL(35px, 35px, 547px, 348px);
+    }
+    @include size(phone) {
+      @include putL(28px, 28px, 415px, 313px);
+    }
   }
   .line2 {
     @include putL(150.91px, 150.91px, 469.5px, 780px);
-    background: url(../images/obj_center_line2.png) no-repeat;
-    transform-origin: 319px -195px;
+    background: url(../images/obj_center_line2.png) no-repeat center / contain;
+    transform-origin: 232% -127%;
+    @include size(desktopM) {
+      @include putL(131px, 131px, 466px, 750px);
+    }
+    @include size(desktopS) {
+      @include putL(109px, 109px, 361px, 700px);
+    }
+    @include size(padL) {
+      @include xyL(361px, 680px);
+    }
+    @include size(padM) {
+      @include xyL(304px, 654px);
+    }
+    @include size(padS) {
+      @include putL(87px, 87px, 233px, 613px);
+    }
+    @include size(phone) {
+      @include putL(69px, 69px, 160px, 529px);
+    }
   }
   .triangle2 {
-    @include putL(22px, 23px, 513px, 580px);
-    background: url(../images/triangle_02.png) no-repeat;
+    width: 22px;
+    height: 23px;
+    position: absolute;
+    right: 105%;
+    background: url(../images/triangle_02.png) no-repeat center / contain;
+    @include size(desktopS) {
+      @include putR(15px, 16px, 105%, auto);
+    }
+    @include size(phone) {
+      @include putR(10px, 10px, 105%, auto);
+    }
   }
   .triangle3 {
-    @include putL(34px, 39px, 805px, 568px);
-    background: url(../images/triangle_03.png) no-repeat;
+    width: 34px;
+    height: 39px;
+    position: absolute;
+    background: url(../images/triangle_03.png) no-repeat center / contain;
+    @include size(desktopM) {
+      @include putL(30px, 34px, auto, auto);
+    }
+    @include size(desktopS) {
+      @include putL(24px, 28px, auto, auto);
+    }
+    @include size(padM) {
+      @include putL(21px, 24px, auto, auto);
+    }
+    @include size(padS) {
+      @include putL(19px, 22px, auto, auto);
+    }
+    @include size(phone) {
+      @include putL(15px, 18px, auto, auto);
+    }
   }
   .rectL1 {
     @include putL(357px, 329px, 0px, 0px);
-    background: url(../images/obj_left_top.png) no-repeat;
+    background-color: $black;
     overflow: hidden;
+    @include size(desktopS) {
+      @include putL(248px, 387px, 0, 0);
+    }
+    @include size(padS) {
+      @include putL(195px, 304px, 0, 0);
+    }
+    @include size(phone) {
+      @include putL(122px, 190px, 0, 0);
+    }
   }
   .arrow1 {
     @include putL(243px, 256px, 50px, 36px);
-    background: url(../images/obj_arrow_1.png) no-repeat;
+    background: url(../images/obj_arrow_1.png) no-repeat center / contain;
+    @include size(desktopS) {
+      @include putL(190px, 200px, 30px, 31px);
+    }
+    @include size(padS) {
+      @include putL(150px, 157px, 21px, 25px);
+    }
+    @include size(phone) {
+      @include putL(93px, 98px, 13px, 15px);
+    }
   }
   .rectL2 {
     @include putL(427px, 477px, 0px, 329px);
-    background: url(../images/obj_left.png) no-repeat;
+    background-color: $primary;
     overflow: hidden;
+    @include size(desktopS) {
+      @include putL(248px, 271px, 0, 387px);
+    }
+    @include size(padS) {
+      @include putL(195px, 213px, 0, 304px);
+    }
+    @include size(phone) {
+      @include putL(122px, 133px, 0, 190px);
+    }
   }
   .rectL3 {
     @include putL(70px, 477px, 357px, 329px);
-    background: url(../images/obj_left2.png) no-repeat;
+    background-color: $gray;
+    @include size(desktopS) {
+      @include putL(40px, 271px, 248px, 387px);
+    }
+    @include size(padS) {
+      @include putL(31px, 213px, 195px, 304px);
+    }
+    @include size(phone) {
+      @include putL(19px, 133px, 122px, 190px);
+    }
   }
   .rectL4 {
     @include putL(428px, 184px, 0px, 804px);
-    background: url(../images/obj_left_bottom.png) no-repeat;
+    background-color: $black;
+    @include size(desktopS) {
+      @include putL(288px, 244px, 0, 658px);
+    }
+    @include size(padS) {
+      @include putL(226px, 252px, 0, 517px);
+    }
+    @include size(phone) {
+      @include putL(141px, 340px, 0, 323px);
+    }
   }
   .taiwan {
     @include putL(80px, 122px, 395px, 449px);
-    background: url(../images/obj_Taiwan.png) no-repeat;
+    background: url(../images/obj_Taiwan.png) no-repeat center / contain;
+    @include size(desktopS) {
+      @include xyL(260px, 400px);
+    }
+    @include size(padL) {
+      @include xyL(260px, 440px);
+    }
+    @include size(padS) {
+      @include putL(63px, 96px, 207px, 339px);
+    }
+    @include size(phone) {
+      @include putL(40px, 60px, 128px, 214px);
+    }
   }
   .TW {
     @include putL(100.5px, 48px, 225px, 329px);
-    background: url(../images/obj_TW.png) no-repeat;
+    background: url(../images/icon_TWword.png) no-repeat center / contain;
+    @include size(desktopS) {
+      display: none;
+    }
   }
   .halfCircle {
     @include putL(178.5px, 357px, 110px, 0px);
-    background: url(../images/obj_left_half_circle.png) no-repeat;
+    background: url(../images/obj_left_half_circle.png) no-repeat center / contain;
     transform-origin: 0% 50%;
+    @include size(desktopS) {
+      @include putL(116px, 232px, 57px, 20px);
+    }
+    @include size(padS) {
+      @include putL(91px, 182px, 50px, 17px);
+    }
+    @include size(phone) {
+      @include putL(57px, 114px, 28px, 10px);
+    }
   }
   .taiccaBox {
     @include putL(146px, 146px, 37px, 428.62px);
-    background: url(../images/taicca.png) no-repeat;
+    background: url(../images/taicca.png) no-repeat center / contain;
+    filter: brightness(0);
+    @include size(desktopS) {
+      @include putL(95px, 95px, 20px, 473px);
+    }
+    @include size(padS) {
+      @include putL(75px, 75px, 11px, 376px);
+    }
+    @include size(phone) {
+      @include putL(46px, 47px, 5px, 233px);
+    }
   }
   .rectR1 {
     @include putL(352px, 854px, 1088px, 0px);
-    background: url(../images/obj_right_top.png) no-repeat;
+    background-color: $primary;
+    @include size(desktopM) {
+      @include putL(352px, 854px, 1026px, 0);
+    }
+    @media (max-width: 1220px) {
+      transition: 0s;
+      @include putR(220px, 629px, 0, 0);
+    }
+    @include size(padL) {
+      @include putR(194px, 555px, 0, 0);
+    }
+    @include size(padM) {
+      @include putR(172px, 492px, 0, 0);
+    }
+    @include size(padS) {
+      @include putR(158px, 452px, 0, 0);
+    }
+    @include size(phone) {
+      @include putR(117px, 240px, 0, 0);
+    }
+    @include size(phoneM) {
+      @include putR(64px, 148px, 0, 0);
+    }
   }
   .rectR2 {
     @include putL(352px, 469px, 1088px, 385px);
-    background: url(../images/obj_right.png) no-repeat;
+    background-color: $black;
+    @include size(desktopM) {
+      @include putL(352px, 469px, 1026px, 385px);
+    }
+    @media (max-width: 1220px) {
+      transition: 0s;
+      @include putR(220px, 469px, 0, 385px);
+    }
+    @include size(desktopS) {
+      transition: 0.1s;
+      @include putR(220px, 291px, 0, 385px);
+    }
+    @include size(padL) {
+      @include putR(194px, 257px, 0, 298px);
+    }
+    @include size(padM) {
+      @include putR(172px, 394px, 0, 264px);
+    }
+    @include size(padS) {
+      @include putR(158px, 410px, 0, 243px);
+    }
+    @include size(phone) {
+      @include putR(117px, 240px, 0, 179px);
+    }
+    @include size(phoneM) {
+      @include putR(64px, 191px, 0, 148px);
+    }
+  }
+  .circleWrapper {
+    display: flex;
+    align-items: center;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    @include xyL(0px, 0px);
+    @media (max-width: 1220px) {
+      transition: 0s;
+      @include xyR(0px, 0px);
+    }
+    @include size(padL) {
+      transition: 0.1s;
+      transform: scale(0.8);
+      @include xyR(13px, -20px);
+    }
+    @include size(padM) {
+      @include xyR(0px, -50px);
+    }
+    @include size(padS) {
+      transform: scale(0.65);
+      @include putR(158px, 452px, -17px, -92px);
+    }
+    @include size(phone) {
+      transform: scale(0.45);
+      @include putR(117px, 240px, -22px, -62px);
+    }
+    @include size(phoneM) {
+      @include putR(64px, 148px, -2px, -2px);
+    }
   }
   .circleR5 {
     @include putL(42px, 23px, 1159px, 47px);
-    background: url(../images/obj_right_circle5.png) no-repeat;
+    background: url(../images/hero_circle5.png) no-repeat center / contain;
+    @include size(desktopM) {
+      @include xyL(1096px, 47px);
+    }
+    @media (max-width: 1220px) {
+      transition: 0s;
+      @include xyR(83px, 47px);
+    }
   }
   .circleR4 {
     @include putL(65.66px, 35.22px, 1147px, 95.87px);
-    background: url(../images/obj_right_circle4.png) no-repeat;
+    background: url(../images/hero_circle4.png) no-repeat center / contain;
+    @include size(desktopM) {
+      @include xyL(1085px, 95.87px);
+    }
+    @media (max-width: 1220px) {
+      transition: 0s;
+      @include xyR(71px, 95.87px);
+    }
   }
   .circleR3 {
     @include putL(83.49px, 44.1px, 1138px, 153.14px);
-    background: url(../images/obj_right_circle3.png) no-repeat;
+    background: url(../images/hero_circle3.png) no-repeat center / contain;
+    @include size(desktopM) {
+      @include xyL(1076px, 153.14px);
+    }
+    @media (max-width: 1220px) {
+      transition: 0s;
+      @include xyR(62px, 153.1px);
+    }
   }
   .circleR2 {
     @include putL(115px, 62px, 1123px, 219px);
-    background: url(../images/obj_right_circle2.png) no-repeat;
+    background: url(../images/hero_circle2.png) no-repeat center / contain;
+    @include size(desktopM) {
+      @include xyL(1061px, 219px);
+    }
+    @media (max-width: 1220px) {
+      transition: 0s;
+      @include xyR(45px, 219px);
+    }
   }
   .circleR1 {
     @include putL(167px, 167px, 1097px, 308.96px);
-    background: url(../images/obj_right_circle1.png) no-repeat;
+    background: url(../images/hero_circle1.png) no-repeat center / contain;
+    @include size(desktopM) {
+      @include xyL(1035px, 309px);
+    }
+    @media (max-width: 1220px) {
+      transition: 0s;
+      @include xyR(20px, 309px);
+    }
   }
   .circleDollar {
-    @include putL(40px, 80px, 64px, 39px);
-    background: url(../images/obj_right_dollar.png) no-repeat;
+    @include putL(35px, 70px, 65px, 47px);
+    background: url(../images/obj_right_dollar.svg) no-repeat center / contain;
   }
   .arrow2 {
     @include putL(168px, 160px, 1099px, 518px);
-    background: url(../images/obj_arrow_2.png) no-repeat;
+    background: url(../images/obj_arrow_2.png) no-repeat center/ contain;
+    @include size(desktopM) {
+      @include xyL(1037px, 518px);
+    }
+    @media (max-width: 1220px) {
+      transition: 0s;
+      @include xyR(20px, 518px);
+    }
+    @include size(desktopS) {
+      transition: 0.1s;
+      @include xyR(20px, 315px);
+    }
+    @include size(padL) {
+      @include putR(140px, 140px, 26px, 315px);
+    }
+    @include size(padM) {
+      @include xyR(16px, 315px);
+    }
+    @include size(padS) {
+      @include putR(113px, 113px, 21px, 410px);
+    }
+    @include size(phone) {
+      @include putR(80px, 80px, 18px, 226px);
+    }
   }
   .rectT1 {
     @include putL(561px, 36px, 527px, 0px);
-    background: url(../images/obj_top_01.png) no-repeat;
+    background-color: $black;
+    @include size(desktopM) {
+      @include putL(500px, 36px, 527px, 0);
+    }
+    @media (max-width: 1220px) {
+      transition: 0s;
+      @include putR(530px, 36px, 220px, 0);
+
+    }
+    @include size(padL) {
+      @include xyR(194px, 0);
+    }
+    @include size(padM) {
+      @include xyR(172px, 0);
+    }
+    @include size(padS) {
+      @include putR(415px, 36px, 158px, 0);
+    }
+    @include size(phone) {
+      @include putL(337px, 29px, 122px, 0);
+    }
   }
   .rectT2 {
     @include putL(523px, 39px, 527px, 36px);
-    background: url(../images/obj_top_02.png) no-repeat;
+    background-color: $primary;
+    @include size(desktopM) {
+      @include putL(461px, 39px, 527px, 36px);
+    }
+    @media (max-width: 1220px) {
+      transition: 0s;
+      @include putR(491px, 39px, 259px, 36px);
+    }
+    @include size(padL) {
+      @include xyR(233px, 36px);
+    }
+    @include size(padM) {
+      @include putR(461px, 39px, 211px, 36px);
+    }
+    @include size(padS) {
+      @include putR(375px, 39px, 198px, 36px);
+    }
+    @include size(phone) {
+      @include putL(304px, 32px, 122px, 29px);
+    }
   }
   .circle1 {
     @include putL(38px, 38px, 1050px, 36px);
-    background: url(../images/obj_top_03.png) no-repeat;
+    border-radius: 100%;
+    background-color: $white;
+    @include size(desktopM) {
+      @include putL(38px, 38px, 988px, 36px);
+    }
+    @media (max-width: 1220px) {
+      transition: 0s;
+      @include putR(39px, 39px, 220px, 36px);
+    }
+    @include size(padL) {
+      @include xyR(194px, 36px);
+    }
+    @include size(padM) {
+      @include xyR(172px, 36px);
+    }
+    @include size(padS) {
+      @include xyR(158px, 36px);
+    }
+    @include size(phone) {
+      @include putR(32px, 32px, 117px, 29px);
+    }
   }
   .text1 {
     @include putL(fit-content, auto, 374px, 144px);
     font-size: 26px;
     font-weight: 700;
+    @include size(desktopS) {
+      @include xyL(269px, 144px);
+    }
+    @include size(padM) {
+      @include xyL(269px, 120px);
+    }
+    @include size(padS) {
+      @include xyL(208px, 92px);
+    }
+    @include size(phone) {
+      @include xyL(164px, 89px);
+    }
   }
   .text2 {
     @include putL(fit-content, auto, 374px, 175px);
     font-size: 20px;
     line-height: 38px;
+    span {
+      display: none;
+    }
+    @include size(desktopS) {
+      @include xyL(269px, 175px);
+    }
+    @include size(padM) {
+      @include xyL(269px, 151px);
+    }
+    @include size(padS) {
+      @include xyL(208px, 123px);
+    }
+    @include size(phone) {
+      span {
+        display: block;
+      }
+      line-height: 14px;
+      text-align: center;
+      @include xyL(192px, 151px);
+    }
   }
   .text3 {
     @include putL(177px, 18px, 900px, 141px);
-    background: url(../images/obj_text1.png) no-repeat;
+    background: url(../images/obj_text1.png) no-repeat center / contain;
+    @include size(desktopM) {
+      @include xyL(838px, 141px);
+    }
+    @media (max-width: 1220px) {
+      transition: 0s;
+      @include xyR(231px, 141px);
+    }
+    @include size(padL) {
+      @include xyR(205px, 141px);
+    }
+    @include size(padM) {
+      @include xyL(269px, 273px);
+    }
+    @include size(padS) {
+      @include xyL(208px, 237px);
+    }
+    @include size(phone) {
+      @include putL(102px, 10px, 154px, 296px);
+    }
   }
   .text4 {
     @include putL(140px, 17px, 900px, 170px);
-    background: url(../images/obj_text2.png) no-repeat;
+    background: url(../images/obj_text2.png) no-repeat center / contain;
+    @include size(desktopM) {
+      @include xyL(838px, 170px);
+    }
+    @media (max-width: 1220px) {
+      transition: 0s;
+      @include xyR(268px, 170px);
+    }
+    @include size(padL) {
+      @include xyR(242px, 170px);
+    }
+    @include size(padM) {
+      @include xyL(269px, 301px);
+    }
+    @include size(padS) {
+      @include xyL(208px, 265px);
+    }
+    @include size(phone) {
+      @include putL(80px, 10px, 156px, 312px);
+    }
   }
   .downloadBox {
     @include putL(fit-content, auto, 377px, 250px);
@@ -200,13 +632,25 @@ $desktopH: 1056px;
     cursor: pointer;
     transition: .2s;
 
+    @include size(desktopS) {
+      @include xyL(269px, 225px);
+    }
+    @include size(padM) {
+      @include xyL(269px, 205px);
+    }
+    @include size(padS) {
+      @include xyL(208px, 173px);
+    }
+    @include size(phone) {
+      @include xyL(248px, 237px);
+    }
     &:hover {
       opacity: .9;
     }
     .triangle1 {
       width: 12px;
       height: 13px;
-      background: url(../images/triangle_01.png) no-repeat;
+      background: url(../images/triangle_01.png) no-repeat center / contain;
     }
   }
 }

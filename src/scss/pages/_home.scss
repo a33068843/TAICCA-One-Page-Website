@@ -11,10 +11,18 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     margin-top: 18px;
-    padding: 0 265px 0 236px;
-    scroll-margin-top: 66px;
     position: relative;
+    @include size(desktopM) {
+      left: 20px;
+    }
+    @include size(desktopS) {
+      left: 40px;
+    }
+    @include size(desktopS) {
+      left: 20px;
+    }
 
     .title {
       width: 909px;
@@ -23,12 +31,28 @@
       font-size: 80px;
       font-weight: 300;
       line-height: 80px;
+      @include size(padM) {
+        width: 799px;
+      }
+      @include size(padM) {
+        width: 648px;
+      }
 
       &_bottom_line {
         width: 939px;
         border-bottom: 2px solid $primary;
         margin-top: 12px;
         z-index: 1;
+
+        @include size(desktopS) {
+          width: 897px;
+        }
+        @include size(padM) {
+          width: 842px;
+        }
+        @include size(padS) {
+          width: 670px;
+        }
       }
     }
     .desc {
@@ -39,6 +63,17 @@
       gap: 192px;
       margin-top: 40px;
       z-index: 1;
+      @include size(desktopS) {
+        gap: 120px;
+      }
+      @include size(padM) {
+        gap: 90px;
+        margin-top: 50px;
+      }
+      @include size(padS) {
+        flex-direction: column;
+        align-items: center;
+      }
 
       .light {
         color: $white;
@@ -52,9 +87,29 @@
         flex-direction: column;
         gap: 28px;
         width: 180px;
-
+        @include size(desktopS) {
+          margin-left: 40px;
+        }
+        @include size(padS) {
+          margin-left: 0px;
+          align-items: center;
+        }
+        &:nth-child(2) {
+          @include size(desktopS) {
+            margin-left: 100px;
+          }
+          @include size(padS) {
+            margin-left: 0px;
+          }
+        }
         &:last-child {
           margin-left: 85px;
+          @include size(padM) {
+            margin-left: 30px;
+          }
+          @include size(padS) {
+            margin-left: 0px;
+          }
         }
 
       }
@@ -65,6 +120,10 @@
       }
       &_text {
         font-size: 13px;
+        @include size(padS) {
+          text-align: center;
+          width: 300px;
+        }
       }
     }
   }
@@ -73,8 +132,25 @@
     padding: 0 125px 0 139px;
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
     gap: 64px;
 
+    @include size(desktopM) {
+      padding: 0 49px 0 85px;
+      gap: 34px;
+    }
+    @include size(desktopS) {
+      gap: 40px;
+    }
+    @include size(padM) {
+      gap: 23px;
+    }
+    @include size(padS) {
+      margin-top: 80px;
+      flex-direction: column;
+      padding: 0 80px 0 0;
+    }
     .desc {
       display: flex;
       flex-direction: column;
@@ -91,6 +167,9 @@
         font-weight: 600;
         line-height: 32px;
         margin-top: 13px;
+        @include size(padS) {
+          margin-top: 40px;
+        }
       }
       &_text {
         font-size: 18px;
@@ -101,9 +180,21 @@
         font-size: 16px;
         line-height: 30px;
         margin-top: 13px;
+        @include size(padS) {
+          width: 500px;
+          margin-top: 26px;
+        }
 
         &:last-child {
           margin-top: 19px;
+          @include size(desktopS) {
+            position: relative;
+            top: 6px;
+            .text {
+              position: absolute;
+              width: 549px;
+            }
+          }
         }
       }
       &_buttonWrapper {
@@ -111,6 +202,13 @@
         flex-direction: row;
         gap: 26px;
         margin-top: 48px;
+        @include size(desktopS) {
+          position: relative;
+          top: 6px;
+        }
+        @include size(padS) {
+          margin-top: 26px;
+        }
 
         .buttonBox {
           display: flex;
@@ -118,11 +216,14 @@
           justify-content: center;
           align-items: center;
           cursor: pointer;
+          @include size(desktopS) {
+            flex-shrink: 0;
+          }
 
           .icon {
             width: 12px;
             height: 13px;
-            background-image: url(../images/triangle_01.png);
+            background: url(../images/triangle_01.png) no-repeat center / contain;
           }
           .text {
             font-size: 18px;
@@ -136,12 +237,38 @@
         width: calc(100% - 15px);
         border-bottom: 1px solid #787878;
         margin-top: 26px;
+        @include size(desktopS) {
+          position: relative;
+          top: 6px;
+          border-bottom: none;
+        }
+        .line {
+          @include size(desktopS) {
+            position: absolute;
+            width: 543px;
+            border-bottom: 1px solid #787878;
+          }
+        }
       }
     }
     .cards {
       display: flex;
       flex-direction: row;
       height: 608px;
+      @include size(desktopS) {
+        position: relative;
+        bottom: 80px;
+      }
+      @include size(padL) {
+        bottom: 0px;
+      }
+      @include size(padM) {
+        top: 45px;
+      }
+      @include size(padS) {
+        top: 90px;
+        left: 75px;
+      }
 
       .card {
         width: 280px;
@@ -155,12 +282,20 @@
         padding: 111px 0 62px 0;
         box-shadow: 0 20px 50px 0 rgba($primary, 30%);
 
+        @include size(padL) {
+          width: 260px;
+          height: 370px;
+          padding: 60px 0 30px;
+        }
         &.black {
           top: 0px;
           background-color: $black;
           color: $white;
           padding: 196px 0 101px 0;
           box-shadow: none;
+          @include size(padL) {
+            padding: 114px 0 65px;
+          }
         }
         &_title {
           font-size: 28px;
@@ -182,16 +317,21 @@
     }
   }
   .container_application {
+    position: relative;
+    padding: 0 155px 0 150px;
+    @include size(desktopM) {
+      padding: 0 60px 0 84px;
+    }
+    @include size(desktopS) {
+      padding: 0 0 0 84px;
+    }
+
     &.applyA {
-      position: relative;
       margin-top: 268px;
-      padding: 0 155px 0 150px;
     }
     &.applyB {
-      position: relative;
       margin-top: 100px;
       margin-bottom: 200px;
-      padding: 0 155px 0 150px;
     }
 
     .sideTitle {
@@ -200,30 +340,69 @@
       line-height: 160px;
       transform: rotate(90deg);
       transform-origin: center;
-      @include putR(auto, auto, 40px, 40px)
+      @include putR(auto, auto, 40px, 40px);
+      @include size(desktopM) {
+        @include xyR(0px, 0px);
+      }
+      @include size(desktopS) {
+        @include xyR(-60px, 0px);
+      }
+      @include size(padM) {
+        @include xyR(-60px, 84px);
+      }
+      @include size(padS) {
+        @include xyR(-86px, 137px);
+        z-index: -1;
+      }
     }
     .taiwan {
       @include putR(160px, 244px, 37px, 405px);
-      background: url(../images/obj_Taiwan-L.png) no-repeat;
+      background: url(../images/obj_Taiwan-L.png) no-repeat center / contain;
+      @include size(padM) {
+        @include xyR(82px, 692px);
+      }
+      @include size(padS) {
+        @include xyR(26px, 674px);
+      }
     }
     .halfCircle {
       @include putL(205px, 292px, 80px, 558px);
-      background: url(../images/obj_application_circle.png) no-repeat;
+      background: url(../images/obj_application_circle.png) no-repeat center / contain;
+      @include size(desktopS) {
+        @include xyL(-35px, 558px);
+      }
+      @include size(padM) {
+        @include xyL(0px, 450px);
+      }
+      @include size(padS) {
+        @include xyL(-30px, 500px);
+      }
     }
     .arrow {
       @include putL(168px, 160px, 94px, 575px);
-      background: url(../images/obj_arrow_2.png) no-repeat;
+      background: url(../images/obj_arrow_2.png) no-repeat center / contain;
+      @include size(padM) {
+        @include xyL(94px, 850px);
+      }
     }
     .title {
       font-size: 32px;
       font-weight: 700;
       line-height: 38px;
+      @include size(padM) {
+        position: relative;
+        left: -30px;
+      }
     }
     .subTitleBox {
       display: flex;
       flex-direction: row;
       align-items: center;
       margin-top: 58px;
+      @include size(padM) {
+        position: relative;
+        left: -30px;
+      }
 
       .icon {
         width: 53px;
@@ -242,6 +421,12 @@
       margin-top: 42px;
       padding-right: 133px;
       gap: 3px;
+      @include size(padM) {
+        padding-right: 64px;
+      }
+      @include size(padS) {
+        padding-right: 86px;
+      }
 
       .shadowTitle {
         width: fit-content;
@@ -251,11 +436,19 @@
         line-height: 60px;
         text-shadow: 0px 4px 30px rgba($black, 30%);
         padding-left: 127px;
+        @include size(padM) {
+          padding-left: 204px;
+        }
+        @include size(padM) {
+          padding-left: 115px;
+        }
       }
       .blockBox {
         display: flex;
         flex-direction: row;
-
+        @include size(padM) {
+          justify-content: center;
+        }
         .smallBox {
           width: 175px;
           height: 171px;
@@ -274,6 +467,14 @@
             line-height: 35px;
           }
         }
+        .twoBoxWrapper {
+          display: flex;
+          flex-direction: row;
+
+          @include size(padM) {
+            flex-direction: column;
+          }
+        }
         .largeBox {
           width: 406px;
           height: 418px;
@@ -286,10 +487,21 @@
           color: $white;
           box-shadow: 0 20px 50px rgba($primary, 30%);
 
+          @include size(desktopS) {
+            width: 380px;
+          }
+          @include size(padL) {
+            width: 320px;
+            height: 418px;
+          }
+          @include size(padM) {
+            width: 420px;
+          }
           .title {
             font-size: 32px;
             font-weight: 600;
             line-height: 35px;
+            left: 0;
           }
           .subtitle {
             font-size: 18px;
@@ -351,6 +563,15 @@
           background-color: rgba($primary, 80%);
           box-shadow: 0 20px 50px rgba($primary, 30%);
 
+          @include size(desktopS) {
+            width: 320px;
+            height: 260px;
+          }
+          @include size(padM) {
+            width: 420px;
+            height: 172px;
+            bottom: 0;
+          }
           .text {
             color: $white;
             font-size: 16px;
@@ -364,12 +585,25 @@
         margin-top: 0px;
         padding-right: 0;
         padding-left: 133px;
+        @include size(desktopS) {
+          padding-left: 30px;
+        }
+        @include size(padM) {
+          padding-left: 0px;
+          padding-right: 200px;
+        }
+        @include size(padS) {
+          padding-right: 86px;
+        }
 
         .shadowTitle {
           padding-right: 424px;
           padding-left: 0;
           width: 100%;
           text-align: right;
+          @include size(padM) {
+            padding-right: 62px;
+          }
         }
         .blockBox {
           .smallBox {
@@ -391,12 +625,27 @@
             padding: 31px 31px 95px 55px;
             background-color: rgba($black, 80%);
             box-shadow: 0 20px 50px rgba($black, 30%);
+
+            @include size(desktopS) {
+              width: 320px;
+              height: 412px;
+            }
+            @include size(padL) {
+              padding: 31px 35px 13px 55px;
+            }
+            @include size(padM) {
+              width: 420px;
+              height: 318px;
+            }
             ul {
               list-style-type: decimal;
             }
             li {
               margin-top: 26px;
 
+              @include size(padL) {
+                margin-top: 18px;
+              }
               &:first-child {
                 margin-top: 0;
               }
@@ -411,31 +660,62 @@
     margin-top: 258px;
     position: relative;
 
+    .circleWrapper {
+      display: flex;
+      align-items: center;
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      @include size(padM) {
+        @include xyL(-95px, 405px);
+      }
+      @include size(padS) {
+        @include xyL(-48px, 0px);
+      }
+    }
     .halfCircle5 {
       @include putL(48px, 26px, 232px, 605px);
-      background: url(../images/obj_right_circle5.png) no-repeat center / contain;
+      background: url(../images/hero_circle5.png) no-repeat center / contain;
+      @include size(desktopM) {
+        @include xyL(140px, 605px);
+      }
     }
     .halfCircle4 {
       @include putL(75px, 40px, 220px, 655px);
-      background: url(../images/obj_right_circle4.png) no-repeat center / contain;
+      background: url(../images/hero_circle4.png) no-repeat center / contain;
+      @include size(desktopM) {
+        @include xyL(128px, 655px);
+      }
     }
     .halfCircle3 {
       @include putL(95px, 50px, 210px, 720px);
-      background: url(../images/obj_right_circle3.png) no-repeat center / contain;
+      background: url(../images/hero_circle3.png) no-repeat center / contain;
+      @include size(desktopM) {
+        @include xyL(118px, 720px);
+      }
     }
     .halfCircle2 {
       @include putL(130px, 70px, 190px, 800px);
-      background: url(../images/obj_right_circle2.png) no-repeat center / contain;
+      background: url(../images/hero_circle2.png) no-repeat center / contain;
+      @include size(desktopM) {
+        @include xyL(102px, 800px);
+      }
     }
     .halfCircle1 {
       @include putL(189px, 189px, 162px, 900px);
-      background: url(../images/obj_right_circle1.png) no-repeat center / contain;
+      background: url(../images/hero_circle1.png) no-repeat center / contain;
+      @include size(desktopM) {
+        @include xyL(75px, 900px);
+      }
     }
     .title {
       color: $black;
       font-size: 32px;
       font-weight: 600;
       padding: 0 122px 0 150px;
+      @include size(padM) {
+        padding: 0 122px 0 72px;
+      }
     }
     .subtitle {
       font-size: 22px;
@@ -455,13 +735,28 @@
       font-size: 100px;
       font-weight: 100;
       line-height: 160px;
-      @include putR(auto, auto, 120px, 40px)
+      @include putR(auto, auto, 120px, 40px);
+      @include size(desktopM) {
+        @include xyR(45px, 40px);
+      }
+      @include size(padM) {
+        @include xyR(60px, -45px);
+      }
     }
     .cards {
       display: flex;
       flex-direction: row;
       justify-content: center;
       margin-top: 36px;
+      @include size(padM) {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 72px;
+      }
+      @include size(padS) {
+        position: relative;
+        left: 105px;
+      }
 
       .card {
         width: 390px;
@@ -470,7 +765,17 @@
         padding: 48px 30px 52px;
         position: relative;
         top: 212px;
-
+        @include size(desktopS) {
+          width: 320px;
+        }
+        @include size(padM) {
+          width: 420px;
+          top: auto;
+          left: 127px;
+        }
+        @include size(padS) {
+          left: 0;
+        }
         .title {
           padding: 0;
           color: $white;
@@ -500,6 +805,9 @@
           width: 330px;
           border-bottom: 1px solid $white;
           margin-top: 40px;
+          @include size(desktopS) {
+            width: 260px;
+          }
         }
         .optionText {
           margin-top: 24px;
@@ -513,6 +821,12 @@
           background-color: $black;
           padding: 40px 30px;
           top: 0;
+          @include size(padM) {
+            left: -130px;
+          }
+          @include size(padS) {
+            left: 0;
+          }
 
           .title {
             padding: 0;
@@ -538,6 +852,13 @@
           background-color: $gray;
           padding: 52px 30px 64px;
           top: 120px;
+          @include size(padM) {
+            top: 0;
+            left: -61px;
+          }
+          @include size(padS) {
+            left: 0;
+          }
 
           .title {
             color: $black;
@@ -568,30 +889,95 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    @include size(desktopS) {
+      height: 781px;
+    }
+    @include size(padM) {
+      height: 811px;
+      margin-top: 121px;
+    }
+    @include size(padS) {
+      height: 826px;
+    }
 
     .grayBlock {
       @include putL(1440px, 722px, 0px ,0px);
-      background-color: $gray;
+      background-color: #888888;
+      @include size(desktopS) {
+        height: 781px;
+      }
+      @include size(padM) {
+        height: 100%;
+      }
     }
     .primaryBlock {
       @include putL(247px, 722px, 0px ,0px);
       background-color: $primary;
+      box-shadow: 0px 20px 50px rgba($primary, 30%);
+      @include size(desktopM) {
+        @include putL(185px, 722px, 0px ,0px);
+      }
+      @include size(desktopS) {
+        @include putL(105px, 781px, 0, 0);
+      }
+      @include size(padL) {
+        @include putL(98px, 781px, 0, 0);
+      }
+      @include size(padM) {
+        height: 100%;
+      }
+      @include size(padS) {
+        width: 106px;
+      }
     }
     .blurCircle {
-      @include putL(730px, 418px, 710px, 0px);
-      background: url(../images/obj_blur_circle2.png) no-repeat;
+      @include putL(687px, 431px, 747px, 0px);
+      background: url(../images/obj_blur_circle2.png) no-repeat center / contain;
+      @include size(desktopM) {
+        @include xyL(620px, 0);
+      }
+      @include size(desktopS) {
+        @include xyL(500px, 0);
+      }
+      @include size(padM) {
+        @include xyL(300px, 0);
+      }
+      @include size(padS) {
+        @include xyL(189px, -90px);
+      }
     }
     .backgroundCircle {
       @include putL(534px, 534px, 859px, 136px);
-      background: url(../images/background-circle.png) no-repeat;
+      background: url(../images/background-circle.png) no-repeat center / contain;
+      @include size(padS) {
+        @include xyL(637px, 115px);
+      }
     }
     .icon {
       @include putR(77px, 74px, 565px, 34px);
-      background: url(../images/obj_arrow_4.png) no-repeat;
+      background: url(../images/obj_arrow_4.png) no-repeat center / contain;
+      @include size(desktopS) {
+        @include xyR(449px, 34px);
+      }
+      @include size(padM) {
+        @include putR(64px, 61px, 382px, 39px);
+      }
+      @include size(padS) {
+        @include putR(45px, 45px, 263px, 52px);
+      }
     }
     .TW {
       @include putR(97px, 46px, 556px, 135px);
-      background: url(../images/obj_TW-S.png) no-repeat;
+      background: url(../images/icon_TWword.png) no-repeat center / contain;
+      @include size(desktopS) {
+        @include xyR(440px, 135px);
+      }
+      @include size(padM) {
+        @include putR(79px, 38px, 377px, 136px);
+      }
+      @include size(padS) {
+        @include putR(58px, 28px, 258px, 111px);
+      }
     }
     .sideTitle {
       color: $white;
@@ -600,6 +986,21 @@
       line-height: 90px;
       position: relative;
       @include putR(auto, auto, 120px, 12px);
+      @include size(desktopS) {
+        @include xyR(40px, 12px);
+      }
+      @include size(padM) {
+        font-size: 70px;
+        font-weight: 100;
+        line-height: 80px;
+        @include xyR(40px, 24px);
+      }
+      @include size(padS) {
+        font-size: 45px;
+        font-weight: 100;
+        line-height: 50px;
+        @include xyR(40px, 45px);
+      }
     }
     .descWrapper {
       position: relative;
@@ -610,6 +1011,18 @@
       gap: 50px;
       position: relative;
 
+      @include size(desktopS) {
+        right: 24px;
+      }
+      @include size(padL) {
+        right: 0;
+      }
+      @include size(padM) {
+        right: 10px;
+      }
+      @include size(padS) {
+        right: 2px;
+      }
       .titleBox {
         display: flex;
         flex-direction: row;
@@ -617,6 +1030,12 @@
         gap: 22px;
         position: relative;
         right: 50px;
+        @include size(padM) {
+          right: 50px;
+        }
+        @include size(padS) {
+          right: 0;
+        }
 
         .circle {
           width: 164px;
@@ -627,9 +1046,10 @@
           justify-content: center;
           align-items: center;
 
-          .icon {
+          img {
             width: 50px;
             height: 50px;
+            object-fit: contain;
           }
         }
         .title {
@@ -642,12 +1062,24 @@
         display: flex;
         flex-direction: column;
         gap: 32px;
+        @include size(desktopS) {
+          position: relative;
+          left: 55px;
+        }
+        @include size(padS) {
+          left: 10px;
+        }
 
         .subtitleBox {
           display: flex;
           flex-direction: row;
           align-items: center;
           gap: 27px;
+          @include size(desktopS) {
+            flex-direction: column;
+            align-items: baseline;
+            gap: 0;
+          }
 
           .title {
             font-size: 25px;
@@ -668,6 +1100,12 @@
           flex-direction: row;
           align-items: center;
           gap: 94px;
+          @include size(desktopS) {
+            padding-left: 0;
+          }
+          @include size(padM) {
+            gap: 40px;
+          }
 
           .item {
             width: 230px;
@@ -680,6 +1118,15 @@
             padding-left: 25px;
             gap: 27px;
 
+            @include size(padS) {
+              width: 210px;
+              gap: 17px;
+            }
+            img {
+              width: 42px;
+              height: 35px;
+              object-fit: contain;
+            }
             .text {
               font-size: 26px;
               font-weight: 400;
@@ -696,28 +1143,91 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    @include size(padM) {
+      height: 791px;
+    }
+    @include size(padS) {
+      height: 801px;
+    }
 
     .whiteBlock {
       background-color: #E2E2E2;
-      @include putL(929px, 601px, 0px, 0px);
+      @include putL(800px, 601px, 0px, 0px);
+      @include size(padL) {
+        width: 787px;
+      }
+      @include size(padM) {
+        width: 693px;
+        height: 100%;
+      }
     }
     .primaryBlock {
       background-color: $primary;
       @include putL(207px, 601px, 769px, 0px);
+      @include size(desktopS) {
+        width: 151px;
+      }
+      @include size(desktopS) {
+        @include putL(94px, 601px, 692px, 0px);
+      }
+      @include size(padM) {
+        height: 100%;
+        @include xyL(693px, 0px);
+      }
+      @include size(padS) {
+        width: 184px;
+        @include xyL(584px, 0px);
+      }
     }
     .grayBlock {
       background-color: #555555;
       @include putL(464px, 270px, 976px, 0px);
+      @include size(desktopS) {
+        @include putL(218px, 349px, 920px, 0);
+      }
+      @include size(padL) {
+        @include putL(293px, 349px, 786px, 0);
+      }
+      @include size(padM) {
+        @include putL(133px, 447px, 787px, 0);
+      }
     }
     .bigArrow {
-      @include putL(489px, 463px, 1122px, 314px);
-      background: url(../images/big_arrow.png) no-repeat;
+      @include putL(489px, 463px, 1038px, 314px);
+      background: url(../images/big_arrow.png) no-repeat center / contain;
+      @include size(desktopM) {
+        @include xyL(1000px, 314px);
+      }
+      @include size(desktopS) {
+        @include putL(344px, 326px, 854px, 410px);
+      }
+      @include size(padL) {
+        @include xyL(751px, 410px);
+      }
+      @include size(padM) {
+        background: url(../images/big_arrowRWD.png) no-repeat center / contain;
+        @include putL(300px, 344px, 632px, 447px);
+      }
+      @include size(padS) {
+        @include xyL(525px, 535px);
+      }
     }
     .contentWrapper {
       display: flex;
       flex-direction: column;
       position: relative;
       right: 115px;
+      @include size(desktopS) {
+        right: 20px;
+      }
+      @include size(padM) {
+        right: 130px;
+        bottom: 15px;
+      }
+      @include size(padM) {
+        right: 37px;
+        bottom: 15px;
+      }
     }
     .sideTitle {
       width: 505px;
@@ -726,6 +1236,9 @@
       line-height: 160px;
       position: relative;
       border-bottom: 3px solid $black;
+      @include size(padS) {
+        width: 575px;
+      }
     }
     .descWrapper {
       display: flex;
@@ -734,6 +1247,10 @@
       position: relative;
       margin-top: 20px;
 
+      @include size(padM) {
+        flex-direction: column;
+        gap: 26px;
+      }
       .buttonBox {
         transition: .2s;
         &:hover {
@@ -745,6 +1262,9 @@
         flex-direction: column;
         gap: 52px;
 
+        @include size(padM) {
+          gap: 30px;
+        }
         .text {
           width: 382px;
           font-size: 18px;
@@ -755,47 +1275,95 @@
           display: flex;
           flex-direction: row;
           gap: 17px;
+          @include size(padM) {
+            flex-direction: column;
+            gap: 14px;
+          }
+          .buttonBox {
+            width: 183px;
+            height: 183px;
+            background-color: $black;
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 12px 70px rgba($black, 0.1);
+            cursor: pointer;
+            @include size(padM) {
+              width: 505px;
+              height: 56px;
+              flex-direction: row;
+              padding: 0 30px 0 20px;
+              gap: 22px;
+            }
+            @include size(padS) {
+              width: 431px;
+            }
 
-            .buttonBox {
-              width: 183px;
-              height: 183px;
-              background-color: $black;
-              border-radius: 6px;
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              align-items: center;
-              box-shadow: 0 12px 70px rgba($black, 0.1);
-              cursor: pointer;
-
-              .text {
-                color: $white;
-                width: fit-content;
-                font-size: 15px;
-                font-weight: 100;
-                line-height: 18px;
-                margin-top: 16px;
-              }
-              .arrow {
-                margin-top: 24px;
-                width: 10px;
-                height: 10px;
-                background: url(../images/icon_arrow.png) no-repeat;
+            .text {
+              color: $white;
+              width: fit-content;
+              font-size: 15px;
+              font-weight: 100;
+              line-height: 18px;
+              margin-top: 16px;
+              @include size(padM) {
+                margin-top: 0px;
+                flex-grow: 1;
               }
             }
+            img {
+              width: 38px;
+              height: 52px;
+              object-fit: contain;
+              @include size(padM) {
+                width: 30px;
+                height: 39px;
+                position: relative;
+                bottom: 1px;
+              }
+            }
+            .arrow {
+              margin-top: 24px;
+              width: 10px;
+              height: 10px;
+              background: url(../images/icon_arrow.png) no-repeat center / contain;
+              @include size(padM) {
+                margin-top: 0;
+              }
+            }
+          }
         }
       }
       .rightWrapper {
         padding-top: 50px;
-
+        @include size(padM) {
+          padding-top: 0px;
+        }
         iframe {
           width: 541px;
           height: 301px;
+          @include size(desktopS) {
+            width: 437px;
+            height: 243px;
+          }
+          @include size(padM) {
+            width: 505px;
+            height: 281px;
+          }
+          @include size(padS) {
+            width: 431px;
+            height: 281px;
+          }
         }
         .buttonWrapper {
           display: flex;
           flex-direction: row;
           gap: 30px;
+          @include size(padM) {
+            margin-top: 10px;
+          }
 
           .buttonBox {
             display: flex;
@@ -808,6 +1376,11 @@
               color: #555555;
               font-size: 13px;
               font-weight: 200;
+            }
+            img {
+              width: 12px;
+              height: 12px;
+              object-fit: contain;
             }
           }
         }
@@ -822,9 +1395,25 @@
     justify-content: center;
     align-items: center;
 
+    @include size(padM) {
+      height: 625px;
+    }
+    @include size(padS) {
+      height: 677px;
+    }
+
     .blurCircle {
       @include putL(683px, 683px, 888px, 165px);
       background: url(../images/news_blurCircle.png) no-repeat center / contain;
+      @include size(desktopS) {
+        @include xyL(670px, 165px);
+      }
+      @include size(padL) {
+        @include xyL(506px, 234px);
+      }
+      @include size(padS) {
+        @include xyL(364px, 258px);
+      }
     }
     .sideTitle {
       color: $white;
@@ -832,6 +1421,21 @@
       font-weight: 100;
       line-height: 160px;
       @include putL(auto, auto, 1020px, 400px);
+      @include size(desktopM) {
+        @include xyL(960px, 400px);
+      }
+      @include size(desktopS) {
+        @include xyL(783px, 418px);
+      }
+      @include size(padL) {
+        @include xyL(602px, 418px);
+      }
+      @include size(padM) {
+        @include xyL(621px, 418px);
+      }
+      @include size(padS) {
+        @include xyL(508px, 482px);
+      }
     }
     .newsWrapper {
       display: flex;
@@ -840,6 +1444,13 @@
       width: fit-content;
       position: relative;
       right: 208px;
+
+      @include size(desktopS) {
+        right: 62px;
+      }
+      @include size(padM) {
+        right: 0;
+      }
 
       .title {
         font-size: 28px;
@@ -851,7 +1462,12 @@
         flex-direction: column;
         gap: 14px;
         margin-top: 60px;
-
+        @include size(padM) {
+          margin-top: 50px;
+        }
+        @include size(padS) {
+          gap: 34px;
+        }
         .news {
           display: flex;
           flex-direction: row;
@@ -884,6 +1500,11 @@
             font-size: 18px;
             font-weight: 600;
             margin-left: 28px;
+
+            @include size(padS) {
+              width: 500px;
+              line-height: 32px;
+            }
           }
         }
       }
@@ -897,6 +1518,12 @@
         margin-top: 91px;
         cursor: pointer;
         transition: .2s;
+        @include size(padM) {
+          margin-top: 100px;
+        }
+        @include size(padS) {
+          margin-top: 81px;
+        }
 
         &:hover {
           filter: brightness(1.2);
@@ -918,9 +1545,18 @@
     flex-direction: column;
     align-items: center;
 
+    @include size(padM) {
+      height: 741px;
+    }
     .sideTitle {
       @include putL(782px, 180px, 690px, 143px);
-      background: url(../images/partner_title.png) no-repeat;
+      background: url(../images/partner_title.png) no-repeat center / contain;
+      @include size(padM) {
+        @include xyL(160px, 547px);
+      }
+      @include size(padS) {
+        @include putL(597px, 138px, 183px, 568px);
+      }
     }
     .titleWrapper {
       margin-top: 52px;
@@ -950,6 +1586,10 @@
       right: 38px;
       mix-blend-mode: luminosity;
 
+      @include size(padM) {
+        flex-direction: column;
+        right: 0;
+      }
       img {
         filter: drop-shadow(0 15px 60px rgba($black, 0.38));
         &:last-child {
@@ -969,54 +1609,127 @@
     }
     .bottomPrimaryBlock {
       background-color: $primary;
+      overflow: hidden;
       @include putL(780px, 409px, 660px, 374px);
+      box-shadow: -30px 0 50px rgba($primary, 30%);
+      @include size(desktopS) {
+        @include xyL(600px, 374px);
+      }
+      @include size(padM) {
+        @include putR(316px, 436px, 0, 374px);
+      }
+      .circleBlank {
+        display: none;
+        @include size(padM) {
+          display: block;
+          @include putR(371px, 371px, -41px, 147px);
+        }
+      }
+    }
+    .circleWrapper {
+      display: flex;
+      align-items: center;
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      @include size(padS) {
+        @include xyL(-125px, 0px);
+      }
     }
     .halfCircle4 {
       @include putL(29px, 56px, 132px, 71px);
-      background: url(../images/contact_circle4.png) no-repeat;
+      background: url(../images/contact_circle4.png) no-repeat center / contain;
     }
     .halfCircle3 {
       @include putL(41px, 76px, 176px, 60px);
-      background: url(../images/contact_circle3.png) no-repeat;
+      background: url(../images/contact_circle3.png) no-repeat center / contain;
     }
     .halfCircle2 {
       @include putL(110px, 110px, 235px, 44px);
-      background: url(../images/contact_circle2.png) no-repeat;
+      background: url(../images/contact_circle2.png) no-repeat center / contain;
     }
     .halfCircle1 {
       @include putL(160px, 160px, 360px, 19px);
-      background: url(../images/contact_circle1.png) no-repeat;
+      background: url(../images/contact_circle1.png) no-repeat center / contain;
     }
     .arrow {
       @include putL(190px, 180px, 121px, 159px);
-      background: url(../images/contact_arrow.png) no-repeat;
+      background: url(../images/contact_arrow.png) no-repeat center / contain;
+      @include size(padS) {
+        @include xyL(150px, 159px);
+      }
     }
     .circleBlank {
       @include putL(482px, 482px, 992px, 301px);
-      background: url(../images/contact_circle_blank.png) no-repeat;
+      background: url(../images/contact_circle_blank.png) no-repeat center / contain;
+      @include size(desktopM) {
+        @include xyL(815px, 320px);
+      }
+      @include size(desktopS) {
+        @include xyL(704px, 344px);
+      }
+      @include size(padL) {
+        @include xyL(660px, 344px);
+      }
+      @include size(padM) {
+        display: none;
+      }
     }
     .taicca {
-      @include putR(194px, 194px, 417px, 450px);
-      background: url(../images/contact_taicca.png) no-repeat;
+      @include putR(196px, 196px, 417px, 450px);
+      background: url(../images/taicca.png) no-repeat center / contain;
+      @include size(desktopM) {
+        @include xyR(350px, 450px);
+      }
+      @include size(desktopS) {
+        @include xyR(256px, 486px);
+      }
+      @include size(padL) {
+        @include xyR(200px, 486px);
+      }
+      @include size(padM) {
+        @include putR(159px, 159px, 74px, 406px);
+      }
     }
     .taiwan {
       @include putR(80px, 122px, 156px, 470px);
-      background: url(../images/contact_taiwan.png) no-repeat;
+      background: url(../images/obj_Taiwan-L.png) no-repeat center / contain;
+      @include size(desktopS) {
+        @include xyR(90px, 512px);
+      }
+      @include size(padM) {
+        @include putR(62px, 94px, 125px, 592px);
+      }
     }
     .text1 {
       @include putR(177px, 18px, 113px, 654px);
-      background: url(../images/contact_text1.png) no-repeat;
+      background: url(../images/obj_text1.png) no-repeat center / contain;
       filter: brightness(0) invert(1);
+      @include size(desktopS) {
+        @include xyR(50px, 690px);
+      }
+      @include size(padM) {
+        @include xyR(61px, 718px);
+      }
     }
     .text2 {
       @include putR(140px, 18px, 150px, 680px);
-      background: url(../images/contact_text2.png) no-repeat;
+      background: url(../images/obj_text2.png) no-repeat center / contain;
       filter: brightness(0) invert(1);
+      @include size(desktopS) {
+        @include xyR(87px, 716px);
+      }
+      @include size(padM) {
+        @include xyR(98px, 744px);
+      }
     }
     .map {
       @include putL(844px, 413px, 726px, 19px);
-      background: url(../images/contact_map.png) no-repeat;
+      background: url(../images/contact_map.png) no-repeat center / contain;
       opacity: .08;
+      @include size(padS) {
+        @include xyL(600px, 19px);
+      }
     }
     .topWrapper {
       @include putL(1002px, 374px, 438px, 0);
@@ -1026,6 +1739,9 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      @include size(padS) {
+        @include xyL(315px, 0);
+      }
 
       .title {
         font-size: 80px;
@@ -1065,6 +1781,7 @@
         img {
           cursor: pointer;
           transition: .2s;
+          object-fit: contain;
 
           &:hover {
             filter: brightness(1.2);
@@ -1073,16 +1790,29 @@
       }
     }
     .bottomWrapper {
-      @include putL(1002px, 409px, 0, 374px);
+      @include putL(fit-content, 409px, 0, 374px);
       padding: 0 0 0 59px;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      @include size(padM) {
+        padding-bottom: 20px;
+      }
+      @include size(padS) {
+        padding-bottom: 0px;
+      }
 
       .textWrapper {
         display: flex;
         flex-direction: column;
         gap: 8px;
+
+        @include size(padM) {
+          gap: 0;
+        }
+        @include size(padS) {
+          width: 350px;
+        }
       }
       .text {
         font-size: 14px;
@@ -1090,6 +1820,12 @@
 
         &-contact {
           margin-top: 18px;
+          @include size(padM) {
+            margin-top: 10px;
+          }
+          @include size(padS) {
+            margin-top: 20px;
+          }
         }
         &-underline {
           width: fit-content;
@@ -1139,7 +1875,9 @@
         margin-top: 42px;
         cursor: pointer;
         transition: .3s;
-
+        @include size(padS) {
+          margin-top: 10px;
+        }
         &:hover {
           filter: brightness(1.2);
         }

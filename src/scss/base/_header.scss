@@ -14,17 +14,31 @@ nav {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0 132px 0 119px;
+    padding: 0 108px 0 119px;
     transition: .3s;
 
     @include size(desktopM) {
-      padding: 0 40px;
+      padding: 0 10px 0 40px;
     }
-
+    @include size(desktopS) {
+      padding: 0 53px 0 80px;
+    }
+    @include size(padL) {
+      padding: 0 27px 0 50px;
+    }
+    @include size(padM) {
+      padding: 0 53px 0 50px;
+    }
+    @include size(padS) {
+      padding: 0 39px 0 50px;
+    }
+    @include size(phoneM) {
+      padding: 0 22px 0 50px;
+    }
     &_logo {
       width: 105px;
       height: 32px;
-      background-image: url(../images/taicca_logo_1.png);
+      background: url(../images/taicca_logo_1.png) no-repeat center / contain;
     }
     &_lists {
       height: 100%;
@@ -36,11 +50,22 @@ nav {
     &_items {
       display: flex;
       flex-direction: row;
+      @include size(padM) {
+        .menu_item {
+          display: none;
+        }
+      }
     }
     &_item {
       padding: 21px 18px;
       cursor: pointer;
       transition: .2s;
+      @include size(desktopS) {
+        padding: 21px 14px;
+      }
+      @include size(padL) {
+        padding: 21px 9px;
+      }
 
       &:hover {
         opacity: 0.8;
@@ -57,7 +82,25 @@ nav {
       align-items: center;
       cursor: pointer;
       transition: .3s;
+      @include size(desktopS) {
+        width: 66px;
+        padding: 0;
+      }
 
+      .menu_text {
+        @include size(desktopS) {
+          display: none;
+        }
+      }
+      .menu_icon {
+        width: 25px;
+        height: 30px;
+        background: url(../images/icon_download-L.png) no-repeat center / contain;
+        display: none;
+        @include size(desktopS) {
+          display: block;
+        }
+      }
       &:hover {
         background-color: $primary;
       }
@@ -72,13 +115,28 @@ nav {
 
       .menu_item {
         padding: 3px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
       .menu_text {
         font-size: 13px;
         color: $primary;
+        @include size(phoneM) {
+          display: none;
+        }
       }
       .active {
         border-bottom: 1px solid $primary;
+      }
+      .menu_icon {
+        width: 18px;
+        height: 35px;
+        background: url(../images/icon_option.png) no-repeat center / contain;
+        display: none;
+        @include size(padM) {
+          display: block;
+        }
       }
     }
     &_text {

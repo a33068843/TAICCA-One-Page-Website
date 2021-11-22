@@ -59,7 +59,9 @@ block content
             .icon
             .text 應備文件及證明事項
         .desc_bottom_line
-        .desc_detail 合作備忘錄期限為簽約後到次年年底，如有特殊情形可以提出延長申請，經本院評估視情況延展。
+          .line
+        .desc_detail
+          .text 合作備忘錄期限為簽約後到次年年底，如有特殊情形可以提出延長申請，經本院評估視情況延展。
       .cards
         .card#aboutCard.black
           .card_title 最後一桶金
@@ -84,19 +86,20 @@ block content
         .blockBox
           .smallBox
             .text A
-          .largeBox#applyLargeCardA
-            .title 製作投資
-            .subtitle 為全案製作總預算的
-            .number 30%
-            .textWrapper
-              span.line
-              .text 最高
-              span.line
-            .text 美金<span class="number">30</span>萬元
-            .bottom_line
-            .text 賞金一次到位
-          .mediumBox#applyMediumCardA
-            .text 以同一製作投資專案申請並獲得文化部或其所屬、受其監督機關(構)製作項目之補助者，不得申請本製作投資支持。
+          .twoBoxWrapper
+            .largeBox#applyLargeCardA
+              .title 製作投資
+              .subtitle 為全案製作總預算的
+              .number 30%
+              .textWrapper
+                span.line
+                .text 最高
+                span.line
+              .text 美金<span class="number">30</span>萬元
+              .bottom_line
+              .text 賞金一次到位
+            .mediumBox#applyMediumCardA
+              .text 以同一製作投資專案申請並獲得文化部或其所屬、受其監督機關(構)製作項目之補助者，不得申請本製作投資支持。
     .container_application.applyB#js_triggerApplyB
       .arrow#applyArrow
       .card.Bcard
@@ -104,30 +107,32 @@ block content
         .blockBox
           .smallBox
             .text B
-          .largeBox#applyLargeCardB
-            .title 行銷支持
-            .subtitle 為全案製作總預算的
-            .number 30%
-            .textWrapper
-              span.line
-              .text 最高
-              span.line
-            .text 美金<span class="number">30</span>萬元
-            .bottom_line
-            .text 分期支持：<br>
-              | 第一期50%、第二期50%
-          .mediumBox#applyMediumCardB
-            ul
-              li.text 同一製作投資專案已獲得文化部或其所屬、受監督機關(構)製作項目之補助者，方得申請本行銷支持。
-              li.text 若同一行銷專案申請已獲得文化部或其所屬、受其監督機關(構)行銷項目之獎補助者，不得重複申請本行銷支持。
-              li.text 同一專案不得同時申請製作投資及行銷支持。
+          .twoBoxWrapper
+            .largeBox#applyLargeCardB
+              .title 行銷支持
+              .subtitle 為全案製作總預算的
+              .number 30%
+              .textWrapper
+                span.line
+                .text 最高
+                span.line
+              .text 美金<span class="number">30</span>萬元
+              .bottom_line
+              .text 分期支持：<br>
+                | 第一期50%、第二期50%
+            .mediumBox#applyMediumCardB
+              ul
+                li.text 同一製作投資專案已獲得文化部或其所屬、受監督機關(構)製作項目之補助者，方得申請本行銷支持。
+                li.text 若同一行銷專案申請已獲得文化部或其所屬、受其監督機關(構)行銷項目之獎補助者，不得重複申請本行銷支持。
+                li.text 同一專案不得同時申請製作投資及行銷支持。
     .container_criteria#js_triggerCriteria
       .sideTitle#criteriaTitle Criteria
-      .halfCircle5#criteriaC5
-      .halfCircle4#criteriaC4
-      .halfCircle3#criteriaC3
-      .halfCircle2#criteriaC2
-      .halfCircle1#criteriaC1
+      .circleWrapper
+        .halfCircle5#criteriaC5
+        .halfCircle4#criteriaC4
+        .halfCircle3#criteriaC3
+        .halfCircle2#criteriaC2
+        .halfCircle1#criteriaC1
       .title 必要條件
       .cards
         .card.black
@@ -137,7 +142,7 @@ block content
           .bottom_line
           .optionText A 製作投資
           .optionText B 行銷支持
-        .card#criteriaCard
+        .card#criteriaCard1
           .title 國際影視通路
           .text 3 項至少符合 1 項
           .descWrapper
@@ -153,7 +158,7 @@ block content
           .bottom_line
           .optionText A 製作投資
           .optionText B 行銷支持
-        .card.gray#criteriaCard
+        .card.gray#criteriaCard2
           .title 自籌資金已達七成
           .descWrapper
             .descBox
@@ -281,11 +286,13 @@ block content
       a.target#anchorContact
       .topPrimaryBlock
       .bottomPrimaryBlock
-      .halfCircle4#contactCircle4
-      .halfCircle3#contactCircle3
-      .halfCircle2#contactCircle2
-      .halfCircle1#contactCircle1
-      .arrow#contactArrow
+        .circleBlank#contactCircleBlank
+      .circleWrapper
+        .halfCircle4#contactCircle4
+        .halfCircle3#contactCircle3
+        .halfCircle2#contactCircle2
+        .halfCircle1#contactCircle1
+        .arrow#contactArrow
       .circleBlank#contactCircleBlank
       .taicca#contactTaicca
       .taiwan

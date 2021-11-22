@@ -32,9 +32,6 @@ $(document).ready(function() {
       window.location.hash = target;
     });
   })
-  // $('html, body').animate({
-  //   scrollTop: 10000
-  // }, 1000, function() {});
 
   const heroTrigger = gsap.timeline({
     scrollTrigger: {
@@ -56,17 +53,18 @@ $(document).ready(function() {
   const MOUTrigger = gsap.timeline({
     scrollTrigger: {
       trigger: '#js_triggerMOU',
-      start: '30% 40%',
+      start: '40% 40%',
       end: '200% 66',
       scrub: true,
       pin: true,
+      markers: true,
     }
   });
   const applyATrigger = gsap.timeline({
     scrollTrigger: {
       trigger: '#js_triggerApplyA',
-      start: 'top 16%',
-      end: '500% 66',
+      start: 'top 12%',
+      end: '300% 66',
       scrub: true,
       pin: true,
     }
@@ -80,22 +78,12 @@ $(document).ready(function() {
       pin: true,
     }
   });
-  const criteriaTrigger = gsap.timeline({
-    scrollTrigger: {
-      trigger: '#js_triggerCriteria',
-      start: 'top 16%',
-      end: '300% 66',
-      scrub: true,
-      pin: true,
-    }
-  });
   const elementTrigger = gsap.timeline({
     scrollTrigger: {
       trigger: '#js_triggerElement',
-      start: 'top 16%',
-      end: '100% 66',
+      start: 'top 80%',
+      end: 'top 66',
       scrub: true,
-      pin: true,
     }
   });
   const downloadTrigger = gsap.timeline({
@@ -106,26 +94,96 @@ $(document).ready(function() {
       scrub: true,
     }
   });
-  const newsTrigger = gsap.timeline({
-    scrollTrigger: {
-      trigger: '#js_triggerNews',
-      start: 'top 16%',
-      end: '100% 66',
-      scrub: true,
-      pin: true,
-    }
-  });
+  // const newsTrigger = gsap.timeline({
+  //   scrollTrigger: {
+  //     trigger: '#js_triggerNews',
+  //     start: 'top 16%',
+  //     end: '100% 66',
+  //     scrub: true,
+  //     pin: true,
+  //   }
+  // });
   const contactTrigger = gsap.timeline({
     scrollTrigger: {
       trigger: '#js_triggerContact',
-      start: 'top 16%',
+      start: 'top 10%',
       end: '80% 66',
       scrub: true,
       pin: true,
+      // markers: true,
     }
   });
   ScrollTrigger.matchMedia({
-    '(min-width: 100px)': function() {
+    '(min-width: 1025px)': function() {
+      heroTrigger
+        .to(".arrow2", { y: 176 }, 0)
+    },
+    '(min-width: 0px) and (max-width: 1024px)': function() {
+      heroTrigger
+        .to(".arrow2", { y: 100 }, 0)
+    },
+    // '(min-width: 921px)': function() {
+    //   applyATrigger
+    //     .from("#applyTitle", { x: 500 }, 0)
+    //     .from("#applyLargeCardA", { y: 1000 , delay: .1 }, 0)
+    //     .from("#applyMediumCardA", { y: 1000 }, 1)
+    //     .from("#applyTaiwan", { x: -1500 }, 2)
+    //   applyBTrigger
+    //     .from("#applyArrow", { y: -200, opacity: 0 })
+
+    //   const criteriaTrigger = gsap.timeline({
+    //     scrollTrigger: {
+    //       trigger: '#js_triggerCriteria',
+    //       start: 'top 16%',
+    //       end: '200% 66',
+    //       scrub: true,
+    //       pin: true,
+    //     }
+    //   });
+    //   criteriaTrigger
+    //     .from("#criteriaTitle", { x: 500 }, 0)
+    //     .from("#criteriaC5", { y: -100 }, 0)
+    //     .from("#criteriaC4", { y: -120 }, 0)
+    //     .from("#criteriaC3", { y: -140 }, 0)
+    //     .from("#criteriaC2", { y: -165 }, 0)
+    //     .from("#criteriaC1", { y: -190 }, 0)
+    //     .from("#criteriaCard1", { y: 800 }, 1)
+    //     .from("#criteriaCard2", { y: 800 }, 1)
+    //   downloadTrigger
+    //     .from("#downloadButton1", { y: 400 }, 0)
+    //     .from("#downloadButton2", { y: 400, delay: .3 }, 0)
+    // },
+    // '(min-width: 0px) and (max-width: 920px)': function() {
+    //   applyATrigger
+    //     .from("#applyTitle", { x: 500 }, 0)
+    //     .from("#applyLargeCardA", { y: 1000, delay: .1 }, 0)
+    //     .from("#applyMediumCardA", { y: 1000 }, 1)
+    //     .from("#applyTaiwan", { x: -1500 }, 1)
+    //   applyBTrigger
+    //     .from("#applyArrow", { y: -500, opacity: 0, delay: 2 })
+    //   const criteriaTriggerRWD = gsap.timeline({
+    //     scrollTrigger: {
+    //       trigger: '#js_triggerCriteria',
+    //       start: 'top 80%',
+    //       end: '20% 66',
+    //       scrub: true,
+    //       markers: true,
+    //     }
+    //   });
+    //   criteriaTriggerRWD
+    //     .from("#criteriaTitle", { x: 500 }, 0)
+    //     .from("#criteriaC5", { y: -100 }, 1)
+    //     .from("#criteriaC4", { y: -120 }, 1)
+    //     .from("#criteriaC3", { y: -140 }, 1)
+    //     .from("#criteriaC2", { y: -165 }, 1)
+    //     .from("#criteriaC1", { y: -190 }, 1)
+    //     .from("#criteriaCard1", { y: 800 , duration: 2.5 }, 2)
+    //     .from("#criteriaCard2", { y: 800 , duration: 3.5 }, 3)
+    //   downloadTrigger
+    //     .from("#downloadButton1", { x: 800 }, 0)
+    //     .from("#downloadButton2", { x: 800, delay: .3 }, 0)
+    // },
+    'all': function () {
       heroTrigger
         .from(".arrow1", { x: -500 }, 0)
         .from(".TW", { x: 500 }, 0)
@@ -137,40 +195,21 @@ $(document).ready(function() {
         .from(".circleR1", { y: -123 }, 0)
         .from(".line1", { rotate: -360 }, 0)
         .from(".line2", { rotate: -360 }, 0)
-        .to(".triangle3", { x: 240 }, 0)
-        .to(".arrow2", { y: 176 }, 0)
+        .to(".triangle3", { xPercent: 700 }, 0)
 
       aboutTrigger.from("#aboutTitle", { x: 1000 }, 0)
 
       MOUTrigger.from("#aboutCard", { y: 1000 }, 0)
 
-      applyATrigger
-        .from("#applyTitle", { x: 500 }, 0)
-        .from("#applyLargeCardA", { y: 1000 , delay: .3 }, 0)
-        .from("#applyMediumCardA", { y: 1000 }, 1)
-        .from("#applyTaiwan", { x: -1500 }, 2)
-
       applyBTrigger
         .from("#applyLargeCardB", { y: 1000 })
         .from("#applyMediumCardB", { y: 1000 })
-        .from("#applyArrow", { y: -200, opacity: 0 })
-
-      criteriaTrigger
-        .from("#criteriaTitle", { x: 500 })
-        .from("#criteriaC5", { y: -100 }, 1)
-        .from("#criteriaC4", { y: -120 }, 1)
-        .from("#criteriaC3", { y: -140 }, 1)
-        .from("#criteriaC2", { y: -165 }, 1)
-        .from("#criteriaC1", { y: -190 }, 1)
-        .from("#criteriaCard", { y: 800 })
 
       elementTrigger
         .from("#elementIcon", { y: -200 }, 0)
         .from("#elementTitle", { x: 500 }, 0)
 
       downloadTrigger
-        .from("#downloadButton1", { y: 400 }, 0)
-        .from("#downloadButton2", { y: 400, delay: .3 }, 0)
         .from("#downloadArrow", { x: 500, delay: .3 }, 0)
 
       newsTrigger
@@ -184,8 +223,6 @@ $(document).ready(function() {
         .from("#contactArrow", { x: -300 }, 0)
         .from("#contactCircleBlank", { scale: 0.5 }, 0)
         .from("#contactTaicca", { scale: 0.5 }, 0)
-    },
-    'all': function () {
     }
   })
 });
