@@ -45,8 +45,9 @@ body {
   line-height: 24px;
   background-color: $background;
   overflow-x: hidden;
-  // letter-spacing: 0.03em;
-  // overflow-y: scroll;
+  &.disableScroll {
+    overflow: hidden;
+  }
 }
 a, a:hover, a:visited, a:active {
   color: inherit;
