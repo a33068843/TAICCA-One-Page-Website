@@ -1,14 +1,6 @@
 @use "sass:math";
 $desktopW: 1506px;
 $desktopH: 1056px;
-// $media-desktop-M: 1280;
-// $media-desktop-S: 1080;
-// $media-pad-L: 1024;
-// $media-pad-M: 920;
-// $media-pad-S: 768;
-// $media-phone: 576;
-// $media-phone-M: 375;
-
 @mixin putL($w, $h, $x, $y){
   width: $w;
   height: $h;
@@ -27,12 +19,684 @@ $desktopH: 1056px;
 @mixin xyR($x, $y) {
   inset: $y $x auto auto;
 }
+@mixin wh($w, $h) {
+  width: $w;
+  height: $h;
+}
+// $media-desktop-M: 1280;
+// $media-desktop-S: 1080;
+// $media-pad-L: 1024;
+// $media-pad-M: 920;
+// $media-pad-S: 768;
+// $media-phone: 576;
+// $media-phone-M: 375;
+.grid-container {
+  max-width: 1440px;
+  display: grid;
+  grid-template-columns: 357px 70px auto 352px;
+  grid-template-rows: 75px 254px 477px 184px;
+  grid-auto-columns: minmax(auto, 1440px);
+  @include size(desktopM) {
+    grid-template-columns: 357px 70px auto 257px;
+    grid-template-rows: 75px 254px 477px 184px;
+    grid-auto-columns: minmax(auto, 1280px);
+  }
+  @include size(desktopS) {
+    grid-template-columns: 248px 39px auto 220px;
+    grid-template-rows: 75px 312px 271px 244px;
+    grid-auto-columns: minmax(auto, 1080px);
+  }
+  @include size(padL) {
+    grid-template-columns: 248px 39px auto 194px;
+    grid-template-rows: 75px 312px 271px 172px;
+    grid-auto-columns: minmax(auto, 1024px);
+  }
+  @include size(padM) {
+    grid-template-columns: 248px 39px auto 172px;
+    grid-template-rows: 75px 312px 271px 172px;
+    grid-auto-columns: minmax(auto, 920px);
+  }
+  @include size(padS) {
+    grid-template-columns: calc(166 / 768 * 100%) calc(31 / 768 * 100%) auto calc(148 / 768 * 100%);
+    grid-template-rows: 75px 230px 213px 252px;
+    grid-auto-columns: minmax(auto, 768px);
+    // grid-template-columns: 196px 31px auto 158px;
+    // grid-template-rows: 75px 230px 213px 252px;
+    // grid-auto-columns: minmax(auto, 768px);
+  }
+  @include size(phone) {
+    grid-template-columns: 122px 20px auto 117px;
+    grid-template-rows: 61px 130px 134px 340px;
+    grid-auto-columns: minmax(auto, 576px);
+  }
+  @include size(phoneM) {
+    grid-template-columns: calc(72 / 450 * 100%) 12px auto 64px;
+    grid-template-rows: 55px 87px 76px 437px;
+    grid-auto-columns: minmax(auto, 375px);
+  }
+  .item {
+    &:nth-child(1) {
+      grid-area: 1 / 1 / 3 / 2;
+      background-color: $black;
+    }
+    &:nth-child(2) {
+      grid-area: 1 / 2 / 2 / 4;
+    }
+    &:nth-child(3) {
+      grid-area: 1 / 4 / 5 / 5;
+    }
+    &:nth-child(4) {
+      grid-area: 2 / 2 / 3 / 4;
+    }
+    &:nth-child(5) {
+      background-color: $primary;
+    }
+    &:nth-child(6) {
+      background-color: $gray;
+    }
+    &:nth-child(7) {
+      grid-area: 3 / 3 / 5 / 4;
+    }
+    &:nth-child(8) {
+      grid-area: 4 / 1 / 5 / 3;
+      background-color: $black;
+    }
+  }
+  .item:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 10%;
+    width: 100%;
+    .arrow1 {
+      @include wh(234px, 256px);
+      background: url(../images/obj_arrow_1.png) no-repeat center / contain;
+      @include size(desktopS) {
+        @include wh(190px, 200px);
+      }
+      @include size(padS) {
+        @include wh(150px, 157px);
+        width: 90%;
+      }
+      @include size(phone) {
+        @include wh(93px, 98px);
+        width: 90%;
+      }
+      @include size(phoneM) {
+        @include wh(53px, 56px);
+      }
+    }
+  }
+  .item:nth-child(2) {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-shrink: 1;
+    .allWrapper {
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      z-index: -1;
+      .rectT1 {
+        @include wh(561px, 36px);
+        background-color: $black;
+        @include size(desktopM) {
+          @include wh(500px, 36px);
+        }
+        @include size(padS) {
+          @include wh(415px, 36px);
+        }
+        @include size(phone) {
+          @include wh(337px, 29px);
+        }
+        @include size(phoneM) {
+          @include wh(241px, 26px);
+        }
+      }
+      .bottomWrapper {
+        display: flex;
+        flex-direction: row;
+        .rectT2 {
+          @include wh(523px, 39px);
+          background-color: $primary;
+          @include size(desktopM) {
+            @include wh(461px, 39px);
+          }
+          @include size(padS) {
+            @include wh(375px, 39px);
+          }
+          @include size(phone) {
+            @include wh(304px, 32px);
+          }
+          @include size(phoneM) {
+            @include wh(211px, 29px);
+          }
+        }
+        .circle1 {
+          border-radius: 100%;
+          background-color: $white;
+          @include wh(38px, 38px);
+          @include size(phone) {
+            @include wh(32px, 32px);
+          }
+          @include size(phoneM) {
+            @include wh(29px, 29px);
+          }
+        }
+      }
+    }
+  }
+  .item:nth-child(3) {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    .rectWrapper {
+      display: flex;
+      flex-direction: column;
+      .rectR1 {
+        @include wh(100%, 385px);
+        background-color: $primary;
+        @include size(desktopS) {
+          height: 338px;
+        }
+        @include size(padL) {
+          height: 298px;
+        }
+        @include size(padM) {
+          height: 264px;
+        }
+        @include size(padS) {
+          height: 243px;
+        }
+        @include size(phone) {
+          height: 179px;
+        }
+        @include size(phoneM) {
+          height: 148px;
+        }
+      }
+      .rectR2 {
+        @include wh(100%, 469px);
+        background-color: $black;
+        @include size(desktopS) {
+          height: 291px;
+        }
+        @include size(padL) {
+          height: 257px;
+        }
+        @include size(padM) {
+          height: 394px;
+        }
+        @include size(padS) {
+          height: 410px;
+        }
+        @include size(phone) {
+          height: 240px;
+        }
+        @include size(phoneM) {
+          height: 191px;
+        }
+      }
+    }
+    .circleArrowWrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: fit-content;
+      height: fit-content;
+      position: absolute;
+      padding-left: 10px;
+      padding-top: 17%;
+      gap: 20px;
+      @include size(desktopS) {
+        padding-left: 0px;
+        padding-top: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+      }
+      @include size(padL) {
+        transform: translate(-50%, 0) scale(0.8);
+        top: -2%;
+      }
+      @include size(padM) {
+        transform: translate(-50%, 0) scale(0.65);
+        top: -8%;
+      }
+      @include size(padS) {
+        transform: translate(-50%, 0) scale(0.65);
+        top: -13%;
+      }
+      @include size(phone) {
+        transform: translate(-50%, 0) scale(0.45);
+        top: -27%;
+      }
+      @include size(phoneM) {
+        transform: translate(-50%, 0) scale(0.31);
+        top: -33%;
+      }
+      .circleR5 {
+        @include wh(42px, 23px);
+        background: url(../images/hero_circle5.png) no-repeat center / contain;
+      }
+      .circleR4 {
+        @include wh(65.66px, 35.22px);
+        background: url(../images/hero_circle4.png) no-repeat center / contain;
+      }
+      .circleR3 {
+        @include wh(83.49px, 44.1px);
+        background: url(../images/hero_circle3.png) no-repeat center / contain;
+      }
+      .circleR2 {
+        @include wh(115px, 62px);
+        background: url(../images/hero_circle2.png) no-repeat center / contain;
+      }
+      .circleR1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20% 38%;
+        background: url(../images/hero_circle1.png) no-repeat center / contain;
+        @include wh(167px, 167px);
+        .circleDollar {
+          @include wh(99%, 100%);
+          background: url(../images/obj_right_dollar.svg) no-repeat center / contain;
+        }
+      }
+      .arrow2 {
+        margin-top: 20%;
+        background: url(../images/obj_arrow_2.png) no-repeat center/ contain;
+        @include wh(160px, 160px);
+        @include size(desktopS) {
+          margin-top: 0;
+        }
+        @include size(padM) {
+          margin-top: 80%;
+        }
+        @include size(padS) {
+          margin-top: 100%;
+        }
+      }
+    }
+  }
+  .item:nth-child(4) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 24px;
+    position: relative;
+    z-index: 1;
+    @include size(padM) {
+      justify-content: flex-start;
+      padding-top: 24px;
+    }
+    @include size(phone) {
+      padding: 35px 20px 0;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .text1 {
+      font-size: 26px;
+      font-weight: 500;
+      line-height: 32px;
+      @include wh(fit-content, auto);
+      @include size(phone) {
+        text-align: center;
+      }
+    }
+    .text2 {
+      font-size: 20px;
+      line-height: 38px;
+      margin-top: 8px;
+      @include wh(fit-content, auto);
+      span {
+        display: none;
+      }
+      @include size(phone) {
+        span {
+          display: contents;
+        }
+        line-height: 28px;
+        text-align: center;
+        margin-top: 28px;
+      }
+    }
+    .downloadBox {
+      @include wh(fit-content, auto);
+      margin-top: 20px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 7px;
+      cursor: pointer;
+      transition: .2s;
+
+      @include size(padS) {
+        margin-top: 24px;
+      }
+      @include size(phone) {
+        margin-top: 40px;
+      }
+      &:hover {
+        opacity: .9;
+      }
+      .triangle1 {
+        width: 12px;
+        height: 13px;
+        background: url(../images/triangle_01.png) no-repeat center / contain;
+      }
+    }
+    .text3 {
+      @include wh(177px, 18px);
+      position: absolute;
+      top: 30%;
+      right: 5%;
+      transition: .3s;
+      background: url(../images/obj_text1.png) no-repeat center / contain;
+      @media (max-width:1170px) {
+        top: 80%;
+        left: 5%;
+      }
+      @include size(padM) {
+        top: 80%;
+        left: 5%;
+      }
+      @media (max-width:710px) {
+        top: 163%;
+        left: calc(20% - 2px);
+        @include wh(102px, 10px);
+      }
+      @include size(phone) {
+        top: 180%;
+        left: 10%;
+      }
+      @media (max-width: 541px) {
+        opacity: .4;
+      }
+      @include size(phoneM) {
+        opacity: 1;
+        top: 350%;
+      }
+    }
+    .text4 {
+      @include wh(140px, 17px);
+      position: absolute;
+      top: 42%;
+      right: calc(5% + 37px);
+      transition: .3s;
+      background: url(../images/obj_text2.png) no-repeat center / contain;
+      @media (max-width:1170px) {
+        top: 90%;
+        left: 5%;
+      }
+      @include size(padM) {
+        top: 90%;
+        left: 5%;
+      }
+      @media (max-width:710px) {
+        top: 170%;
+        left: 20%;
+        @include wh(80px, 10px);
+      }
+      @include size(phone) {
+        top: 192%;
+        left: calc(10% + 2px);
+      }
+      @media (max-width: 541px) {
+        opacity: .4;
+      }
+      @include size(phoneM) {
+        opacity: 1;
+        top: 370%;
+      }
+    }
+  }
+  .item:nth-child(5) {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden;
+    @include size(desktopS) {
+      align-items: center;
+    }
+    .taiccaWrapper {
+      width: 100%;
+      height: fit-content;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      .taiccaBox {
+        position: absolute;
+        top: 50%;
+        left: 26%;
+        transform: translate(-50%, -50%);
+        filter: brightness(0);
+        background: url(../images/taicca.png) no-repeat center / contain;
+        @include wh(146px, 146px);
+        @include size(desktopS) {
+          @include wh(95px, 95px);
+        }
+        @include size(padS) {
+          @include wh(75px, 75px);
+        }
+        @include size(phone) {
+          @include wh(46px, 47px);
+        }
+        @include size(phoneM) {
+          @include wh(27px, 27px);
+        }
+      }
+      .halfCircle {
+        background: url(../images/obj_left_half_circle.png) no-repeat center / contain;
+        transform-origin: 0% 50%;
+        @include wh(178.5px, 357px);
+        @include size(desktopS) {
+          @include wh(116px, 232px);
+        }
+        @include size(padS) {
+          @include wh(91px, 182px);
+        }
+        @include size(phone) {
+          @include wh(57px, 114px);
+        }
+        @include size(phoneM) {
+          @include wh(33px, 65px);
+        }
+      }
+      .TW {
+        position: absolute;
+        right: 5%;
+        top: 100%;
+        transform: translate(0%, -100%);
+        @include wh(100.5px, 48px);
+        background: url(../images/icon_TWword.png) no-repeat center / contain;
+        @include size(desktopS) {
+          display: none;
+        }
+      }
+    }
+  }
+  .item:nth-child(6) {
+    display: flex;
+    position: relative;
+    .taiwan {
+      position: absolute;
+      top: 35%;
+      transform: translate(10%, -50%);
+      background: url(../images/obj_Taiwan.png) no-repeat center / contain;
+      @include wh(80px, 122px);
+      @include size(padS) {
+        @include wh(63px, 96px);
+      }
+      @include size(phone) {
+        @include wh(40px, 60px);
+      }
+      @include size(phoneM) {
+        @include wh(23px, 34px);
+      }
+    }
+  }
+  .item:nth-child(7) {
+    display: flex;
+    justify-content: flex-end;
+    z-index: -1;
+    .circleC {
+      @include putL(531.62px, 531.62px, 556px, 322px);
+      background: url(../images/obj_center_circle.png) no-repeat center / contain;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      @include size(desktopM) {
+        @include wh(462px, 462px);
+        @include putL(462px, 462px, 560px, 342px);
+      }
+      @include size(desktopS) {
+        @include wh(384px, 384px);
+        @include putL(384px, 384px, 420px, 360px);
+      }
+      @include size(padL) {
+        @include xyL(420px, 340px);
+      }
+      @include size(padM) {
+        @include putL(328px, 328px, 387px, 352px);
+      }
+      @include size(padS) {
+        @include putL(307px, 307px, 283px, 348px);
+      }
+      @include size(phone) {
+        @include putL(243px, 243px, 204px, 315px);
+      }
+      @include size(phoneM) {
+        @include putL(185px, 185px, 123px, 368px);
+      }
+    }
+    .line1 {
+      @include putL(61.29px, 60.49px, 1018.5px, 330px);
+      background: url(../images/obj_center_line1.png) no-repeat center / contain;
+      transform-origin: -340% 420%;
+      @include size(desktopM) {
+        @include putL(53px, 53px, 960.5px, 350px);
+      }
+      @include size(desktopS) {
+        @include putL(44px, 44px, 760px, 367px);
+      }
+      @include size(padL) {
+        @include xyL(760px, 347px);
+      }
+      @include size(padM) {
+        @include xyL(704px, 341px);
+      }
+      @include size(padS) {
+        @include putL(35px, 35px, 547px, 348px);
+      }
+      @include size(phone) {
+        @include putL(28px, 28px, 415px, 313px);
+      }
+      @include size(phoneM) {
+        @include putL(21px, 21px, 288px, 376px);
+      }
+    }
+    .line2 {
+      @include putL(150.91px, 150.91px, 469.5px, 780px);
+      background: url(../images/obj_center_line2.png) no-repeat center / contain;
+      transform-origin: 232% -127%;
+      @include size(desktopM) {
+        @include putL(131px, 131px, 466px, 750px);
+      }
+      @include size(desktopS) {
+        @include putL(109px, 109px, 361px, 700px);
+      }
+      @include size(padL) {
+        @include xyL(361px, 680px);
+      }
+      @include size(padM) {
+        @include xyL(304px, 654px);
+      }
+      @include size(padS) {
+        @include putL(87px, 87px, 233px, 613px);
+      }
+      @include size(phone) {
+        @include putL(69px, 69px, 160px, 529px);
+      }
+      @include size(phoneM) {
+        @include putL(53px, 53px, 93px, 530px);
+      }
+    }
+    .triangle2 {
+      width: 22px;
+      height: 23px;
+      position: absolute;
+      right: 105%;
+      background: url(../images/triangle_02.png) no-repeat center / contain;
+      @include size(desktopS) {
+        @include putR(15px, 16px, 105%, auto);
+      }
+      @include size(phone) {
+        @include putR(10px, 10px, 105%, auto);
+      }
+      @include size(phoneM) {
+        @include putR(8px, 8px, 105%, auto);
+      }
+    }
+    .triangle3 {
+      width: 34px;
+      height: 39px;
+      position: absolute;
+      background: url(../images/triangle_03.png) no-repeat center / contain;
+      @include size(desktopM) {
+        @include putL(30px, 34px, auto, auto);
+      }
+      @include size(desktopS) {
+        @include putL(24px, 28px, auto, auto);
+      }
+      @include size(padM) {
+        @include putL(21px, 24px, auto, auto);
+      }
+      @include size(padS) {
+        @include putL(19px, 22px, auto, auto);
+      }
+      @include size(phone) {
+        @include putL(15px, 18px, auto, auto);
+      }
+      @include size(phoneM) {
+        @include putL(12px, 14px, auto, auto);
+      }
+    }
+  }
+  .blurCircle {
+    z-index: -2;
+    @include putL(804px, 804px, -188px, 593px);
+    background: url(../images/obj_blur_circle.png) no-repeat center / contain;
+    @include size(desktopS) {
+      @include putL(757px, 757px, -224px, 579px);
+    }
+    @include size(padS) {
+      @include putL(800px, 800px, -30px, 388px);
+    }
+    @include size(phone) {
+      @include putL(600px, 600px, -12px, 396px);
+    }
+    @include size(phone) {
+      @include putL(550px, 550px, -91px, 420px)
+    }
+  }
+}
+
+
+
+
+
+
 .fixMap {
   @include putL(844px, 413px, 50%, 100px);
   position: fixed;
   transform: translateX(-50%);
   background: url(../images/world_map.png) no-repeat;
-  z-index: -1;
+  z-index: -2;
 }
 
 .hero * {
@@ -609,7 +1273,10 @@ $desktopH: 1056px;
       @include xyL(269px, 120px);
     }
     @include size(padS) {
-      @include xyL(208px, 92px);
+      @include xyL(auto, 92px);
+      display: flex;
+      width: fit-content;
+      justify-content: center;
     }
     @include size(phone) {
       @include xyL(164px, 89px);

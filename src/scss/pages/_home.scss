@@ -15,6 +15,8 @@
     align-items: center;
     margin-top: 18px;
     position: relative;
+    bottom: 140px;
+    width: 100%;
     @include size(desktopM) {
       left: 20px;
     }
@@ -24,8 +26,14 @@
     @include size(padM) {
       left: 20px;
     }
+    @include size(padS) {
+      bottom: 125px;
+    }
     @include size(phone) {
       left: 0px;
+    }
+    @include size(phoneM) {
+      bottom: 100px;
     }
 
     .title {
@@ -39,10 +47,10 @@
         width: 799px;
       }
       @include size(padS) {
-        width: 648px;
+        width: 90%;
       }
       @include size(phone) {
-        width: 530px;
+        width: 100%;
       }
       @include size(phoneM) {
         font-size: 60px;
@@ -169,6 +177,11 @@
     @include size(padM) {
       gap: 23px;
     }
+    @media (max-width:870px) {
+      margin-top: 80px;
+      flex-direction: column;
+      padding: 0 80px 0 0;
+    }
     @include size(padS) {
       margin-top: 80px;
       flex-direction: column;
@@ -227,9 +240,11 @@
         font-size: 16px;
         line-height: 30px;
         margin-top: 13px;
-        @include size(padS) {
+        @media (max-width: 870px) {
           width: 500px;
           margin-top: 26px;
+        }
+        @include size(padS) {
         }
         @include size(phone) {
           width: 420px;
@@ -343,6 +358,10 @@
       }
       @include size(padM) {
         top: 45px;
+      }
+      @media (max-width: 870px) {
+        top: 90px;
+        left: 35px;
       }
       @include size(padS) {
         top: 90px;
@@ -1122,6 +1141,10 @@
     @include size(padS) {
       height: 826px;
     }
+    @media (max-width: 697px) {
+      height: 1560px;
+      margin-top: 92px;
+    }
     @include size(phone) {
       height: 1560px;
       margin-top: 92px;
@@ -1212,10 +1235,13 @@
         @include putR(45px, 45px, 263px, 52px);
       }
       @include size(phone) {
-        @include xyL(263px, 42px);
+        @include xyR(263px, 42px);
       }
       @include size(phoneM) {
         @include xyL(45px, 31px);
+      }
+      @media (max-width:330px) {
+        @include xyL(45px, 24px);
       }
     }
     .TW {
@@ -1231,9 +1257,12 @@
         @include putR(58px, 28px, 258px, 111px);
       }
       @include size(phone) {
-        @include xyL(256px, 101px);
+        @include xyR(256px, 101px);
       }
       @include size(phoneM) {
+        @include xyL(39px, 88px);
+      }
+      @media (max-width:330px) {
         @include xyL(39px, 88px);
       }
     }
@@ -1265,6 +1294,9 @@
       @include size(phoneM) {
         @include xyL(124px, 21px);
       }
+      @media (max-width:330px) {
+        @include xyL(110px, 21px);
+      }
     }
     .descWrapper {
       position: relative;
@@ -1274,6 +1306,7 @@
       align-items: flex-start;
       gap: 50px;
       position: relative;
+      width: 90%;
 
       @include size(desktopS) {
         right: 24px;
@@ -1283,6 +1316,9 @@
       }
       @include size(padM) {
         right: 10px;
+      }
+      @media (max-width: 880px) {
+        right: 40px;
       }
       @include size(padS) {
         right: 2px;
@@ -1300,6 +1336,9 @@
         right: 50px;
         @include size(padM) {
           right: 50px;
+        }
+        @media (max-width: 880px) {
+          right: -20px;
         }
         @include size(padS) {
           right: 0;
@@ -1334,6 +1373,7 @@
         display: flex;
         flex-direction: column;
         gap: 32px;
+        width: 100%;
         @include size(desktopS) {
           position: relative;
           left: 55px;
@@ -1381,15 +1421,21 @@
           flex-direction: row;
           align-items: center;
           gap: 94px;
+          width: 100%;
           @include size(desktopS) {
             padding-left: 0;
+            gap: 60px;
           }
           @include size(padM) {
             gap: 40px;
           }
-          @include size(phone) {
+          @media (max-width: 880px) {
+            gap: 20px;
+          }
+          @media (max-width: 697px) {
             flex-direction: column;
-            width: 450px;
+          }
+          @include size(phone) {
           }
           @include size(phoneM) {
             width: 273px;
@@ -1410,6 +1456,11 @@
             @include size(padS) {
               width: 210px;
               gap: 17px;
+            }
+            @media (max-width: 697px) {
+              flex-direction: row;
+              width: 100%;
+              gap: 42px;
             }
             @include size(phone) {
               flex-direction: row;
@@ -1442,6 +1493,7 @@
     }
     @include size(padS) {
       height: 801px;
+      padding-left: 20px;
     }
     @include size(phone) {
       height: 816px;
@@ -1487,7 +1539,7 @@
       background-color: #555555;
       @include putL(464px, 270px, 976px, 0px);
       @include size(desktopS) {
-        @include putL(218px, 349px, 920px, 0);
+        @include putL(300px, 349px, 800px, 0);
       }
       @include size(padL) {
         @include putL(293px, 349px, 786px, 0);
@@ -1526,23 +1578,29 @@
       display: flex;
       flex-direction: column;
       position: relative;
-      right: 115px;
+      padding-left: 100px;
+      width: 100%;
+      @include size(desktopM) {
+        padding-left: 80px;
+      }
       @include size(desktopS) {
-        right: 20px;
+        padding-left: 40px;
       }
       @include size(padM) {
-        right: 130px;
+        padding-left: 45px;
+      }
+      @include size(padM) {
+        padding-left: 70px;
         bottom: 15px;
       }
-      @include size(padM) {
-        right: 37px;
+      @include size(padS) {
+        padding-left: 20px;
       }
       @include size(phone) {
-        right: 25px;
+        padding-left: 0px;
         bottom: 25px;
       }
       @include size(phoneM) {
-        right: 0px;
         bottom: 64px;
       }
     }
@@ -1554,11 +1612,13 @@
       position: relative;
       border-bottom: 3px solid $black;
       @include size(padS) {
-        width: 575px;
+        max-width: 575px;
+        width: 90%;
       }
       @include size(phone) {
         font-size: 80px;
-        width: 450px;
+        max-width: 450px;
+        width: 90%;
       }
       @include size(phoneM) {
         font-size: 60px;
@@ -1593,10 +1653,11 @@
           gap: 30px;
         }
         .text {
-          width: 382px;
+          max-width: 382px;
           font-size: 18px;
           font-weight: 400;
           line-height: 32px;
+          width: 90%;
           @include size(phoneM) {
             width: 245px;
           }
@@ -1605,6 +1666,7 @@
           display: flex;
           flex-direction: row;
           gap: 17px;
+          width: 100%;
           @include size(padM) {
             flex-direction: column;
             gap: 14px;
@@ -1628,10 +1690,11 @@
               gap: 22px;
             }
             @include size(padS) {
-              width: 431px;
+              max-width: 431px;
+              width: 90%;
             }
             @include size(phoneM) {
-              width: 320px;
+              max-width: 320px;
             }
             .text {
               color: $white;
@@ -1685,11 +1748,12 @@
             height: 281px;
           }
           @include size(padS) {
-            width: 431px;
+            max-width: 431px;
             height: 281px;
+            width: 90%;
           }
           @include size(phoneM) {
-            width: 317px;
+            max-width: 317px;
             height: 176px;
           }
         }
@@ -1796,17 +1860,25 @@
       justify-content: center;
       width: fit-content;
       position: relative;
-      right: 208px;
+      width: 100%;
+      padding: 0 140px;
 
-      @include size(desktopS) {
-        right: 62px;
+      @include size(desktopM) {
+        padding: 0 92px;
+      }
+      @include size(padL) {
+        padding: 0 74px;
       }
       @include size(padM) {
         right: 0;
       }
+      @include size(phone) {
+        padding: 0 40px;
+      }
       @include size(phoneM) {
         align-items: center;
         bottom: 46px;
+        padding: 0 30px;
       }
 
       .title {
@@ -1843,6 +1915,7 @@
             align-items: center;
             justify-content: center;
             padding-bottom: 3px;
+            flex-shrink: 0;
           }
           &_year {
             font-size: 20px;
@@ -1867,12 +1940,15 @@
             }
             @include size(phone) {
               font-size: 15px;
-              line-height: 28px;
+              line-height: 22px;
               width: 333px;
             }
             @include size(phoneM) {
               width: 190px;
               line-height: 22px;
+            }
+            @media (max-width: 320px) {
+              margin-left: 14px;
             }
           }
         }
@@ -1921,16 +1997,35 @@
       height: 741px;
     }
     .sideTitle {
-      @include putL(782px, 180px, 690px, 143px);
+      // width: calc(782 / 1440 * 100%); me too
+      width: 781px;
+      height: 180px;
+      position: absolute;
+      inset: calc(143 / 381 * 100%) auto auto calc(690 / 1440 * 100%);
       background: url(../images/partner_title.png) no-repeat center / contain;
+      // &:before {
+      //   content: '';
+      //   display: block;
+      //   padding-top: calc(180 / 381 * 100%);
+      // } 幫我註解我無快捷鍵OKOK
       @include size(padM) {
-        @include xyL(160px, 547px);
-      }
-      @include size(padS) {
-        @include putL(597px, 138px, 183px, 568px);
+        width: calc(597 / 768 * 100%);
+        inset: calc(568 / 741 * 100%) auto auto calc(183 / 768 * 100%);
+        &:before {
+          content: '';
+          display: block;
+          padding-top: calc(138 / 597 * 100%);
+        }
       }
       @include size(phoneM) {
-        @include putL(339px, 80px, 44px, 653px);
+        width: calc(339 / 375 * 100%);
+        inset: calc(654 / 741 * 100%) auto auto calc(44 / 425 * 100%);
+        &:before {
+          content: '';
+          display: block;
+          padding-top: calc(80 / 339 * 100%);
+        }
+        
       }
     }
     .titleWrapper {
@@ -1940,17 +2035,20 @@
       justify-content: center;
       align-items: center;
       gap: 40px;
+      width: 100%;
 
       .line {
-        width: 89px;
+        max-width: 89px;
+        width: 100%;
         border-bottom: 1px solid $black;
         @include size(phoneM) {
-          width: 59px;
+          max-width: 59px;
         }
       }
       .title {
         font-size: 32px;
         font-weight: 500;
+        flex-shrink: 0;
       }
     }
     .partnerWrapper {
@@ -2010,6 +2108,7 @@
       }
       @include size(phoneM) {
         @include putR(375px, 214px, 0, 1085px);
+        width: 100%;
       }
       .circleBlank {
         display: none;

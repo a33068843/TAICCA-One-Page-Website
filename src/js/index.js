@@ -53,6 +53,18 @@ $(document).ready(function() {
     }
   })
 
+  $('#downloadPrepareDocument').on('click', function() {
+    window.open('https://drive.google.com/uc?export=download&id=10l8poy0fiuRAWiSKZ42qfrmpVVz-P-h-');
+    window.open('https://drive.google.com/uc?export=download&id=1lx3IkA3wjUAQdgC5TWK4GRU_Xbqu43G_');
+    window.open('https://drive.google.com/uc?export=download&id=17H9zyBpusM27xc2-jGqX2oe0X7v-Zl-3');
+    window.open('https://drive.google.com/uc?export=download&id=1ceV5WMzg2ZapBbGRHl_Hiol6bOEHsoBF');
+  });
+  $('#downloadButton2').on('click', function() {
+    window.open('https://drive.google.com/uc?export=download&id=1aZgAtB_w23iNTk50zg0wZet2ADbfQF14');
+    window.open('https://drive.google.com/uc?export=download&id=1HOJPvivRyQ0JVKrKuf_53aNKZsjRNhwS');
+    window.open('https://drive.google.com/uc?export=download&id=1paPFSdlQnt33sr1XdOGWQiDM6aA1znEs');
+    window.open('https://drive.google.com/uc?export=download&id=1H5lafs2LV-4Wmt6Mlw5gNM1AtrFNO9Rf');
+  });
   // Smooth Scroll
   $('a[href^="#"]').on('click', function(e) {
     e.preventDefault();
@@ -65,51 +77,6 @@ $(document).ready(function() {
       window.location.hash = target;
     });
   })
-  // const applyBTrigger = gsap.timeline({
-  //   scrollTrigger: {
-  //     trigger: '#js_triggerApplyB',
-  //     start: 'top 20%',
-  //     end: '300% 66',
-  //     scrub: true,
-  //     pin: true,
-  //   }
-  // });
-  // const elementTrigger = gsap.timeline({
-  //   scrollTrigger: {
-  //     trigger: '#js_triggerElement',
-  //     start: 'top 80%',
-  //     end: 'top 66',
-  //     scrub: true,
-  //   }
-  // });
-  // const downloadTrigger = gsap.timeline({
-  //   scrollTrigger: {
-  //     trigger: '#js_triggerDownload',
-  //     start: 'top 50%',
-  //     end: '20% 40%',
-  //     scrub: true,
-  //   }
-  // });
-  // const newsTrigger = gsap.timeline({
-  //   scrollTrigger: {
-  //     trigger: '#js_triggerNews',
-  //     start: 'top 16%',
-  //     end: '100% 66',
-  //     scrub: true,
-  //     pin: true,
-  //   }
-  // });
-  // const contactTrigger = gsap.timeline({
-  //   scrollTrigger: {
-  //     trigger: '#js_triggerContact',
-  //     start: 'top 10%',
-  //     end: '80% 66',
-  //     scrub: true,
-  //     pin: true,
-  //     // markers: true,
-  //   }
-  // });
-  // Hero, About, Mou
   const saveStyled = `
     .arrow1,
     .TW,
@@ -123,22 +90,45 @@ $(document).ready(function() {
     .triangle3,
     .arrow2,
     #aboutTitle,
-    #aboutCard,
+    #mouCard,
     #applyTitle,
     #applyLargeCardA,
     #applyMediumCardA,
-    #applyTaiwan
+    #applyTaiwan,
+    #applyLargeCardB,
+    #applyMediumCardB,
+    #criteriaTitle,
+    #criteriaC5,
+    #criteriaC4,
+    #criteriaC3,
+    #criteriaC2,
+    #criteriaC1,
+    #criteriaCard1,
+    #criteriaCard2,
+    #elementIcon,
+    #elementTitle,
+    #downloadButton1,
+    #downloadButton2,
+    #downloadArrow,
+    #newsBlurCircle,
+    #contactCircle4,
+    #contactCircle3,
+    #contactCircle2,
+    #contactCircle1,
+    #contactArrow,
+    #contactCircleBlank,
+    #contactTaicca
   `
   gsap.set(saveStyled, {clearProps: "all"});
   ScrollTrigger.saveStyles(saveStyled);
   ScrollTrigger.matchMedia({
-    // Hero, ApplyA
+    // Hero,
     '(min-width: 921px)': function() {
       const heroTrigger = gsap.timeline({
         scrollTrigger: {
           trigger: '#js_triggerHero',
           start: 'top 66',
-          end: '+=10%',
+          end: '+=100% 66',
           scrub: true,
           pin: true,
         }
@@ -155,7 +145,26 @@ $(document).ready(function() {
         .from(".line1", { rotate: -360 }, 0)
         .from(".line2", { rotate: -360 }, 0)
         .to(".triangle3", { xPercent: 700 }, 0)
-        .to(".arrow2", { y: 176 }, 0)
+        .to(".arrow2", { y: 176 }, 0);
+      const MOUTrigger = gsap.timeline({
+        scrollTrigger: {
+          trigger: '#js_triggerMOU',
+          start: '40% 40%',
+          end: '+=100% 66',
+          scrub: true,
+          pin: true,
+        }
+      });
+      MOUTrigger.from("#mouCard", { y: 500 }, 0);
+      const aboutTrigger = gsap.timeline({
+        scrollTrigger: {
+          trigger: '#js_triggerAbout',
+          start: 'top 100%',
+          end: '+=20% 60%',
+          scrub: true,
+        }
+      });
+      aboutTrigger.from("#aboutTitle", { x: 1000 }, 0);
       const applyATrigger = gsap.timeline({
         scrollTrigger: {
           trigger: '#js_triggerApplyA',
@@ -163,24 +172,106 @@ $(document).ready(function() {
           end: '+=100% 66',
           scrub: true,
           pin: true,
-          markers: true,
-          anticipatePin: 1,
         }
       });
       applyATrigger
         .from("#applyTitle", { x: 500 }, 0)
-        // .from("#applyLargeCardA", { y: 1000, delay: .1 }, 0)
-        // .from("#applyMediumCardA", { y: 1000 }, 1)
-        // .from("#applyTaiwan", { x: -1500 }, 1)
+        .from("#applyLargeCardA", { y: 1000, delay: .1 }, 0)
+        .from("#applyMediumCardA", { y: 1000 }, 1)
+        .from("#applyTaiwan", { x: -1500 }, 1);
+
+      const applyBTrigger = gsap.timeline({
+        scrollTrigger: {
+          trigger: '#js_triggerApplyB',
+          start: 'top 20%',
+          end: '300% 66',
+          scrub: true,
+          pin: true,
+        }
+      });
+      applyBTrigger
+        .from("#applyLargeCardB", { y: 1000 })
+        .from("#applyMediumCardB", { y: 1000 });
+
+      const criteriaTrigger = gsap.timeline({
+        scrollTrigger: {
+          trigger: '#js_triggerCriteria',
+          start: 'top 16%',
+          end: '200% 66',
+          scrub: true,
+          pin: true,
+        }
+      });
+      criteriaTrigger
+        .from("#criteriaTitle", { x: 500 }, 0)
+        .from("#criteriaC5", { y: -100 }, 0)
+        .from("#criteriaC4", { y: -120 }, 0)
+        .from("#criteriaC3", { y: -140 }, 0)
+        .from("#criteriaC2", { y: -165 }, 0)
+        .from("#criteriaC1", { y: -190 }, 0)
+        .from("#criteriaCard1", { y: 800 }, 1)
+        .from("#criteriaCard2", { y: 800 }, 1);
+      const elementTrigger = gsap.timeline({
+        scrollTrigger: {
+          trigger: '#js_triggerElement',
+          start: 'top center',
+          end: 'top 66',
+          scrub: true,
+          markers: true,
+        }
+      });
+      elementTrigger
+        .from("#elementIcon", { y: -200 }, 0)
+        .from("#elementTitle", { x: 500 }, 0);
+      const downloadTrigger = gsap.timeline({
+        scrollTrigger: {
+          trigger: '#js_triggerDownload',
+          start: 'top 40%',
+          end: '20% 30%',
+          scrub: true,
+        }
+      });
+      downloadTrigger
+        .from("#downloadButton1", { y: 400 }, 0)
+        .from("#downloadButton2", { y: 400 }, 0.3)
+        .from("#downloadArrow", { x: 500 }, 0.3);
+      const newsTrigger = gsap.timeline({
+        scrollTrigger: {
+          trigger: '#js_triggerNews',
+          start: 'top 16%',
+          end: '100% 66',
+          scrub: true,
+          pin: true,
+        }
+      });
+      newsTrigger.from("#newsBlurCircle", { scale: 0.5 }, 0)
+      const contactTrigger = gsap.timeline({
+        scrollTrigger: {
+          trigger: '#js_triggerContact',
+          start: 'top 80%',
+          end: '80% bottom',
+          scrub: true,
+          pin: true,
+        }
+      });
+      contactTrigger
+        .from("#contactCircle4", { x: -470 }, 0)
+        .from("#contactCircle3", { x: -485 }, 0)
+        .from("#contactCircle2", { x: -505 }, 0)
+        .from("#contactCircle1", { x: -520 }, 0)
+        .from("#contactArrow", { x: -300 }, 0)
+        .from("#contactCircleBlank", { scale: 0.5 }, 0)
+        .from("#contactTaicca", { scale: 0.5 }, 0);
     },
     '(max-width: 920px)': function() {
       const heroTriggerRWD = gsap.timeline({
         scrollTrigger: {
           trigger: '#js_triggerHero',
-          start: 'top-=1px 66',
-          end: '+=10% 66',
+          start: 'top 66',
+          end: '+=100% 66',
           scrub: true,
           pin: true,
+          // markers: true,
         }
       });
       heroTriggerRWD
@@ -195,43 +286,16 @@ $(document).ready(function() {
         .from(".line1", { rotate: -360 }, 0)
         .from(".line2", { rotate: -360 }, 0)
         .to(".triangle3", { xPercent: 700 }, 0)
-        .to(".arrow2", { y: 100 }, 0)
-
-        // applyATrigger
-        //   .from("#applyTitle", { x: 500 }, 0)
-        //   .from("#applyLargeCardA", { y: 1000 , delay: .1 }, 0)
-        //   .from("#applyMediumCardA", { y: 1000 }, 1)
-        //   .from("#applyTaiwan", { x: -1500 }, 2)
-        // applyBTrigger
-        //   .from("#applyArrow", { y: -200, opacity: 0 })
-    },
-    // Mou
-    '(min-width: 769px)': function() {
-      const MOUTrigger = gsap.timeline({
+        .to(".arrow2", { y: 100 }, 0);
+      const MOUTriggerRWD = gsap.timeline({
         scrollTrigger: {
           trigger: '#js_triggerMOU',
-          start: '40% 40%',
-          end: '+=100% 66',
-          scrub: true,
-          // pin: true,
-          // markers: true,
-        }
-      });
-      MOUTrigger.from("#aboutCard", { y: 1000 }, 0)
-    },
-    '(max-width: 768px)': function() {
-      const MOUTrigger = gsap.timeline({
-        scrollTrigger: {
-          trigger: '#js_triggerMOU',
-          start: '20% 70%',
-          end: '+=80% 70%',
+          start: '50% 70%',
+          end: '+=100% 70%',
           scrub: true,
         }
       });
-      MOUTrigger.from("#aboutCard", { y: 1000 }, 0)
-    },
-    // About
-    'all': function() {
+      MOUTriggerRWD.from("#mouCard", { y: 1000 }, 0);
       const aboutTrigger = gsap.timeline({
         scrollTrigger: {
           trigger: '#js_triggerAbout',
@@ -240,69 +304,103 @@ $(document).ready(function() {
           scrub: true,
         }
       });
-      aboutTrigger.from("#aboutTitle", { x: 1000 }, 0)
-    }
+      aboutTrigger.from("#aboutTitle", { x: 1000 }, 0);
+      const applyATrigger = gsap.timeline({
+        scrollTrigger: {
+          trigger: '#js_triggerApplyA',
+          start: 'top 10%',
+          end: '+=100% 66',
+          scrub: true,
+          pin: true,
+        }
+      });
+      applyATrigger
+        .from("#applyTitle", { x: 500 }, 0)
+        .from("#applyLargeCardA", { y: 1000, delay: .1 }, 0)
+        .from("#applyMediumCardA", { y: 1000 }, 1)
+        .from("#applyTaiwan", { x: -1500 }, 1);
+
+      const applyBTrigger = gsap.timeline({
+        scrollTrigger: {
+          trigger: '#js_triggerApplyB',
+          start: 'top 10%',
+          end: '300% 66',
+          scrub: true,
+          pin: true,
+        }
+      });
+      applyBTrigger
+        .from("#applyLargeCardB", { y: 1000 })
+        .from("#applyMediumCardB", { y: 1000 });
+
+      const criteriaTrigger = gsap.timeline({
+        scrollTrigger: {
+          trigger: '#js_triggerCriteria',
+          start: 'top 10%',
+          end: '200% 66',
+          scrub: true,
+          pin: true,
+        }
+      });
+      criteriaTrigger
+        .from("#criteriaTitle", { x: 500 }, 0)
+        .from("#criteriaC5", { y: -100 }, 0)
+        .from("#criteriaC4", { y: -120 }, 0)
+        .from("#criteriaC3", { y: -140 }, 0)
+        .from("#criteriaC2", { y: -165 }, 0)
+        .from("#criteriaC1", { y: -190 }, 0)
+        .from("#criteriaCard1", { y: 800 }, 1)
+        .from("#criteriaCard2", { y: 800 }, 1);
+      const elementTrigger = gsap.timeline({
+        scrollTrigger: {
+          trigger: '#js_triggerElement',
+          start: 'top 80%',
+          end: 'top 66',
+          scrub: true,
+        }
+      });
+      elementTrigger
+        .from("#elementIcon", { y: -200 }, 0)
+        .from("#elementTitle", { x: 500 }, 0);
+      const downloadTrigger = gsap.timeline({
+        scrollTrigger: {
+          trigger: '#js_triggerDownload',
+          start: 'top 40%',
+          end: '20% 30%',
+          scrub: true,
+        }
+      });
+      downloadTrigger
+        .from("#downloadButton1", { y: 400 }, 0)
+        .from("#downloadButton2", { y: 400 }, 0.3)
+        .from("#downloadArrow", { x: 500 }, 0.3);
+      const newsTrigger = gsap.timeline({
+        scrollTrigger: {
+          trigger: '#js_triggerNews',
+          start: 'top 16%',
+          end: '100% 66',
+          scrub: true,
+          pin: true,
+        }
+      });
+      newsTrigger.from("#newsBlurCircle", { scale: 0.5 }, 0)
+      const contactTrigger = gsap.timeline({
+        scrollTrigger: {
+          trigger: '#js_triggerContact',
+          start: '60% bottom',
+          end: 'bottom bottom',
+          scrub: true,
+          // markers: true,
+        }
+      });
+      contactTrigger
+        .from("#contactCircle4", { x: -470 }, 0)
+        .from("#contactCircle3", { x: -485 }, 0)
+        .from("#contactCircle2", { x: -505 }, 0)
+        .from("#contactCircle1", { x: -520 }, 0)
+        .from("#contactArrow", { x: -300 }, 0)
+        .from("#contactCircleBlank", { scale: 0.5 }, 0)
+        .from("#contactTaicca", { scale: 0.5 }, 0);
+    },
   })
-  // ScrollTrigger.matchMedia({
-  //   '(min-width: 921px)': function() {
-  //     const criteriaTrigger = gsap.timeline({
-  //       scrollTrigger: {
-  //         trigger: '#js_triggerCriteria',
-  //         start: 'top 16%',
-  //         end: '200% 66',
-  //         scrub: true,
-  //         pin: true,
-  //       }
-  //     });
-  //     criteriaTrigger
-  //       .from("#criteriaTitle", { x: 500 }, 0)
-  //       .from("#criteriaC5", { y: -100 }, 0)
-  //       .from("#criteriaC4", { y: -120 }, 0)
-  //       .from("#criteriaC3", { y: -140 }, 0)
-  //       .from("#criteriaC2", { y: -165 }, 0)
-  //       .from("#criteriaC1", { y: -190 }, 0)
-  //       .from("#criteriaCard1", { y: 800 }, 1)
-  //       .from("#criteriaCard2", { y: 800 }, 1)
-  //     downloadTrigger
-  //       .from("#downloadButton1", { y: 400 }, 0)
-  //       .from("#downloadButton2", { y: 400, delay: .3 }, 0)
-  //   },
-  //   '(min-width: 0px) and (max-width: 920px)': function() {
-  //     applyBTrigger
-  //       .from("#applyArrow", { y: -500, opacity: 0, delay: 2 })
-  //     const criteriaTriggerRWD = gsap.timeline({
-  //       scrollTrigger: {
-  //         trigger: '#js_triggerCriteria',
-  //         start: 'top 80%',
-  //         end: '20% 66',
-  //         scrub: true,
-  //         markers: true,
-  //       }
-  //     });
-  //     criteriaTriggerRWD
-  //       .from("#criteriaTitle", { x: 500 }, 0)
-  //       .from("#criteriaC5", { y: -100 }, 1)
-  //       .from("#criteriaC4", { y: -120 }, 1)
-  //       .from("#criteriaC3", { y: -140 }, 1)
-  //       .from("#criteriaC2", { y: -165 }, 1)
-  //       .from("#criteriaC1", { y: -190 }, 1)
-  //       .from("#criteriaCard1", { y: 800 , duration: 2.5 }, 2)
-  //       .from("#criteriaCard2", { y: 800 , duration: 3.5 }, 3)
-  //     downloadTrigger
-  //       .from("#downloadButton1", { x: 800 }, 0)
-  //       .from("#downloadButton2", { x: 800, delay: .3 }, 0)
-  //   },
-  //   'all': function () {
-  //     applyBTrigger
-  //       .from("#applyLargeCardB", { y: 1000 })
-  //       .from("#applyMediumCardB", { y: 1000 })
-
-  //     elementTrigger
-  //       .from("#elementIcon", { y: -200 }, 0)
-  //       .from("#elementTitle", { x: 500 }, 0)
-
-  //     downloadTrigger
-  //       .from("#downloadArrow", { x: 500, delay: .3 }, 0)
-  //   }
-  // })
 });

@@ -8,7 +8,7 @@ block append js
 
 block content
   .content
-    +hero()
+    +test()
     .container_about#js_triggerAbout(name="about")
       a.target#anchorAbout
       .title#aboutTitle ABOUT
@@ -55,7 +55,7 @@ block content
           a.buttonBox(href="https://taicca.surveycake.biz/s/O0zP3" target="_blank")
             .icon
             .text MOU 夥伴意願調查
-          a.buttonBox(href="https://drive.google.com/drive/u/1/folders/1_xXY82FXh8G8dKcTOLIzWo21v_ChqATw" target="_blank")
+          a.buttonBox#downloadPrepareDocument
             .icon
             .text 應備文件及證明事項
         .desc_bottom_line
@@ -63,11 +63,11 @@ block content
         .desc_detail
           .text 合作備忘錄期限為簽約後到次年年底，如有特殊情形可以提出延長申請，經本院評估視情況延展。
       .cards
-        .card#aboutCard.black
+        .card#mouCard.black
           .card_title 最後一桶金
           .card_text 國際合作投資專案計畫
           .card_text 本頁面方案
-        .card#aboutCard
+        .card#mouCard
           .card_title 第一哩路
           .card_text 內容開發專案計畫：劇本開發支持
           .icon
@@ -221,11 +221,11 @@ block content
           .leftWrapper
             .text 已成為 MOU 夥伴者，請依撰寫說明提供企劃書（含附件）中文正本一式四份及電子檔一份，並寄回以下聯絡窗口。
             .buttonWrapper
-              a.buttonBox#downloadButton1(href="https://drive.google.com/drive/u/1/folders/1F86-Cxp09OTD89k_6JW9t_4tQamQqRwZ" target="_blank")
+              a.buttonBox#downloadButton1(href="https://drive.google.com/uc?export=download&id=16OZHtiXlw3IkttAK8S5TEC6ZYZy-dh50" target="_blank")
                 img(src="../images/icon_page1.png")
                 .text 企劃書撰寫說明
                 .arrow
-              a.buttonBox#downloadButton2(href="https://drive.google.com/drive/u/1/folders/1fdzS_bk9n89lYoGv7A9tt-R2dkFB4B1K" target="_blank")
+              a.buttonBox#downloadButton2
                 img(src="../images/icon_page2.png")
                 .text 授權書與聲明書範本
                 .arrow
@@ -235,7 +235,7 @@ block content
               .buttonBox#js_toggleFullScreen
                 img(src="../images/icon_fullScreen.png")
                 .text 放大顯示
-              a.buttonBox(href="https://drive.google.com/file/d/1GB8gNwgzV2oKFxzp48Dla9EAy1ChHqtF/view?usp=sharing" target="_blank")
+              a.buttonBox(href="https://drive.google.com/uc?export=download&id=1GB8gNwgzV2oKFxzp48Dla9EAy1ChHqtF" target="_blank")
                 img(src="../images/icon_download.png")
                 .text 下載簡報
     .container_news#js_triggerNews

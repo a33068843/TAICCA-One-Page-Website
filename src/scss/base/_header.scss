@@ -156,7 +156,7 @@ nav {
             }
           }
         }
-        @include size(phoneM) {
+        @include size(padM) {
           display: none;
           &:last-child {
             display: flex;
@@ -211,9 +211,10 @@ nav {
     &.open {
       background-color: rgba($white, 0.95);
       height: calc(100% - $header-height);
+      backdrop-filter: blur(10px);
       .menu_item {
         display: flex;
-        @include size(phoneM) {
+        @include size(padM) {
           &:last-child {
             display: flex;
           }
