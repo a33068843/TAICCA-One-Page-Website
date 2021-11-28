@@ -36,7 +36,7 @@ nav {
       padding: 0 13px 0 50px;
     }
     @include size(phoneM) {
-      padding: 0 0 0 50px;
+      padding: 0 0 0 20px;
     }
     &_logo {
       width: 105px;
@@ -59,6 +59,37 @@ nav {
     &_items {
       display: flex;
       flex-direction: row;
+      .menu_item {
+        &:hover {
+          .menu_text {
+            &:after {
+              right: 0;
+            }
+          }
+        }
+        .menu_text {
+          position: relative;
+          &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: calc(100% + 18px);
+            left: 0;
+            right: 100%;
+            height: 3px;
+            background-color: $primary;
+            border-radius: 20px;
+            transition: .2s;
+          }
+        }
+        &.active {
+          .menu_text {
+            &:after {
+              right: 0;
+            }
+          }
+        }
+      }
       @include size(padM) {
         .menu_item {
           display: none;
@@ -143,6 +174,11 @@ nav {
         &:last-child {
           display: none;
         }
+        &:hover {
+          .menu_textWrapper {
+            border-bottom: 1px solid $primary;
+          }
+        }
         @include size(padM) {
           padding: 0 9px;
           &:last-child {
@@ -167,6 +203,8 @@ nav {
         display: flex;
         justify-content: center;
         align-items: center;
+        border-bottom: 1px solid rgba($primary, 0);
+        transition: .3s;
       }
       .menu_text {
         font-size: 13px;
@@ -176,6 +214,7 @@ nav {
         }
       }
       .active {
+        pointer-events: none;
         .menu_textWrapper {
           border-bottom: 1px solid $primary;
         }
@@ -212,6 +251,7 @@ nav {
       background-color: rgba($white, 0.95);
       height: calc(100% - $header-height);
       backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       .menu_item {
         display: flex;
         @include size(padM) {

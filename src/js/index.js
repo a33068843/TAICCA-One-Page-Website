@@ -16,9 +16,30 @@ const requestFullScreen = () => {
 }
 $(document).ready(function() {
   // Open Slide
-  const fullScreenButton = $('#js_toggleFullScreen');
-  fullScreenButton.on('click', function() {
-    requestFullScreen();
+  // const fullScreenButton = $('#js_toggleFullScreen');
+  // fullScreenButton.on('click', function() {
+  //   requestFullScreen();
+  // })
+
+  const newsCount = $('.container_news').find('.news');
+  if (newsCount.length > 5) {
+    const readMoreButton = $('.container_news').find('.readMoreButton');
+    if (!readMoreButton.hasClass('active')) {
+      readMoreButton.addClass('active');
+    }
+  }
+  // Slide with Fancy Box
+  const iframeWidth = Math.ceil($(window).width() * 80 / 100)
+  const iframeHeight = iframeWidth * 400 / 541;
+  $('#js_toggleFullScreen').fancybox({
+    'width': iframeWidth,
+    'height': iframeHeight,
+    'autoScale': false,
+    'autoSize' : false,
+    type : 'iframe',
+    iframe : {
+        scrolling : 'no'
+    }
   })
 
   // Toggle Hamburger
@@ -70,12 +91,18 @@ $(document).ready(function() {
     e.preventDefault();
     const target = this.hash;
     const atarget = $(target);
-    console.log(atarget);
     $('html, body').stop().animate({
       'scrollTop': atarget.offset().top
     }, 900, 'swing', function () {
       window.location.hash = target;
     });
+  })
+
+  // Active Header
+  const headerLink = $('.menu_items > a');
+  $(headerLink).on('click', function() {
+    headerLink.removeClass('active');
+    $(this).addClass('active');
   })
   const saveStyled = `
     .arrow1,
@@ -90,7 +117,8 @@ $(document).ready(function() {
     .triangle3,
     .arrow2,
     #aboutTitle,
-    #mouCard,
+    #mouCard1,
+    #mouCard2,
     #applyTitle,
     #applyLargeCardA,
     #applyMediumCardA,
@@ -145,17 +173,18 @@ $(document).ready(function() {
         .from(".line1", { rotate: -360 }, 0)
         .from(".line2", { rotate: -360 }, 0)
         .to(".triangle3", { xPercent: 700 }, 0)
-        .to(".arrow2", { y: 176 }, 0);
+        .to(".arrow2", { y: 100 }, 0);
       const MOUTrigger = gsap.timeline({
         scrollTrigger: {
           trigger: '#js_triggerMOU',
           start: '40% 40%',
-          end: '+=100% 66',
+          end: '+=200% 66',
           scrub: true,
           pin: true,
         }
       });
-      MOUTrigger.from("#mouCard", { y: 500 }, 0);
+      MOUTrigger.from("#mouCard1", { y: 500 }, 0);
+      MOUTrigger.from("#mouCard2", { y: 500 }, 0.5);
       const aboutTrigger = gsap.timeline({
         scrollTrigger: {
           trigger: '#js_triggerAbout',
@@ -217,7 +246,6 @@ $(document).ready(function() {
           start: 'top center',
           end: 'top 66',
           scrub: true,
-          markers: true,
         }
       });
       elementTrigger
@@ -249,9 +277,8 @@ $(document).ready(function() {
         scrollTrigger: {
           trigger: '#js_triggerContact',
           start: 'top 80%',
-          end: '80% bottom',
+          end: '100% bottom',
           scrub: true,
-          pin: true,
         }
       });
       contactTrigger
@@ -260,8 +287,8 @@ $(document).ready(function() {
         .from("#contactCircle2", { x: -505 }, 0)
         .from("#contactCircle1", { x: -520 }, 0)
         .from("#contactArrow", { x: -300 }, 0)
-        .from("#contactCircleBlank", { scale: 0.5 }, 0)
-        .from("#contactTaicca", { scale: 0.5 }, 0);
+        .from("#contactCircleBlank", { scale: 0.5 }, 1)
+        .from("#contactTaicca", { scale: 0.5 }, 1);
     },
     '(max-width: 920px)': function() {
       const heroTriggerRWD = gsap.timeline({
@@ -271,7 +298,6 @@ $(document).ready(function() {
           end: '+=100% 66',
           scrub: true,
           pin: true,
-          // markers: true,
         }
       });
       heroTriggerRWD
@@ -291,11 +317,12 @@ $(document).ready(function() {
         scrollTrigger: {
           trigger: '#js_triggerMOU',
           start: '50% 70%',
-          end: '+=100% 70%',
+          end: '+=200% 70%',
           scrub: true,
         }
       });
-      MOUTriggerRWD.from("#mouCard", { y: 1000 }, 0);
+      MOUTriggerRWD.from("#mouCard1", { y: 800 }, 0);
+      MOUTriggerRWD.from("#mouCard2", { y: 800 }, 0.5);
       const aboutTrigger = gsap.timeline({
         scrollTrigger: {
           trigger: '#js_triggerAbout',
@@ -387,10 +414,9 @@ $(document).ready(function() {
       const contactTrigger = gsap.timeline({
         scrollTrigger: {
           trigger: '#js_triggerContact',
-          start: '60% bottom',
+          start: 'top bottom',
           end: 'bottom bottom',
           scrub: true,
-          // markers: true,
         }
       });
       contactTrigger
@@ -399,8 +425,8 @@ $(document).ready(function() {
         .from("#contactCircle2", { x: -505 }, 0)
         .from("#contactCircle1", { x: -520 }, 0)
         .from("#contactArrow", { x: -300 }, 0)
-        .from("#contactCircleBlank", { scale: 0.5 }, 0)
-        .from("#contactTaicca", { scale: 0.5 }, 0);
+        .from("#contactCircleBlank", { scale: 0.5 }, 1)
+        .from("#contactTaicca", { scale: 0.5 }, 1);
     },
   })
 });

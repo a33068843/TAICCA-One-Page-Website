@@ -1,4 +1,4 @@
-mixin header()
+mixin header(language)
   header
     nav
       .menu
@@ -21,10 +21,10 @@ mixin header()
             span.menu_text 下載專區
             span.menu_icon
           .menu_languages
-            a.menu_item.active
+            a.menu_item(href="https://ticp.taicca.tw" class= language === "ch" ? "active" : "")
               .menu_textWrapper
                 .menu_text 中
-            a.menu_item
+            a.menu_item(href="./homeEn.html" class= language === "en" ? "active" : "")
               .menu_textWrapper
                 .menu_text En
             a.menu_item#js_toggleHamburger

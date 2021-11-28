@@ -33,6 +33,7 @@ $desktopH: 1056px;
 .grid-container {
   max-width: 1440px;
   display: grid;
+  overflow-x: clip;
   grid-template-columns: 357px 70px auto 352px;
   grid-template-rows: 75px 254px 477px 184px;
   grid-auto-columns: minmax(auto, 1440px);
@@ -308,7 +309,7 @@ $desktopH: 1056px;
         background: url(../images/obj_arrow_2.png) no-repeat center/ contain;
         @include wh(160px, 160px);
         @include size(desktopS) {
-          margin-top: 0;
+          margin-top: -60%;
         }
         @include size(padM) {
           margin-top: 80%;
@@ -678,19 +679,22 @@ $desktopH: 1056px;
       @include putL(800px, 800px, -30px, 388px);
     }
     @include size(phone) {
-      @include putL(600px, 600px, -12px, 396px);
+      width: 600px;
+      position: absolute;
+      left: #{math.div(-40, 576) * 100%};
+      top: 300px;
+      &:before {
+        content:'';
+        display: block;
+        padding-bottom: #{1 * 100%};
+      }
+      // @include putL(600px, 600px, -12px, 396px);
     }
-    @include size(phone) {
+    @include size(phoneM) {
       @include putL(550px, 550px, -91px, 420px)
     }
   }
 }
-
-
-
-
-
-
 .fixMap {
   @include putL(844px, 413px, 50%, 100px);
   position: fixed;

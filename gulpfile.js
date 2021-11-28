@@ -3,6 +3,8 @@
 const gulp        = require('gulp');
 const pug         = require('gulp-pug');
 const sass        = require('gulp-sass')(require('sass'));
+const postcss     = require('gulp-postcss');
+const autoprefixer= require('autoprefixer');
 const watch       = require('gulp-watch');
 const plumber     = require('gulp-plumber');
 const browserSync = require('browser-sync').create();
@@ -46,6 +48,7 @@ gulp.task('styles', (done) => {
     .src('src/**/[^_]*.scss')
     .pipe(plumber())
     .pipe(sass())
+    .pipe(postcss([autoprefixer({browsers: 'last 2 versions, > 1%'})]))
     .pipe(rename({dirname: ''}))
     .pipe(gulp.dest('./www/css'))
     .pipe(browserSync.reload( {stream: true} ))
