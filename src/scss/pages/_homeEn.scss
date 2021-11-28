@@ -140,13 +140,18 @@
           }
         }
         &:last-child {
-          margin-left: 85px;
+          margin-left: 50px;
+          .desc_text {
+            max-width: 100%;
+            width: max-content;
+          }
           @include size(padM) {
             margin-left: 30px;
           }
           @include size(padS) {
             margin-left: 0px;
           }
+
         }
 
       }
@@ -193,12 +198,12 @@
     @media (max-width:870px) {
       margin-top: 80px;
       flex-direction: column;
-      padding: 0 80px 0 0;
+      padding: 0 80px 0 20px;
     }
     @include size(padS) {
       margin-top: 80px;
       flex-direction: column;
-      padding: 0 80px 0 0;
+      padding: 0 80px 0 20px;
     }
     @include size(phone) {
       margin-top: 50px;
@@ -218,6 +223,7 @@
     .desc {
       display: flex;
       flex-direction: column;
+      width: 100%;
       @include size(phone) {
         align-items: center;
       }
@@ -273,6 +279,9 @@
         }
         &:last-child {
           margin-top: 19px;
+          .text {
+            // width: max-content;
+          }
           @include size(desktopS) {
             position: relative;
             top: 6px;

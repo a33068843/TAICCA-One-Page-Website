@@ -269,6 +269,7 @@ nav {
     display: none;
     &:last-child {
       display: none;
+      border-bottom: none;
     }
     @include size(phoneM) {
       &:last-child {
@@ -284,6 +285,7 @@ nav {
     flex-direction: row;
     padding: 0 9px;
     &.active {
+      pointer-events: none;
       .menu_text {
         border-bottom: 1px solid $primary;
       }
