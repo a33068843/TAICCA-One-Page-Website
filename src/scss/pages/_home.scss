@@ -37,7 +37,12 @@
       bottom: 100px;
       padding: 0 20px;
     }
-
+    .about_break {
+      display: none;
+      @include size(padS) {
+        display: contents;
+      }
+    }
     .title {
       width: 75%;
       text-align: right;
@@ -199,6 +204,12 @@
     }
     @include size(phoneM) {
       margin-top: 100px;
+    }
+    .mou_break {
+      display: none;
+      @include size(phoneM) {
+        display: contents;
+      }
     }
     .desc {
       display: flex;
