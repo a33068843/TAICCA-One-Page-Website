@@ -1,0 +1,529 @@
+@use "sass:math";
+.contact {
+  max-width: 100%;
+  width: 1440px;
+  position: relative;
+  &_container {
+    width: 100%;
+    position: relative;
+  }
+  &_topWrapper {
+    width: 100%;
+    color: $white;
+    display: flex;
+    flex-direction: row;
+    @include size(padS) {
+      flex-direction: column;
+    }
+    .contact_leftWrapper {
+      width: 450px;
+      background-color: $primary;
+      flex-shrink: 0;
+      position: relative;
+      overflow: hidden;
+      &:before {
+        content: '';
+        display: block;
+        padding-bottom: #{math.div(375, 450) * 100%}
+      }
+      @include size(padM) {
+        flex-shrink: 1;
+        width: 315px;
+        &:before {
+          padding-bottom: #{math.div(374, 315) * 100%};
+        }
+      }
+      @include size(padS) {
+        width: 100%;
+        &:before {
+          padding-bottom: 287px;
+        }
+      }
+      .contact_obj {
+        &.halfCircle4 {
+          width: 29px;
+          position: absolute;
+          top:#{math.div(71, 374) * 100%};
+          left:#{math.div(125, 450) * 100%};
+          background: url(../images/contact_circle4.png) no-repeat center / contain;
+          &:before {
+            content: '';
+            display: block;
+            padding-bottom: #{math.div(55, 29) * 100%};
+          }
+          @include size(padM) {
+            left:#{math.div(10, 315) * 100%};
+          }
+          @include size(padS) {
+            top: 71px;
+            left: 12px;
+          }
+        }
+        &.halfCircle3 {
+          width: 41px;
+          position: absolute;
+          top:#{math.div(60, 374) * 100%};
+          left:#{math.div(168, 450) * 100%};
+          background: url(../images/contact_circle3.png) no-repeat center / contain;
+          &:before {
+            content: '';
+            display: block;
+            padding-bottom: #{math.div(76, 41) * 100%};
+          }
+          @include size(padM) {
+            left:#{math.div(60, 315) * 100%};
+          }
+          @include size(padS) {
+            top: 60px;
+            // left:#{math.div(55, 576) * 100%};
+            left: 55px;
+          }
+        }
+        &.halfCircle2 {
+          width: 109px;
+          position: absolute;
+          top:#{math.div(44, 374) * 100%};
+          left:#{math.div(228, 450) * 100%};
+          background: url(../images/contact_circle2.png) no-repeat center / contain;
+          &:before {
+            content: '';
+            display: block;
+            padding-bottom: #{1 * 100%};
+          }
+          @include size(padM) {
+            left:#{math.div(120, 315) * 100%};
+          }
+          @include size(padS) {
+            top: 44px;
+            left: 115px;
+          }
+        }
+        &.halfCircle1 {
+          width: 160px;
+          position: absolute;
+          top:#{math.div(19, 374) * 100%};
+          left:#{math.div(353, 450) * 100%};
+          background: url(../images/contact_circle1.png) no-repeat center / contain;
+          &:before {
+            content: '';
+            display: block;
+            padding-bottom: #{1 * 100%};
+          }
+          @include size(padM) {
+            left:#{math.div(260, 315) * 100%};
+          }
+          @include size(padS) {
+            top: 19px;
+            left: 240px;
+          }
+        }
+        &.arrow {
+          width: 189px;
+          position: absolute;
+          top:#{math.div(159, 374) * 100%};
+          left:#{math.div(121, 450) * 100%};
+          background: url(../images/contact_arrow.png) no-repeat center / contain;
+          &:before {
+            content: '';
+            display: block;
+            padding-bottom: #{math.div(180, 189) * 100%};
+          }
+          @include size(padM) {
+            top: #{math.div(170, 374) * 100%};
+          }
+          @include size(padS) {
+            width: #{math.div(122, 576) * 100%};
+            left: #{math.div(38, 576) * 100%};
+            top: #{math.div(149, 287) * 100%};
+          }
+          @include size(phone) {
+            width: 122px;
+            top: 160px;
+          }
+        }
+      }
+    }
+    .contact_rightWrapper {
+      width: 70%;
+      padding: 40px 56px;
+      background-color: #333333;
+      position: relative;
+      @include size(padS) {
+        width: 100%;
+      }
+      @include size(phoneM) {
+        padding: 20px 20px 40px;
+      }
+      .contact_obj {
+        &.map {
+          width: 844px;
+          position: absolute;
+          top: 20px;
+          left:#{math.div(281, 844) * 100%};
+          background: url(../images/contact_map.png) no-repeat center / contain;
+          opacity: 0.08;
+          z-index: 1;
+          &:before {
+            content: '';
+            display: block;
+            padding-bottom: #{math.div(413, 844) * 100%};
+          }
+        }
+      }
+    }
+    .contact_title {
+      font-size: 80px;
+      font-weight: 200;
+      line-height: 90px;
+      position: relative;
+      right: 3px;
+    }
+    .contact_subtitle {
+      font-size: 32px;
+      font-weight: 200;
+      line-height: 32px;
+      margin-top: 24px;
+    }
+    .contact_text {
+      font-size: 16px;
+      font-weight: 100;
+      @include size(phoneM) {
+        font-size: 13px;
+      }
+    }
+    .contact_textWrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-top: 20px;
+      .contact_rowWrapper {
+        display: flex;
+        flex-direction: column;
+        // gap: 16px;
+        .contact_text {
+          &:first-child {
+            flex-shrink: 0;
+          }
+        }
+      }
+    }
+    .contact_iconWrapper {
+      margin-top: 28px;
+      display: flex;
+      flex-direction: row;
+      gap: 42px;
+
+      img {
+        cursor: pointer;
+        transition: .2s;
+        object-fit: contain;
+
+        &:hover {
+          filter: brightness(1.2);
+        }
+      }
+    }
+  }
+  &_bottomWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    @include size(phoneM) {
+      flex-direction: column;
+    }
+    .contact_title {
+      font-size: 80px;
+      font-weight: 200;
+      line-height: 90px;
+      position: relative;
+      right: 3px;
+    }
+    .contact_subtitle {
+      font-size: 32px;
+      font-weight: 200;
+      line-height: 32px;
+      margin-top: 24px;
+    }
+    .contact_text {
+      font-size: 14px;
+      font-weight: 400;
+      @include size(phoneM) {
+        font-size: 13px;
+      }
+      &-contact {
+        font-size: 14px;
+        margin-top: 18px;
+      }
+      &-underline {
+        width: fit-content;
+        font-size: 14px;
+        border-bottom: 1px solid $black;
+        margin-top: 15px;
+        transition: .2s;
+        &:hover {
+          opacity: 0.9;
+        }
+      }
+      &-copyright {
+        font-size: 14px;
+      }
+    }
+    .contact_textWrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .contact_leftWrapper {
+      width: 52%;
+      padding: 42px 20px 42px 55px;
+      @include size(desktopS) {
+        width: 55%;
+      }
+      @include size(padM) {
+        width: 67%
+      }
+      @include size(phone) {
+        width: 100%;
+      }
+      @include size(phoneM) {
+        padding: 42px 20px;
+      }
+      .contact_buttonWrapper {
+        display: flex;
+        flex-direction: row;
+        gap: 22px;
+        margin-top: 12px;
+
+        .contact_buttonBox {
+          width: 40px;
+          height: 40px;
+          border-radius: 100%;
+          border: 1px solid $black;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          &:hover {
+            border-color: $primary;
+            img {
+              filter: brightness(1);
+            }
+          }
+          img {
+            transition: .2s;
+            filter: brightness(0);
+          }
+        }
+      }
+      .contact_buttonSubscribe {
+        color: white;
+        background-color: $primary;
+        width: fit-content;
+        height: 44px;
+        border-radius: 50px;
+        padding: 11px 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+        cursor: pointer;
+        transition: .3s;
+        &:hover {
+          filter: brightness(1.2);
+        }
+        .text {
+          font-size: 18px;
+          font-weight: 200;
+        }
+      }
+    }
+    .contact_rightWrapper {
+      width: 48%;
+      background-color: $primary;
+      position: relative;
+      overflow: hidden;
+      &:before {
+        content: '';
+        display: block;
+        padding-bottom: #{math.div(409, 780) * 100%}
+      }
+      @include size(desktopS) {
+        width: 45%;
+        &:before {
+          padding-bottom: #{math.div(381, 484) * 100%}
+        }
+      }
+      @include size(padM) {
+        width: 322px;
+      }
+      @include size(phone) {
+        width: 216px;
+      }
+      @include size(phoneM) {
+        width: 100%;
+        &:before {
+          padding-bottom: 214px;
+        }
+      }
+      .contact_obj {
+        &.taicca {
+          width: 194px;
+          position: absolute;
+          top:#{math.div(71, 409) * 100%};
+          left:#{math.div(169, 780) * 100%};
+          background: url(../images/taicca.png) no-repeat center / contain;
+          &:before {
+            content: '';
+            display: block;
+            padding-bottom: #{1 * 100%};
+          }
+          @include size(desktopS) {
+            top:#{math.div(101, 381) * 100%};
+            left:#{math.div(24, 484) * 100%};
+          }
+          @include size(padM) {
+            width: 159px;
+            top: #{math.div(31, 436) * 100%};
+            left: #{math.div(85, 322) * 100%};
+          }
+          @include size(phone) {
+            width: 118px;
+            top: #{math.div(31, 436) * 100%};
+            left: #{math.div(40, 322) * 100%};
+          }
+          @include size(phoneM) {
+            top: #{math.div(49, 214) * 100%};
+            left: #{math.div(31, 374) * 100%};
+          }
+        }
+        &.taiwan {
+          width: 80px;
+          position: absolute;
+          top:#{math.div(96, 409) * 100%};
+          left:#{math.div(544, 780) * 100%};
+          background: url(../images/obj_Taiwan-L.png) no-repeat center / contain;
+          &:before {
+            content: '';
+            display: block;
+            padding-bottom: #{math.div(122, 80) * 100%};
+          }
+          @include size(desktopS) {
+            top:#{math.div(129, 381) * 100%};
+            left:#{math.div(306, 484) * 100%};
+          }
+          @include size(padM) {
+            width: 62px;
+            top: #{math.div(234, 436) * 100%};
+            left: #{math.div(133, 322) * 100%};
+          }
+          @include size(phone) {
+            width: 38px;
+            top: #{math.div(286, 436) * 100%};
+            left: #{math.div(88, 216) * 100%};
+          }
+          @include size(phoneM) {
+            top: #{math.div(59, 214) * 100%};
+            left: #{math.div(259, 374) * 100%};
+          }
+        }
+        &.circleBlank {
+          width: 482px;
+          position: absolute;
+          top:#{math.div(-50, 409) * 100%};
+          left:#{math.div(332, 780) * 100%};
+          background: url(../images/contact_circle_blank.png) no-repeat center / contain;
+          &:before {
+            content: '';
+            display: block;
+            padding-bottom: #{math.div(1, 1) * 100%};
+          }
+          @include size(desktopS) {
+            width: 600px;
+            top:#{math.div(-20, 381) * 100%};
+            left:#{math.div(97, 484) * 100%};
+          }
+          @include size(padM) {
+            width: 371px;
+            top: #{math.div(142, 436) * 100%};
+            left: #{math.div(-40, 322) * 100%};
+          }
+          @include size(padS) {
+            width: 500px;
+            top: #{math.div(142, 436) * 100%};
+            left: #{math.div(-120, 322) * 100%};
+          }
+          @include size(phone) {
+            width: 400px;
+            left: #{math.div(-250, 322) * 100%};
+            top: #{math.div(162, 436) * 100%};
+          }
+          @include size(phoneM) {
+            top: #{math.div(-50, 214) * 100%};
+            left: #{math.div(80, 374) * 100%};
+          }
+        }
+        &.text1 {
+          width: 177px;
+          position: absolute;
+          top:#{math.div(292, 409) * 100%};
+          left:#{math.div(496, 780) * 100%};
+          background: url(../images/obj_text1.png) no-repeat center / contain;
+          filter: brightness(0) invert(1);
+          &:before {
+            content: '';
+            display: block;
+            padding-bottom: #{math.div(18, 177) * 100%};
+          }
+          @include size(desktopS) {
+            top:#{math.div(304, 381) * 100%};
+            left:#{math.div(250, 484) * 100%};
+          }
+          @include size(padM) {
+            top: #{math.div(350, 436) * 100%};
+            left: #{math.div(60, 322) * 100%};
+          }
+          @include size(phone) {
+            width: 85px;
+            top: #{math.div(357, 436) * 100%};
+            left: #{math.div(68, 216) * 100%};
+          }
+          @include size(phoneM) {
+            top: #{math.div(127, 214) * 100%};
+            left: #{math.div(238, 374) * 100%};
+          }
+        }
+        &.text2 {
+          width: 140px;
+          position: absolute;
+          top:#{math.div(317, 409) * 100%};
+          left:#{math.div(496, 780) * 100%};
+          background: url(../images/obj_text2.png) no-repeat center / contain;
+          filter: brightness(0) invert(1);
+          &:before {
+            content: '';
+            display: block;
+            padding-bottom: #{math.div(18, 140) * 100%};
+          }
+          @include size(desktopS) {
+            top:#{math.div(320, 381) * 100%};
+            left:#{math.div(250, 484) * 100%};
+          }
+          @include size(padM) {
+            top: #{math.div(370, 436) * 100%};
+            left: #{math.div(60, 322) * 100%};
+          }
+          @include size(phone) {
+            width: 62px;
+            top: #{math.div(369, 436) * 100%};
+            left: #{math.div(72, 216) * 100%};
+          }
+          @include size(phoneM) {
+            top: #{math.div(139, 214) * 100%};
+            left: #{math.div(240, 374) * 100%};
+          }
+        }
+      }
+    }
+  }
+}

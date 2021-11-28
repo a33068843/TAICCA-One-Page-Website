@@ -52,12 +52,13 @@ block content
           .text <span class="primary">TICP</span>｜Taiwan’s International Co-funding Program 
       .cards
         .card#mouCard1.black
-          .card_title 最後一桶金
-          .card_text 國際合作投資專案計畫
-          .card_text 本頁面方案
+          .card_title Last Stage
+          .card_text Taiwan’s International<br>Co-funding Program
+          .card_text Program on this page
         a.card#mouCard2(href="https://ccdp.taicca.tw/")
-          .card_title 第一哩路
-          .card_text 內容開發專案計畫：劇本開發支持
+          .card_title First Mile
+          .card_text Creative Content Development Program
+          .card_text Scripts Development Fund  
           .icon
     .container_application.applyA#js_triggerApplyA
       a.target#anchorApply
@@ -65,54 +66,55 @@ block content
       .taiwan#applyTaiwan
       .halfCircle
       div
-      .title 申請項目
+      .title Apply
       .subTitleBox
         .icon
-        .subtitle 經費支持上限
+        .subtitle Terms of Grant
       .card
-        .shadowTitle 主要方案
+        .shadowTitle Priority
         .blockBox
           .smallBox
             .text A
           .twoBoxWrapper
             .largeBox#applyLargeCardA
-              .title 製作投資
-              .subtitle 為全案製作總預算的
+              .title Production Support
               .number 30%
+              .subtitle of total production budget
               .textWrapper
                 span.line
-                .text 最高
+                .text Up to
                 span.line
-              .text 美金<span class="number">30</span>萬元
+              .text <span class="upText">USD$</span><span class="number">300,000</span>
               .bottom_line
-              .text 資金一次到位
+              .text All at once
             .mediumBox#applyMediumCardA
-              .text 以同一製作投資專案申請並獲得文化部或其所屬、受其監督機關(構)製作項目之補助者，不得申請本製作投資支持。
+              .text Projects which have received production support from Ministry of Culture or affiliated agencies are not eligible for TAICCA production support.
     .container_application.applyB#js_triggerApplyB
       .arrow#applyArrow
       .card.Bcard
-        .shadowTitle 替代方案
+        .shadowTitle Alternative
         .blockBox
           .smallBox
             .text B
           .twoBoxWrapper
             .largeBox#applyLargeCardB
-              .title 行銷支持
-              .subtitle 為全案製作總預算的
+              .title Marketing<br>Support
               .number 30%
+              .subtitle of total marketing budget
               .textWrapper
                 span.line
-                .text 最高
+                .text Up to
                 span.line
-              .text 美金<span class="number">30</span>萬元
+              .text <span class="upText">USD$</span><span class="number">300,000</span>
               .bottom_line
-              .text 分期支持：<br>
-                | 第一期50%、第二期50%
+              .text In two phases<br>
+                | first 50%<br>
+                | second 50%
             .mediumBox#applyMediumCardB
               ul
-                li.text 同一製作投資專案已獲得文化部或其所屬、受監督機關(構)製作項目之補助者，方得申請本行銷支持。
-                li.text 若同一行銷專案申請已獲得文化部或其所屬、受其監督機關(構)行銷項目之獎補助者，不得重複申請本行銷支持。
-                li.text 同一專案不得同時申請製作投資及行銷支持。
+                li.text Only projects which have received production support from Ministry  of Culture or affiliated agencies  are eligible for TAICCA marketing  support.
+                li.text Projects which have received marketing support from Ministry of Culture or affiliated agencies are not eligible for TAICCA marketing support.
+                li.text The same project shall not apply both TAICCA production and marketing support.
     .container_criteria#js_triggerCriteria
       .sideTitle#criteriaTitle Criteria
       .circleWrapper
@@ -121,42 +123,45 @@ block content
         .halfCircle3#criteriaC3
         .halfCircle2#criteriaC2
         .halfCircle1#criteriaC1
-      .title 必要條件
+      .title Requirements
       .cards
         .card.black
-          .title 國際合製或合資
-          .subtitle 契約文件
-          .text 與國外公司的合資或<br>合製契約
+          .title International Co-financing / Co-production
+          .subtitle Contract
+          .text Co-financing  or<br>Co-production agreement
           .bottom_line
-          .optionText A 製作投資
-          .optionText B 行銷支持
-        .card#criteriaCard1
-          .title 國際影視通路
-          .text 3 項至少符合 1 項
+          .optionText A. Production Support
+          .optionText B. Marketing Support
+        .card.primary#criteriaCard1
+          .title International Distribution 
+          .text Meet at least one of out three criteria
           .descWrapper
-            .descBox
-              .subtitle 公開上映
-              .desc 國外戲院發行契約（非影展放映）
-            .descBox
-              .subtitle 公開播送
-              .desc 國外頻道(無線/有線/衛星電視)
-            .descBox
-              .subtitle 公開傳輸
-              .desc 國際平台付費會員制線上收看(OTT)、按次付費(PPV)、隨選視訊(VOD)、訂閱式隨選視 訊(SVOD)、電視回看公開播映 (TVOD)、以廣告營收為基礎的服務(paid-AVOD, AVOD)
+            ul
+              li.descBox
+                .subtitle Commerical release 
+                .desc Distribution agreement<br>(excl. festival screenings)
+
+              li.descBox
+                .subtitle Public broadcast
+                .desc Foreign channels<br>(broadcast TV/cable TV/satellite TV)
+              li.descBox
+                .subtitle Public transmission
+                .desc i.e. OTT, PPV, VOD, SVOD,<br>TVOD, or AVOD etc.
           .bottom_line
-          .optionText A 製作投資
-          .optionText B 行銷支持
+          .optionText A. Production Support
+          .optionText B. Marketing Support
         .card.gray#criteriaCard2
-          .title 自籌資金已達七成
+          .title Secured 70% of funding needs
           .descWrapper
             .descBox
-              .subtitle 契約文件
-              .desc 投資契約
+              .subtitle Investment agreement
+              //- .desc 投資契約
             .descBox
-              .subtitle 銀行文件
-              .desc 帳戶金流證明（申請人須提供國內外經會計師確認為有公信力銀行之銀行對帳單/帳戶證明），申請人之自籌款（即總預算70%）已進入或將進入該帳戶，並應同意本院每季（或月）自行或委託會計師事務所執行查核工作
+              .subtitle Bank statement 
+              .desc (prove 70% of budgets have been deposited into the account)<br>
+                | Applicants shall agree to be audited monthly or quarterly by TAICCA or commissioned accounting firms.
           .bottom_line
-          .optionText A 製作投資
+          .optionText A. Production Support
     .container_element#js_triggerElement
       .grayBlock
       .primaryBlock
@@ -169,35 +174,35 @@ block content
         .titleBox
           .circle
             img(src="../images/icon_tw.png")
-          .title 台灣元素
+          .title Taiwanese Elements
         .descBox
           .subtitleBox
-            .title 核心內容
-            .subtitle 3 項至少須符合 1 項
+            .title Key<br>Elements
+            .subtitle Meet at least 1 of out 3 criteria
           .itemsBox
             .item
               img(src="../images/icon_team.png")
-              .text 主創團隊
+              .text Main Crew
             .item
               img(src="../images/icon_story.png")
-              .text 故事
+              .text Story
             .item
               img(src="../images/icon_language.png")
-              .text 語言
+              .text Language
         .descBox
           .subtitleBox
-            .title 產業效益
-            .subtitle 3 項至少須符合 1 項
+            .title Production
+            .subtitle Meet at least 1 of out 3 criteria
           .itemsBox
             .item
               img(src="../images/icon_actor.png")
-              .text 主要演員
+              .text Main Cast
             .item
               img(src="../images/icon_photo.png")
-              .text 拍攝場景
+              .text Shooting<br>Location
             .item
               img(src="../images/icon_editor.png")
-              .text 後期製作
+              .text Post-<br>Production
     .container_download#js_triggerDownload
       .whiteBlock
       .primaryBlock
@@ -207,62 +212,44 @@ block content
         .sideTitle Download
         .descWrapper
           .leftWrapper
-            .text 已成為 MOU 夥伴者，請依撰寫說明提供企劃書（含附件）中文正本一式四份及電子檔一份，並寄回以下聯絡窗口。
+            .text MOU partners should draft proposals according to guidelines, and send four copies of proposals (with appendix) on paper and one copy in digital form to your contact.
             .buttonWrapper
               a.buttonBox#downloadButton1(href="https://drive.google.com/uc?export=download&id=16OZHtiXlw3IkttAK8S5TEC6ZYZy-dh50" target="_blank")
                 img(src="../images/icon_page1.png")
-                .text 企劃書撰寫說明
+                .text Proposal Guideline
                 .arrow
               a.buttonBox#downloadButton2
                 img(src="../images/icon_page2.png")
-                .text 授權書與聲明書範本
+                .text Agreement and<br>Declaration Samples
                 .arrow
           .rightWrapper
             iframe#js_googleSlide(src="https://docs.google.com/presentation/d/e/2PACX-1vQyQJWqCDp9CPoHVvqYYBPS1Gf8d8gB8EqPI7Mw52uH1-apDiHDwnj05GM0XyAxdfZhpyUR0YYco_EH/embed?start=false&loop=false&delayms=3000" frameborder="0" width="1440" height="839" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true")
             .buttonWrapper
               a.buttonBox#js_toggleFullScreen(data-fancybox data-type="iframe" data-src="https://docs.google.com/presentation/d/e/2PACX-1vQyQJWqCDp9CPoHVvqYYBPS1Gf8d8gB8EqPI7Mw52uH1-apDiHDwnj05GM0XyAxdfZhpyUR0YYco_EH/embed?start=false&loop=false&delayms=3000")
                 img(src="../images/icon_fullScreen.png")
-                .text 放大顯示
+                .text Expand
               a.buttonBox(href="https://drive.google.com/uc?export=download&id=1GB8gNwgzV2oKFxzp48Dla9EAy1ChHqtF" target="_blank")
                 img(src="../images/icon_download.png")
-                .text 下載簡報
+                .text Download
     .container_news#js_triggerNews
       a.target#anchorNews
       .blurCircle#newsBlurCircle
       .sideTitle News
       .newsWrapper
-        .title 相關報導與聯結
+        .title Program Updates & Announcements
         .newsBox
-          a.news(href="https://taicca.tw/article/bc6fc094")
-            .news_dateBox
-              .news_month 10月
-              .news_day 15
-            .news_year 2022
-            .news_title 《人選之人—造浪者》開拍 從內容孵化到製作投資 文策院與產業一起為臺劇造浪
-          a.news(href="https://taicca.tw/article/d39bf2a8")
-            .news_dateBox
-              .news_month 10月
-              .news_day 8
-            .news_year 2021
-            .news_title 文策院攜手金馬、北影與雄影 力挺新銳導演與優秀團隊持續創作、進入國際市場
           a.news(href="https://taicca.tw/article/63ea844f")
             .news_dateBox
-              .news_month 2月
+              .news_month Feb.
               .news_day 3
             .news_year 2021
-            .news_title 文策院攜手國內影視產製公司 宣示百部影視台流造浪
+            .news_title Taiwanese Cultural Content Making Waves - TAICCA Partners with Local Production Companies to Boost Content Development 
           a.news(href="https://taicca.tw/article/913fdf72")
             .news_dateBox
-              .news_month 1月
+              .news_month Jan.
               .news_day 27
             .news_year 2021
-            .news_title 為台流鋪第一哩路 文策院編劇提案大會 熱烈參與投拍更多台灣原創故事
-          a.news(href="https://taicca.tw/article/0cb06ea8")
-            .news_dateBox
-              .news_month 11月
-              .news_day 25
-            .news_year 2021
-            .news_title 文策院與金馬創投會議攜手 持續助攻臺灣新銳導演原創作品
+            .news_title Paving the First Mile for More Taiwanese Original Stories, TAICCA hosts Book-to-Screen Pitching Session
         .readMoreButton
           .text 顯示更多
     .container_partner
@@ -270,62 +257,10 @@ block content
       .sideTitle
       .titleWrapper
         .line
-        .title 合作夥伴
+        .title Partner
         .line
       .partnerWrapper
         img(src="../images/partner_taipei.png")
         img(src="../images/partner_taipeiFF.png")
         img(src="../images/partner_kaohsiungFF.png")
-    //- .container_contact#js_triggerContact
-      a.target#anchorContact
-      .topPrimaryBlock
-      .bottomPrimaryBlock
-        .circleBlank#contactCircleBlank
-      .circleWrapper
-        .halfCircle4#contactCircle4
-        .halfCircle3#contactCircle3
-        .halfCircle2#contactCircle2
-        .halfCircle1#contactCircle1
-        .arrow#contactArrow
-      .circleBlank#contactCircleBlank
-      .taicca#contactTaicca
-      .taiwan
-      .text1
-      .text2
-      .topWrapper
-        .title Contact
-        .subtitle 聯絡我們
-        .detailWrapper
-          .detailBox
-            .text 聯絡窗口
-            .text coproduction@taicca.tw
-          .detailBox
-            .text 聯絡電話
-            .text (02) 2745-8186 分機 316 或 325
-          .detailBox
-            .text 服務時間
-            .text 週一至週五 09:30-12:30、14:00-18:00
-        .iconWrapper
-          img(src="../images/icon_facebook.png")
-          img(src="../images/icon_twitter.png")
-          img(src="../images/icon_email.png")
-      .map
-      .bottomWrapper
-        .textWrapper
-          .text 105402 台北市松山區民生東路三段158號5樓
-          .text 5F, No. 158, Sec 3, Minsheng E. Rd., Songshan Dist., Taipei City 105402, Taiwan
-          .text TEL (02) 2745-8186 FAX (02) 2749-2436
-        .text-contact 聯繫我們
-        .buttonWrapper
-          .buttonBox
-            img(src="../images/icon_facebook.png")
-          .buttonBox
-            img(src="../images/icon_twitter.png")
-          .buttonBox
-            img(src="../images/icon_email.png")
-        .buttonSubscribe
-          .text 訂閱電子報
-        .textWrapper
-          .text-underline 隱私權及安全政策宣示
-          .text Copyright © 2020 TAICCA (Taiwan Creative Content Agency). All rights reserved.
     +contact()
