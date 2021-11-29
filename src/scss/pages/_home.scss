@@ -1991,8 +1991,10 @@
           &:after {
             opacity: 0;
             content: '';
-            color: $primary;
-            transition: .3s;
+            color: $primary;           
+            position: relative;
+            left: 3px;
+            transition: 0.3s;
           }
           &:nth-child(n+6) {
             display: none;
@@ -2005,7 +2007,6 @@
             &:after {
               opacity: 1;
               content: '▶';
-              position: relative;
               color: $primary;
               top: 1px;
               left: 10px;

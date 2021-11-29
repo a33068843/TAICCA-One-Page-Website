@@ -184,7 +184,7 @@ $(document).ready(function() {
         }
       });
       MOUTrigger.from("#mouCard1", { y: 500 }, 0);
-      MOUTrigger.from("#mouCard2", { y: 500 }, 0.5);
+      MOUTrigger.from("#mouCard2", { y: 500 }, 0.2);
       const aboutTrigger = gsap.timeline({
         scrollTrigger: {
           trigger: '#js_triggerAbout',
