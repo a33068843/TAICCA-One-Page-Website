@@ -48,7 +48,7 @@ gulp.task('styles', (done) => {
     .src('src/**/[^_]*.scss')
     .pipe(plumber())
     .pipe(sass())
-    .pipe(postcss([autoprefixer({browsers: 'last 2 versions, > 1%'})]))
+    .pipe(postcss([autoprefixer({browsers: 'last 4 versions, > 0.001%'})]))
     .pipe(rename({dirname: ''}))
     .pipe(gulp.dest('./www/css'))
     .pipe(browserSync.reload( {stream: true} ))

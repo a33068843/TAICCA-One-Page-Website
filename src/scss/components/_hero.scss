@@ -342,8 +342,16 @@ $desktopH: 1056px;
       font-weight: 500;
       line-height: 32px;
       @include wh(fit-content, auto);
+      .hero_cnSpan {
+        display: none;
+      }
       @include size(phone) {
         text-align: center;
+      }
+      @media (max-width:540px) {
+        .hero_cnSpan {
+          display: contents;
+        }
       }
     }
     .text2 {
@@ -410,12 +418,12 @@ $desktopH: 1056px;
         @include wh(102px, 10px);
       }
       @include size(phone) {
-        top: 180%;
+        top: 212%;
         left: 10%;
       }
-      @media (max-width: 541px) {
-        opacity: .4;
-      }
+      // @media (max-width: 541px) {
+      //   opacity: .4;
+      // }
       @include size(phoneM) {
         opacity: 1;
         top: 350%;
@@ -442,12 +450,12 @@ $desktopH: 1056px;
         @include wh(80px, 10px);
       }
       @include size(phone) {
-        top: 192%;
+        top: 224%;
         left: calc(10% + 2px);
       }
-      @media (max-width: 541px) {
-        opacity: .4;
-      }
+      // @media (max-width: 541px) {
+      //   opacity: .4;
+      // }
       @include size(phoneM) {
         opacity: 1;
         top: 370%;

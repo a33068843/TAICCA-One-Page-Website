@@ -46,7 +46,6 @@
     .title {
       width: 75%;
       text-align: right;
-      font-family: Roboto;
       font-size: 80px;
       font-weight: 300;
       line-height: 80px;
@@ -193,12 +192,11 @@
     @media (max-width:870px) {
       margin-top: 80px;
       flex-direction: column;
-      padding: 0 80px 0 0;
+      padding: 0 80px 0 30px;
     }
     @include size(padS) {
       margin-top: 80px;
       flex-direction: column;
-      padding: 0 80px 0 0;
     }
     @include size(phone) {
       margin-top: 50px;
@@ -218,6 +216,7 @@
     .desc {
       display: flex;
       flex-direction: column;
+      width: 100%;
       @include size(phone) {
         align-items: center;
       }
@@ -279,6 +278,11 @@
             .text {
               position: absolute;
               width: 549px;
+            }
+          }
+          @include size(padS) {
+            .text {
+              width: 100%;
             }
           }
           @include size(phone) {
@@ -371,15 +375,21 @@
         @include size(phone) {
           margin-top: 48px;
         }
+        @include size(phone) {
+          width: 100%;
+        }
         .line {
           @include size(desktopS) {
             position: absolute;
             width: 543px;
             border-bottom: 1px solid #787878;
           }
+          @include size(padS) {
+            width: 100%;
+            max-width: 543px;
+          }
           @include size(phone) {
             position: relative;
-            right: 8px;
           }
         }
       }

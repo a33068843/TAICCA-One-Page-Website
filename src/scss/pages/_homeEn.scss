@@ -46,7 +46,6 @@
     .title {
       width: 75%;
       text-align: right;
-      font-family: Roboto;
       font-size: 80px;
       font-weight: 300;
       line-height: 80px;
@@ -204,7 +203,6 @@
     @include size(padS) {
       margin-top: 80px;
       flex-direction: column;
-      padding: 0 80px 0 20px;
     }
     @include size(phone) {
       margin-top: 50px;
