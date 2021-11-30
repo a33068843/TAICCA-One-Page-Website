@@ -74,18 +74,6 @@ $(document).ready(function() {
     }
   })
 
-  $('#downloadPrepareDocument').on('click', function() {
-    window.open('https://drive.google.com/uc?export=download&id=10l8poy0fiuRAWiSKZ42qfrmpVVz-P-h-');
-    window.open('https://drive.google.com/uc?export=download&id=1lx3IkA3wjUAQdgC5TWK4GRU_Xbqu43G_');
-    window.open('https://drive.google.com/uc?export=download&id=17H9zyBpusM27xc2-jGqX2oe0X7v-Zl-3');
-    window.open('https://drive.google.com/uc?export=download&id=1ceV5WMzg2ZapBbGRHl_Hiol6bOEHsoBF');
-  });
-  $('#downloadButton2').on('click', function() {
-    window.open('https://drive.google.com/uc?export=download&id=1aZgAtB_w23iNTk50zg0wZet2ADbfQF14');
-    window.open('https://drive.google.com/uc?export=download&id=1HOJPvivRyQ0JVKrKuf_53aNKZsjRNhwS');
-    window.open('https://drive.google.com/uc?export=download&id=1paPFSdlQnt33sr1XdOGWQiDM6aA1znEs');
-    window.open('https://drive.google.com/uc?export=download&id=1H5lafs2LV-4Wmt6Mlw5gNM1AtrFNO9Rf');
-  });
   // Smooth Scroll
   $('a[href^="#"]').on('click', function(e) {
     e.preventDefault();
