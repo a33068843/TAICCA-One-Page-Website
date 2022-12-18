@@ -33,7 +33,6 @@ $desktopH: 1056px;
 .grid-container {
   max-width: 1440px;
   display: grid;
-  overflow-x: clip;
   grid-template-columns: 357px 70px auto 352px;
   grid-template-rows: 75px 254px 477px 184px;
   grid-auto-columns: minmax(auto, 1440px);
@@ -108,6 +107,7 @@ $desktopH: 1056px;
     justify-content: center;
     align-items: flex-start;
     padding-top: 10%;
+    overflow-x: hidden;
     width: 100%;
     .arrow1 {
       @include wh(234px, 256px);
@@ -428,6 +428,28 @@ $desktopH: 1056px;
         opacity: 1;
         top: 350%;
       }
+      &.hero_text3En {
+        @include size(padS) {
+          top: 163%;
+          left: calc(10% - 2px);
+          @include wh(102px, 10px);
+        }
+        @include size(phone) {
+          top: 204%;
+          left: 10%;
+        }
+        @media (max-width: 545px) {
+          top: 282%;
+          left: 10%;
+        }
+        @include size(phoneM) {
+          top: 350%;
+        }
+        @media (max-width: 395px) {
+          top: 433%;
+          left: 10%
+        }
+      }
     }
     .text4 {
       @include wh(140px, 17px);
@@ -459,6 +481,28 @@ $desktopH: 1056px;
       @include size(phoneM) {
         opacity: 1;
         top: 370%;
+      }
+      &.hero_text4En {
+        @include size(padS) {
+          top: 170%;
+          left: 10%;
+          @include wh(80px, 10px);
+        }
+        @include size(phone) {
+          top: 214%;
+          left: calc(10% + 2px);
+        }
+        @media (max-width: 545px) {
+          top: 292%;
+          left: calc(10% + 2px);
+        }
+        @include size(phoneM) {
+          top: 364%;
+        }
+        @media (max-width: 395px) {
+          top: 450%;
+          left: calc(10% + 2px);
+        }
       }
     }
   }

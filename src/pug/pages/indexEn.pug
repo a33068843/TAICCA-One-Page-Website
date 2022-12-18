@@ -16,7 +16,7 @@ block content
       .desc
         .desc_wrapper.light
           .desc_title Eligibility
-          .desc_text TAICCA’s MOU partners and entities who have received other TAICCA support (Applicants shall either own the IPs, or receive permissions or licenses from IP owners.)
+          .desc_text TAICCA’s MOU partners and entities who have received other TAICCA support ( Applicants shall either own the IPs, or receive permissions or licenses from IP owners.)
         .desc_wrapper
           .desc_title Gap Financing
           .desc_text Supports up to 30% of Film Production Budget (Priority)
@@ -62,7 +62,8 @@ block content
     .container_application.applyA#js_triggerApplyA
       a.target#anchorApply
       .sideTitle#applyTitle INTRO
-      .taiwan#applyTaiwan
+      .fullContainer
+        .taiwan#applyTaiwan
       .halfCircle
       div
       .title Apply
@@ -236,27 +237,30 @@ block content
       .sideTitle News
       .newsWrapper
         .title Program Updates & Announcements
-        .newsBox
-          a.news(href="https://en.taicca.tw/article/0f93dffa")
-            .news_dateBox
-              .news_month Nov.
-              .news_day 26
-            .news_year 2021
-            .news_title TAICCA and Golden Horse FPP Award Promising Film Projects and Directors
-          a.news(href="https://en.taicca.tw/article/e7b2fe81")
-            .news_dateBox
-              .news_month Feb.
-              .news_day 3
-            .news_year 2021
-            .news_title Taiwanese Cultural Content Making Waves - TAICCA Partners with Local Production Companies to Boost Content Development 
-          a.news(href="https://en.taicca.tw/article/bf18ba3f")
-            .news_dateBox
-              .news_month Jan.
-              .news_day 27
-            .news_year 2021
-            .news_title Paving the First Mile for More Taiwanese Original Stories, TAICCA hosts Book-to-Screen Pitching Session
-        .readMoreButton
-          .text 顯示更多
+        ul.newsBox
+          li
+            a.news(href="https://en.taicca.tw/article/0f93dffa")
+              .news_dateBox
+                .news_month Nov.
+                .news_day 26
+              .news_year 2021
+              .news_title TAICCA and Golden Horse FPP Award Promising Film Projects and Directors
+          li
+            a.news(href="https://en.taicca.tw/article/e7b2fe81")
+              .news_dateBox
+                .news_month Feb.
+                .news_day 3
+              .news_year 2021
+              .news_title Taiwanese Cultural Content Making Waves - TAICCA Partners with Local Production Companies to Boost Content Development 
+          li
+            a.news.hide(href="https://en.taicca.tw/article/bf18ba3f")
+              .news_dateBox
+                .news_month Jan.
+                .news_day 27
+              .news_year 2021
+              .news_title Paving the First Mile for More Taiwanese Original Stories, TAICCA hosts Book-to-Screen Pitching Session
+        .readMoreButton.active
+          .text Read More
     .container_partner
       a.target#anchorPartner
       .sideTitle

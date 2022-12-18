@@ -1,4 +1,4 @@
-@use "sass:math";
+@use 'sass:math';
 .content {
   padding: 66px 0 0 0;
   max-width: 100%;
@@ -118,7 +118,7 @@
         }
       }
 
-      &_wrapper{
+      &_wrapper {
         display: flex;
         flex-direction: column;
         gap: 28px;
@@ -151,9 +151,7 @@
           @include size(padS) {
             margin-left: 0px;
           }
-
         }
-
       }
       &_title {
         color: $primary;
@@ -195,7 +193,7 @@
     @include size(padM) {
       gap: 23px;
     }
-    @media (max-width:870px) {
+    @media (max-width: 870px) {
       margin-top: 80px;
       flex-direction: column;
       padding: 0 80px 0 20px;
@@ -351,7 +349,8 @@
           .icon {
             width: 12px;
             height: 13px;
-            background: url(../images/triangle_01.png) no-repeat center / contain;
+            background: url(../images/triangle_01.png) no-repeat center /
+              contain;
           }
           .text {
             font-size: 18px;
@@ -438,7 +437,7 @@
         align-items: center;
         padding: 111px 0 62px 0;
         box-shadow: 0 20px 50px 0 rgba($primary, 30%);
-        transition: .3s;
+        transition: 0.3s;
         &:last-child {
           cursor: pointer;
           &:hover {
@@ -484,7 +483,7 @@
           }
           &:last-child {
             margin-top: 20px;
-            color: $gray;            
+            color: $gray;
           }
         }
         .icon {
@@ -493,7 +492,7 @@
           height: 189px;
           background: url(../images/obj_arrow_3.svg) no-repeat center / contain;
           filter: brightness(0%);
-          transition: .3s;
+          transition: 0.3s;
         }
       }
     }
@@ -501,7 +500,6 @@
   .container_application {
     position: relative;
     padding: 0 155px 0 150px;
-    overflow-x: clip;
     @include size(desktopM) {
       padding: 0 60px 0 84px;
     }
@@ -553,14 +551,28 @@
         @include xyR(-119px, 193px);
       }
     }
-    .taiwan {
-      @include putR(160px, 244px, 37px, 405px);
-      background: url(../images/obj_Taiwan-L.png) no-repeat center / contain;
+    .fullContainer {
+      @include putR(160px, 244px, 0px, 405px);
+      width: 1440px;
+      overflow: hidden;
       @include size(padM) {
-        @include xyR(82px, 692px);
+        @include xyR(0px, 692px);
       }
       @include size(padS) {
-        @include xyR(26px, 674px);
+        @include xyR(0px, 674px);
+      }
+      @include size(phone) {
+        display: none;
+      }
+    }
+    .taiwan {
+      @include putR(160px, 244px, 37px, 0px);
+      background: url(../images/obj_Taiwan-L.png) no-repeat center / contain;
+      @include size(padM) {
+        @include xyR(45px, 0px);
+      }
+      @include size(padS) {
+        @include xyR(11px, 0px);
       }
       @include size(phone) {
         display: none;
@@ -568,7 +580,8 @@
     }
     .halfCircle {
       @include putL(205px, 292px, 80px, 558px);
-      background: url(../images/obj_application_circle.png) no-repeat center / contain;
+      background: url(../images/obj_application_circle.png) no-repeat center /
+        contain;
       @include size(desktopS) {
         @include xyL(-35px, 558px);
       }
@@ -792,7 +805,7 @@
             }
             .line {
               width: 27px;
-              border-bottom: 1px solid rgba($white, .6);
+              border-bottom: 1px solid rgba($white, 0.6);
             }
           }
           .upText {
@@ -1251,7 +1264,7 @@
     }
 
     .grayBlock {
-      @include putL(1440px, 722px, 0px ,0px);
+      @include putL(1440px, 722px, 0px, 0px);
       background-color: #888888;
       @include size(desktopS) {
         height: 781px;
@@ -1261,11 +1274,11 @@
       }
     }
     .primaryBlock {
-      @include putL(247px, 722px, 0px ,0px);
+      @include putL(247px, 722px, 0px, 0px);
       background-color: $primary;
       box-shadow: 0px 20px 50px rgba($primary, 30%);
       @include size(desktopM) {
-        @include putL(185px, 722px, 0px ,0px);
+        @include putL(185px, 722px, 0px, 0px);
       }
       @include size(desktopS) {
         @include putL(105px, 781px, 0, 0);
@@ -1310,7 +1323,8 @@
     }
     .backgroundCircle {
       @include putL(534px, 534px, 859px, 136px);
-      background: url(../images/background-circle.png) no-repeat center / contain;
+      background: url(../images/background-circle.png) no-repeat center /
+        contain;
       @include size(padS) {
         @include xyL(400px, 89px);
       }
@@ -1336,7 +1350,7 @@
       @include size(phoneM) {
         @include xyL(45px, 31px);
       }
-      @media (max-width:330px) {
+      @media (max-width: 330px) {
         @include xyL(45px, 24px);
       }
     }
@@ -1358,7 +1372,7 @@
       @include size(phoneM) {
         @include xyL(39px, 88px);
       }
-      @media (max-width:330px) {
+      @media (max-width: 330px) {
         @include xyL(39px, 88px);
       }
     }
@@ -1390,7 +1404,7 @@
       @include size(phoneM) {
         @include xyL(124px, 21px);
       }
-      @media (max-width:330px) {
+      @media (max-width: 330px) {
         @include xyL(110px, 21px);
       }
     }
@@ -1597,7 +1611,7 @@
     }
 
     .whiteBlock {
-      background-color: #E2E2E2;
+      background-color: #e2e2e2;
       @include putL(800px, 601px, 0px, 0px);
       @include size(padL) {
         width: 787px;
@@ -1736,7 +1750,7 @@
         gap: 26px;
       }
       .buttonBox {
-        transition: .2s;
+        transition: 0.2s;
         &:hover {
           filter: brightness(1.25);
         }
@@ -1779,7 +1793,7 @@
             align-items: center;
             box-shadow: 0 12px 70px rgba($black, 0.1);
             cursor: pointer;
-            transition: .2s;
+            transition: 0.2s;
             &:hover {
               box-shadow: 0 15px 50px rgba($black, 0.5);
             }
@@ -1825,7 +1839,8 @@
               margin-top: 24px;
               width: 10px;
               height: 10px;
-              background: url(../images/icon_arrow.png) no-repeat center / contain;
+              background: url(../images/icon_arrow.png) no-repeat center /
+                contain;
               @include size(padM) {
                 margin-top: 0;
               }
@@ -1953,7 +1968,7 @@
       top: #{math.div(300, 657) * 100%};
       // @include putL(auto, auto, 1020px, 400px);
       &:before {
-        content:"";
+        content: '';
         display: block;
         padding-bottom: #{1 * 100%};
       }
@@ -2036,16 +2051,16 @@
           flex-direction: row;
           align-items: center;
           position: relative;
-          transition: .3s;
+          transition: 0.3s;
           &:after {
             opacity: 0;
             content: '';
-            color: $primary;           
+            color: $primary;
             position: relative;
             left: 3px;
             transition: 0.3s;
           }
-          &:nth-child(n+6) {
+          &.hide {
             display: none;
           }
           &:hover {
@@ -2073,7 +2088,7 @@
             justify-content: center;
             padding-bottom: 3px;
             flex-shrink: 0;
-            transition: .2s;
+            transition: 0.2s;
           }
           &_year {
             font-size: 20px;
@@ -2120,7 +2135,7 @@
         align-items: center;
         margin-top: 91px;
         cursor: pointer;
-        transition: .2s;
+        transition: 0.2s;
         visibility: hidden;
         @include size(padM) {
           margin-top: 100px;
@@ -2187,7 +2202,6 @@
           display: block;
           padding-top: calc(80 / 339 * 100%);
         }
-        
       }
     }
     .titleWrapper {
@@ -2323,7 +2337,8 @@
     }
     .circleBlank {
       @include putL(482px, 482px, 992px, 301px);
-      background: url(../images/contact_circle_blank.png) no-repeat center / contain;
+      background: url(../images/contact_circle_blank.png) no-repeat center /
+        contain;
       @include size(desktopM) {
         @include xyL(815px, 320px);
       }
@@ -2412,7 +2427,7 @@
     .map {
       @include putL(844px, 413px, 726px, 19px);
       background: url(../images/contact_map.png) no-repeat center / contain;
-      opacity: .08;
+      opacity: 0.08;
       @include size(padS) {
         @include xyL(600px, 19px);
       }
@@ -2480,7 +2495,7 @@
 
         img {
           cursor: pointer;
-          transition: .2s;
+          transition: 0.2s;
           object-fit: contain;
 
           &:hover {
@@ -2568,7 +2583,7 @@
             }
           }
           img {
-            transition: .2s;
+            transition: 0.2s;
             filter: brightness(0);
           }
         }
@@ -2585,7 +2600,7 @@
         align-items: center;
         margin-top: 42px;
         cursor: pointer;
-        transition: .3s;
+        transition: 0.3s;
         @include size(padS) {
           margin-top: 10px;
         }

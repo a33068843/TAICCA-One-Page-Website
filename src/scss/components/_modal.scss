@@ -1,0 +1,106 @@
+.mask {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(24, 24, 27, 0.92);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  z-index: 10;
+  transition: 0.2s;
+
+  &.hidden {
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.2s;
+  }
+
+  .modal {
+    &_plan {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px;
+      transition: 0.2s;
+
+      @include size(padS) {
+        padding: 20px;
+      }
+
+      .plan {
+        padding: 64px 100px 40px 80px;
+        width: 100%;
+        min-height: 400px;
+        max-width: 960px;
+        display: flex;
+        flex-direction: column;
+        gap: 36px;
+        background: rgba(255, 255, 255, 1);
+        border-radius: 16px;
+        box-shadow: 0px 12px 70px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+        transition: 0.2s;
+
+        @include size(padS) {
+          padding: 64px 50px 40px 40px;
+        }
+        @include size(phoneM) {
+          padding: 64px 24px 40px 12px;
+        }
+
+        &_header {
+          position: relative;
+          padding: 0px 0px 0px 30px;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+
+          .decoLine {
+            position: absolute;
+            inset: auto auto auto 0;
+            width: 5px;
+            height: 100%;
+            background: #f93b1d;
+            box-shadow: 0px 4px 15px rgba(249, 59, 29, 0.2);
+          }
+          .planDate {
+            font-size: 14px;
+            font-weight: 400;
+          }
+          .planTitle {
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1;
+            opacity: 1;
+            transition: 0.2s;
+          }
+        }
+        &_content {
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 2;
+          padding: 0px 0px 0px 30px;
+        }
+      }
+      .close_button {
+        display: flex;
+        align-self: flex-end;
+        width: 30px;
+        aspect-ratio: 1;
+        background: url(../images/xmark-solid.svg) no-repeat center / contain;
+        filter: invert(1);
+        opacity: 1;
+        transition: 0.2s;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 0.9;
+        }
+      }
+    }
+  }
+}

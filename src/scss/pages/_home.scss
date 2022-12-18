@@ -1,4 +1,4 @@
-@use "sass:math";
+@use 'sass:math';
 .content {
   padding: 66px 0 0 0;
   max-width: 100%;
@@ -117,7 +117,7 @@
         }
       }
 
-      &_wrapper{
+      &_wrapper {
         display: flex;
         flex-direction: column;
         gap: 28px;
@@ -147,7 +147,6 @@
             margin-left: 0px;
           }
         }
-
       }
       &_title {
         color: $primary;
@@ -189,7 +188,7 @@
     @include size(padM) {
       gap: 23px;
     }
-    @media (max-width:870px) {
+    @media (max-width: 870px) {
       margin-top: 80px;
       flex-direction: column;
       padding: 0 80px 0 30px;
@@ -341,7 +340,8 @@
           .icon {
             width: 12px;
             height: 13px;
-            background: url(../images/triangle_01.png) no-repeat center / contain;
+            background: url(../images/triangle_01.png) no-repeat center /
+              contain;
           }
           .text {
             font-size: 18px;
@@ -434,7 +434,7 @@
         align-items: center;
         padding: 111px 0 62px 0;
         box-shadow: 0 20px 50px 0 rgba($primary, 30%);
-        transition: .3s;
+        transition: 0.3s;
         &:last-child {
           cursor: pointer;
           &:hover {
@@ -480,7 +480,7 @@
           height: 189px;
           background: url(../images/obj_arrow_3.svg) no-repeat center / contain;
           filter: brightness(0%);
-          transition: .3s;
+          transition: 0.3s;
         }
       }
     }
@@ -488,7 +488,6 @@
   .container_application {
     position: relative;
     padding: 0 155px 0 150px;
-    overflow-x: clip;
     @include size(desktopM) {
       padding: 0 60px 0 84px;
     }
@@ -540,14 +539,28 @@
         @include xyR(-119px, 193px);
       }
     }
-    .taiwan {
-      @include putR(160px, 244px, 37px, 405px);
-      background: url(../images/obj_Taiwan-L.png) no-repeat center / contain;
+    .fullContainer {
+      @include putR(160px, 244px, 0px, 405px);
+      width: 1440px;
+      overflow: hidden;
       @include size(padM) {
-        @include xyR(82px, 692px);
+        @include xyR(0px, 692px);
       }
       @include size(padS) {
-        @include xyR(26px, 674px);
+        @include xyR(0px, 674px);
+      }
+      @include size(phone) {
+        display: none;
+      }
+    }
+    .taiwan {
+      @include putR(160px, 244px, 37px, 0px);
+      background: url(../images/obj_Taiwan-L.png) no-repeat center / contain;
+      @include size(padM) {
+        @include xyR(45px, 0px);
+      }
+      @include size(padS) {
+        @include xyR(11px, 0px);
       }
       @include size(phone) {
         display: none;
@@ -555,7 +568,8 @@
     }
     .halfCircle {
       @include putL(205px, 292px, 80px, 558px);
-      background: url(../images/obj_application_circle.png) no-repeat center / contain;
+      background: url(../images/obj_application_circle.png) no-repeat center /
+        contain;
       @include size(desktopS) {
         @include xyL(-35px, 558px);
       }
@@ -682,6 +696,7 @@
           margin-top: 120px;
         }
         .smallBox {
+          padding: 32px;
           width: 175px;
           height: 171px;
           background-color: rgba($primary, 30%);
@@ -691,6 +706,12 @@
           flex-shrink: 0;
           box-shadow: 0 20px 50px rgba($primary, 30%);
 
+          .arrowDeco {
+            width: 100%;
+            aspect-ratio: 1;
+            background: url(../images/obj_arrow_02.png) no-repeat center /
+              contain;
+          }
           .text {
             position: relative;
             bottom: 6px;
@@ -779,7 +800,7 @@
             }
             .line {
               width: 27px;
-              border-bottom: 1px solid rgba($white, .6);
+              border-bottom: 1px solid rgba($white, 0.6);
             }
           }
           .number {
@@ -1018,9 +1039,9 @@
       font-size: 100px;
       font-weight: 100;
       line-height: 160px;
-      @include putR(auto, auto, 120px, 40px);
+      @include putR(auto, auto, 120px, -2px);
       @include size(desktopM) {
-        @include xyR(45px, 40px);
+        @include xyR(45px, -2px);
       }
       @include size(padM) {
         @include xyR(60px, -45px);
@@ -1056,13 +1077,21 @@
         margin-top: 140px;
       }
 
+      .cardWrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        @include size(padM) {
+          gap: 0;
+        }
+      }
       .card {
         width: 390px;
         height: fit-content;
         background-color: $primary;
         padding: 48px 30px 52px;
         position: relative;
-        top: 212px;
+        top: 130px;
         @include size(desktopS) {
           width: 320px;
         }
@@ -1083,6 +1112,16 @@
         }
         .text {
           margin-top: 42px;
+        }
+        .number {
+          position: absolute;
+          inset: 0 0 auto auto;
+          padding: 20px;
+          color: white;
+          font-size: 120px;
+          font-weight: 100;
+          line-height: 120px;
+          opacity: 30%;
         }
         .descWrapper {
           margin-top: 25px;
@@ -1152,7 +1191,7 @@
           color: $black;
           background-color: $gray;
           padding: 52px 30px 64px;
-          top: 120px;
+          top: 60px;
           @include size(padM) {
             top: 0;
             left: -61px;
@@ -1162,6 +1201,7 @@
           }
 
           .title {
+            position: relative;
             color: $black;
           }
           .descWrapper {
@@ -1175,6 +1215,28 @@
           }
           .bottom_line {
             border-color: $black;
+          }
+        }
+        &.white {
+          padding: 40px 18px 16px 30px;
+          background: white;
+          .title {
+            color: black;
+          }
+          .text {
+            color: black;
+            font-weight: 500;
+          }
+          .number {
+            color: black;
+            opacity: 10%;
+          }
+          .arrowDown {
+            width: 77px;
+            aspect-ratio: 155 / 148;
+            background: url(../images/obj_arrow_down.png) no-repeat center /
+              contain;
+            margin-left: auto;
           }
         }
       }
@@ -1214,7 +1276,7 @@
     }
 
     .grayBlock {
-      @include putL(1440px, 722px, 0px ,0px);
+      @include putL(1440px, 722px, 0px, 0px);
       background-color: #888888;
       @include size(desktopS) {
         height: 781px;
@@ -1224,11 +1286,11 @@
       }
     }
     .primaryBlock {
-      @include putL(247px, 722px, 0px ,0px);
+      @include putL(247px, 722px, 0px, 0px);
       background-color: $primary;
       box-shadow: 0px 20px 50px rgba($primary, 30%);
       @include size(desktopM) {
-        @include putL(185px, 722px, 0px ,0px);
+        @include putL(185px, 722px, 0px, 0px);
       }
       @include size(desktopS) {
         @include putL(105px, 781px, 0, 0);
@@ -1273,7 +1335,8 @@
     }
     .backgroundCircle {
       @include putL(534px, 534px, 859px, 136px);
-      background: url(../images/background-circle.png) no-repeat center / contain;
+      background: url(../images/background-circle.png) no-repeat center /
+        contain;
       @include size(padS) {
         @include xyL(400px, 89px);
       }
@@ -1299,7 +1362,7 @@
       @include size(phoneM) {
         @include xyL(45px, 31px);
       }
-      @media (max-width:330px) {
+      @media (max-width: 330px) {
         @include xyL(45px, 24px);
       }
     }
@@ -1321,7 +1384,7 @@
       @include size(phoneM) {
         @include xyL(39px, 88px);
       }
-      @media (max-width:330px) {
+      @media (max-width: 330px) {
         @include xyL(39px, 88px);
       }
     }
@@ -1353,7 +1416,7 @@
       @include size(phoneM) {
         @include xyL(124px, 21px);
       }
-      @media (max-width:330px) {
+      @media (max-width: 330px) {
         @include xyL(110px, 21px);
       }
     }
@@ -1532,8 +1595,12 @@
               object-fit: contain;
             }
             .text {
+              height: 100%;
+              display: flex;
+              align-items: center;
               font-size: 26px;
               font-weight: 400;
+              line-height: 36px;
             }
           }
         }
@@ -1559,7 +1626,7 @@
     }
 
     .whiteBlock {
-      background-color: #E2E2E2;
+      background-color: #e2e2e2;
       @include putL(800px, 601px, 0px, 0px);
       @include size(padL) {
         width: 787px;
@@ -1608,7 +1675,7 @@
       }
     }
     .bigArrow {
-      @include putL(489px, 463px, 1038px, 314px);
+      @include putL(489px, 463px, 1038px, 400px);
       background: url(../images/big_arrow.png) no-repeat center / contain;
       @include size(desktopM) {
         @include xyL(1000px, 314px);
@@ -1698,7 +1765,7 @@
         gap: 26px;
       }
       .buttonBox {
-        transition: .2s;
+        transition: 0.2s;
         &:hover {
           filter: brightness(1.25);
         }
@@ -1741,7 +1808,7 @@
             align-items: center;
             box-shadow: 0 12px 70px rgba($black, 0.1);
             cursor: pointer;
-            transition: .2s;
+            transition: 0.2s;
             &:hover {
               box-shadow: 0 15px 50px rgba($black, 0.5);
             }
@@ -1786,7 +1853,8 @@
               margin-top: 24px;
               width: 10px;
               height: 10px;
-              background: url(../images/icon_arrow.png) no-repeat center / contain;
+              background: url(../images/icon_arrow.png) no-repeat center /
+                contain;
               @include size(padM) {
                 margin-top: 0;
               }
@@ -1795,13 +1863,16 @@
         }
       }
       .rightWrapper {
-        padding-top: 50px;
+        flex: 1;
+        padding-top: 0px;
         @include size(padM) {
           padding-top: 0px;
         }
         iframe {
-          width: 541px;
-          height: 301px;
+          width: 100%;
+          max-width: 667px;
+          height: fit-content;
+          aspect-ratio: 667 / 372;
           box-shadow: 0 40px 80px rgba(#353535, 0.25);
           @include size(desktopS) {
             width: 437px;
@@ -1848,6 +1919,150 @@
             }
           }
         }
+      }
+    }
+  }
+  .container_plans {
+    padding: 80px 140px;
+    color: black;
+    line-height: initial;
+
+    @include size(desktopM) {
+      padding: 90px 92px;
+    }
+    @include size(padL) {
+      padding: 90px 74px;
+    }
+    @include size(phone) {
+      padding: 90px 40px;
+    }
+    @include size(phoneM) {
+      padding: 90px 30px;
+    }
+
+    .title {
+      font-size: 28px;
+      font-weight: 500;
+      margin-bottom: 40px;
+    }
+
+    .plans {
+      display: grid;
+      grid-template-columns: repeat(
+        auto-fill,
+        minmax(max(300px, calc((100% - 100px) / 2)), 1fr)
+      );
+      column-gap: 100px;
+      row-gap: 20px;
+
+      .plan {
+        padding: 36px 0px 18px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        background: rgba(255, 255, 255, 0.38);
+        box-shadow: 0px 12px 70px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+
+        &_header {
+          position: relative;
+          padding: 0px 60px 0px 30px;
+          display: flex;
+          flex-direction: column;
+          gap: 14px;
+
+          .decoLine {
+            position: absolute;
+            inset: auto auto auto 0;
+            width: 5px;
+            height: 100%;
+            background: #f93b1d;
+            box-shadow: 0px 4px 15px rgba(249, 59, 29, 0.2);
+          }
+          .planDate {
+            font-size: 14px;
+            font-weight: 400;
+          }
+          .planTitle {
+            font-size: 24px;
+            font-weight: 700;
+            opacity: 1;
+            transition: 0.2s;
+            cursor: pointer;
+
+            &:hover {
+              opacity: 0.9;
+            }
+          }
+        }
+        &_content {
+          font-size: 13px;
+          font-weight: 400;
+          line-height: 20px;
+          padding: 0px 60px 0px 30px;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 3;
+          overflow: hidden;
+        }
+        &_footer {
+          padding: 0px 60px 0px 30px;
+          display: flex;
+          gap: 8px;
+          opacity: 1;
+          transition: 0.2s;
+          cursor: pointer;
+
+          &:hover {
+            opacity: 0.9;
+          }
+
+          &_text {
+            font-weight: 400;
+            font-size: 14px;
+          }
+          &_showMore {
+            height: 100%;
+            aspect-ratio: 1;
+            background: url(../images/showMore.svg) no-repeat center / contain;
+          }
+        }
+      }
+    }
+    .readMoreButton {
+      width: 169px;
+      height: 53px;
+      background-color: $primary;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      margin-top: 60px;
+      cursor: pointer;
+      transition: 0.2s;
+      visibility: hidden;
+      @include size(padM) {
+        margin-top: 100px;
+      }
+      @include size(padS) {
+        margin-top: 81px;
+      }
+      @include size(phoneM) {
+        margin-top: 43px;
+      }
+
+      &:hover {
+        filter: brightness(1.2);
+      }
+      &.active {
+        display: flex;
+        visibility: visible;
+      }
+      .text {
+        color: $white;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 23px;
       }
     }
   }
@@ -1914,7 +2129,7 @@
       top: #{math.div(300, 657) * 100%};
       // @include putL(auto, auto, 1020px, 400px);
       &:before {
-        content:"";
+        content: '';
         display: block;
         padding-bottom: #{1 * 100%};
       }
@@ -1974,7 +2189,7 @@
 
       .title {
         font-size: 28px;
-        font-weight: 400;
+        font-weight: 500;
         line-height: 23px;
         @include size(phoneM) {
           text-align: center;
@@ -1997,16 +2212,16 @@
           flex-direction: row;
           align-items: center;
           position: relative;
-          transition: .3s;
+          transition: 0.3s;
           &:after {
             opacity: 0;
             content: '';
-            color: $primary;           
+            color: $primary;
             position: relative;
             left: 3px;
             transition: 0.3s;
           }
-          &:nth-child(n+6) {
+          &.hide {
             display: none;
           }
           &:hover {
@@ -2033,7 +2248,7 @@
             justify-content: center;
             padding-bottom: 3px;
             flex-shrink: 0;
-            transition: .2s;
+            transition: 0.2s;
           }
           &_year {
             font-size: 20px;
@@ -2075,12 +2290,12 @@
         width: 169px;
         height: 53px;
         background-color: $primary;
-        display: flex;
+        display: none;
         justify-content: center;
         align-items: center;
         margin-top: 91px;
         cursor: pointer;
-        transition: .2s;
+        transition: 0.2s;
         visibility: hidden;
         @include size(padM) {
           margin-top: 100px;
@@ -2096,6 +2311,7 @@
           filter: brightness(1.2);
         }
         &.active {
+          display: flex;
           visibility: visible;
         }
         .text {
@@ -2108,7 +2324,7 @@
     }
   }
   .container_partner {
-    height: 381px;
+    padding: 0px 0px 60px;
     background-color: $white;
     position: relative;
     display: flex;
@@ -2147,7 +2363,6 @@
           display: block;
           padding-top: calc(80 / 339 * 100%);
         }
-        
       }
     }
     .titleWrapper {
@@ -2174,18 +2389,20 @@
       }
     }
     .partnerWrapper {
+      width: 100%;
+      padding: 0 40px;
       margin-top: 100px;
       display: flex;
       flex-direction: row;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      gap: 100px;
       position: relative;
       mix-blend-mode: luminosity;
 
-      @include size(padM) {
+      @include size(padL) {
         flex-direction: column;
         right: 0;
+        gap: 40px;
       }
       img {
         filter: drop-shadow(0 15px 60px rgba($black, 0.38));
@@ -2283,7 +2500,8 @@
     }
     .circleBlank {
       @include putL(482px, 482px, 992px, 301px);
-      background: url(../images/contact_circle_blank.png) no-repeat center / contain;
+      background: url(../images/contact_circle_blank.png) no-repeat center /
+        contain;
       @include size(desktopM) {
         @include xyL(815px, 320px);
       }
@@ -2372,7 +2590,7 @@
     .map {
       @include putL(844px, 413px, 726px, 19px);
       background: url(../images/contact_map.png) no-repeat center / contain;
-      opacity: .08;
+      opacity: 0.08;
       @include size(padS) {
         @include xyL(600px, 19px);
       }
@@ -2440,7 +2658,7 @@
 
         img {
           cursor: pointer;
-          transition: .2s;
+          transition: 0.2s;
           object-fit: contain;
 
           &:hover {
@@ -2528,7 +2746,7 @@
             }
           }
           img {
-            transition: .2s;
+            transition: 0.2s;
             filter: brightness(0);
           }
         }
@@ -2545,7 +2763,7 @@
         align-items: center;
         margin-top: 42px;
         cursor: pointer;
-        transition: .3s;
+        transition: 0.3s;
         @include size(padS) {
           margin-top: 10px;
         }

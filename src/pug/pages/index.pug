@@ -16,11 +16,11 @@ block content
       .desc
         .desc_wrapper.light
           .desc_title 適用對象
-          .desc_text 本院之 MOU 合作夥伴<br>或已獲本院其他項目支持者<span class="about_break"><br></span>
-            |（申請專案之著作權須為申請者所有，或已獲著作財產權人同意或授權）
+          .desc_text 本院 MOU 夥伴或其他方案合作/選案者、<span class="about_break"></span>
+            | 導演或製作人曾於國際一類影展入圍者、與國際平台合資或合製者
         .desc_wrapper
           .desc_title 支持金額
-          .desc_text 全案製作總預算或行銷總預算的30%，<span class="about_break"><br></span>最高上限30萬美金。
+          .desc_text 全案製作總預算的30%，<span class="about_break"><br></span>最高上限30萬美金。
         .desc_wrapper
           .desc_title 必要條件
           .desc_text 1.具備臺灣元素<br>
@@ -30,11 +30,10 @@ block content
     .container_MOU#js_triggerMOU
       a.target#anchorMOU
       .desc
-        .desc_title MOU
+        .desc_title TICP
         .desc_text 你想成為文策院合作夥伴嗎？<br>
           | 你有國際合資合製經驗，<span class="mou_break"><br></span>或授權國際通路的作品嗎？
         .desc_subtitle 從第一哩路到最後一桶金
-        .desc_detail 成為文策院合作夥伴後，可同時申請「內容開發專案計畫：劇本開發支持」及「國際合作投資專案計畫」，每一合作夥伴每年申請並通過之企劃案，合計以10案為限。
         .desc_buttonWrapper
           a.buttonBox(href="https://taicca.surveycake.biz/s/O0zP3" target="_blank")
             .icon
@@ -45,7 +44,7 @@ block content
         .desc_bottom_line
           .line
         .desc_detail
-          .text 合作備忘錄期限為簽約後到次年年底，如有特殊情形可以提出延長申請，經本院評估視情況延展。
+          .text 2023年度申請方式待公告後施行
       .cards
         .card#mouCard1.black
           .card_title 最後一桶金
@@ -53,12 +52,13 @@ block content
           .card_text 本頁面方案
         a.card#mouCard2(href="https://ccdp.taicca.tw/")
           .card_title 第一哩路
-          .card_text 內容開發專案計畫：劇本開發支持
+          .card_text 內容開發專案計畫：前期開發支持
           .icon
     .container_application.applyA#js_triggerApplyA
       a.target#anchorApply
       .sideTitle#applyTitle INTRO
-      .taiwan#applyTaiwan
+      .fullContainer
+        .taiwan#applyTaiwan
       .halfCircle
       div
       .title 申請項目
@@ -66,10 +66,10 @@ block content
         .icon
         .subtitle 經費支持上限
       .card
-        .shadowTitle 主要方案
+        .shadowTitle 最後一桶金
         .blockBox
           .smallBox
-            .text A
+            .arrowDeco
           .twoBoxWrapper
             .largeBox#applyLargeCardA
               .title 製作投資
@@ -83,32 +83,7 @@ block content
               .bottom_line
               .text 資金一次到位
             .mediumBox#applyMediumCardA
-              .text 以同一製作投資專案申請並獲得文化部或其所屬、受其監督機關(構)製作項目之補助者，不得申請本製作投資支持。
-    .container_application.applyB#js_triggerApplyB
-      .arrow#applyArrow
-      .card.Bcard
-        .shadowTitle 替代方案
-        .blockBox
-          .smallBox
-            .text B
-          .twoBoxWrapper
-            .largeBox#applyLargeCardB
-              .title 行銷支持
-              .subtitle 為全案製作總預算的
-              .number 30%
-              .textWrapper
-                span.line
-                .text 最高
-                span.line
-              .text 美金<span class="number">30</span>萬元
-              .bottom_line
-              .text 分期支持：<br>
-                | 第一期50%、第二期50%
-            .mediumBox#applyMediumCardB
-              ul
-                li.text 同一製作投資專案已獲得文化部或其所屬、受監督機關(構)製作項目之補助者，方得申請本行銷支持。
-                li.text 若同一行銷專案申請已獲得文化部或其所屬、受其監督機關(構)行銷項目之獎補助者，不得重複申請本行銷支持。
-                li.text 同一專案不得同時申請製作投資及行銷支持。
+              .text 以同一專案之製作目的申請並獲得文化部或其附屬、受其監督機關（構）之投資或（獎）補助者，受領金額加總不得超過專案製作總支出之百分之五十
     .container_criteria#js_triggerCriteria
       .sideTitle#criteriaTitle Criteria
       .circleWrapper
@@ -120,13 +95,12 @@ block content
       .title 必要條件
       .cards
         .card.black
+          .number 01
           .title 國際合製或合資
           .subtitle 契約文件
           .text 與國外公司的合資或<br>合製契約
-          .bottom_line
-          .optionText A 製作投資
-          .optionText B 行銷支持
         .card#criteriaCard1
+          .number 02
           .title 國際影視通路
           .text 3 項至少符合 1 項
           .descWrapper
@@ -139,20 +113,22 @@ block content
             .descBox
               .subtitle 公開傳輸
               .desc 國際平台付費會員制線上收看(OTT)、按次付費(PPV)、隨選視訊(VOD)、訂閱式隨選視 訊(SVOD)、電視回看公開播映 (TVOD)、以廣告營收為基礎的服務(paid-AVOD, AVOD)
-          .bottom_line
-          .optionText A 製作投資
-          .optionText B 行銷支持
-        .card.gray#criteriaCard2
-          .title 自籌資金已達七成
-          .descWrapper
-            .descBox
-              .subtitle 契約文件
-              .desc 投資契約
-            .descBox
-              .subtitle 銀行文件
-              .desc 帳戶金流證明（申請人須提供國內外經會計師確認為有公信力銀行之銀行對帳單/帳戶證明），申請人之自籌款（即總預算70%）已進入或將進入該帳戶，並應同意本院每季（或月）自行或委託會計師事務所執行查核工作
-          .bottom_line
-          .optionText A 製作投資
+        .cardWrapper#criteriaCard2
+          .card.gray
+            .number 03
+            .title 自籌資金已達七成
+            .descWrapper
+              .descBox
+                .subtitle 契約文件
+                .desc 投資契約
+              .descBox
+                .subtitle 銀行文件
+                .desc 帳戶金流證明（申請人須提供國內外經會計師確認為有公信力銀行之銀行對帳單/帳戶證明），並應包含投資人與被投資對象、撥款時日及金額等資訊，申請人之自籌款（即總預算70%）已進入或將進入該帳戶，並應同意本院每季（或月）自行或委託會計師事務所執行查核工作
+          .card.white
+            .number 04
+            .title 台灣元素
+            .text 核心內容與產業效益至少各符合一項
+            .arrowDown
     .container_element#js_triggerElement
       .grayBlock
       .primaryBlock
@@ -190,7 +166,7 @@ block content
               .text 主要演員
             .item
               img(src="./images/icon_photo.png")
-              .text 拍攝場景
+              .text 拍攝場景及製作團隊
             .item
               img(src="./images/icon_editor.png")
               .text 後期製作
@@ -203,9 +179,9 @@ block content
         .sideTitle Download
         .descWrapper
           .leftWrapper
-            .text 已成為 MOU 夥伴者，請依撰寫說明提供企劃書（含附件）中文正本一式四份及電子檔一份，並寄回以下聯絡窗口。
+            .text 請依撰寫說明提供企畫書（含附件），上傳至徵件系統
             .buttonWrapper
-              a.buttonBox#downloadButton1(href="https://drive.google.com/uc?export=download&id=16OZHtiXlw3IkttAK8S5TEC6ZYZy-dh50" target="_blank")
+              a.buttonBox#downloadButton1(href="https://drive.google.com/drive/folders/1F86-Cxp09OTD89k_6JW9t_4tQamQqRwZ" target="_blank")
                 img(src="./images/icon_page1.png")
                 .text 企劃書撰寫說明
                 .arrow
@@ -222,45 +198,100 @@ block content
               a.buttonBox(href="https://drive.google.com/uc?export=download&id=1GB8gNwgzV2oKFxzp48Dla9EAy1ChHqtF" target="_blank")
                 img(src="./images/icon_download.png")
                 .text 下載簡報
+    .container_plans
+      .title 方案更新與公告
+      ul.plans#js_plansList
+        li.plan
+          .plan_header
+            .decoLine
+            .planDate 2021-03-18
+            .planTitle 新增「動畫開發方案」
+          .plan_content  為了強化出版端、編劇端與影視或動畫業者之間的商業連結、創造三贏，先前推出「內容開發專案計畫:出版與影視媒合」方案，此次更進一步加速前端開發劇本與動畫樣片，推出「內容開發專 案計畫:劇本開發支持」。內容產製單位或專業從業人員，凡接受本院正式合作夥伴委託開發影視內容之劇本或動畫內容 之樣片，且內容或產製單位與台灣相關，劇情類（電影長片與影集）與紀實類（紀錄片與紀錄片系列）可獲最高 200 萬元之開發經費，動畫類（動畫長片、動畫長片影集、動畫短片影集）可獲最高 300 萬元之開發經費。
+          .plan_footer
+            .plan_footer_text 了解更多
+            .plan_footer_showMore
+        li.plan
+          .plan_header
+            .decoLine
+            .planDate 2021-03-16
+            .planTitle 內容開發專案計畫：劇本開發支持
+          .plan_content 為了強化出版端、編劇端與影視或動畫業者之間的商業連結、創 造三贏，先前推出「內容開發專案計畫:出版與影視媒合」方案，此次更進一步加速前端開發劇本與動畫樣片...
+          .plan_footer
+            .plan_footer_text 了解更多
+            .plan_footer_showMore
+        li.plan
+          .plan_header
+            .decoLine
+            .planDate 2021-03-16
+            .planTitle 內容開發專案計畫：劇本開發支持
+          .plan_content 為了強化出版端、編劇端與影視或動畫業者之間的商業連結、創 造三贏，先前推出「內容開發專案計畫:出版與影視媒合」方案，此次更進一步加速前端開發劇本與動畫樣片...
+          .plan_footer
+            .plan_footer_text 了解更多
+            .plan_footer_showMore
+      .readMoreButton.showMore.active
+          .text 顯示更多
+      .readMoreButton.showLess
+        .text 顯示更少
     .container_news#js_triggerNews
       a.target#anchorNews
       .blurCircle#newsBlurCircle
       .sideTitle News
       .newsWrapper
         .title 相關報導與聯結
-        .newsBox
-          a.news(href="https://taicca.tw/article/0cb06ea8")
-            .news_dateBox
-              .news_month 11月
-              .news_day 25
-            .news_year 2021
-            .news_title 文策院與金馬創投會議攜手 持續助攻臺灣新銳導演原創作品
-          a.news(href="https://taicca.tw/article/bc6fc094")
-            .news_dateBox
-              .news_month 10月
-              .news_day 15
-            .news_year 2022
-            .news_title 《人選之人—造浪者》開拍 從內容孵化到製作投資 文策院與產業一起為臺劇造浪
-          a.news(href="https://taicca.tw/article/d39bf2a8")
-            .news_dateBox
-              .news_month 10月
-              .news_day 8
-            .news_year 2021
-            .news_title 文策院攜手金馬、北影與雄影 力挺新銳導演與優秀團隊持續創作、進入國際市場
-          a.news(href="https://taicca.tw/article/63ea844f")
-            .news_dateBox
-              .news_month 2月
-              .news_day 3
-            .news_year 2021
-            .news_title 文策院攜手國內影視產製公司 宣示百部影視台流造浪
-          a.news(href="https://taicca.tw/article/913fdf72")
-            .news_dateBox
-              .news_month 1月
-              .news_day 27
-            .news_year 2021
-            .news_title 為台流鋪第一哩路 文策院編劇提案大會 熱烈參與投拍更多台灣原創故事
-        .readMoreButton
+        ul.newsBox
+          li
+            a(href="https://taicca.tw/article/0cb06ea8" class="news")
+              .news_dateBox
+                .news_month 11月
+                .news_day 25
+              .news_year 2021
+              .news_title 文策院與金馬創投會議攜手 持續助攻臺灣新銳導演原創作品
+          li
+            a(href="https://taicca.tw/article/bc6fc094" class="news")
+              .news_dateBox
+                .news_month 10月
+                .news_day 15
+              .news_year 2022
+              .news_title 《人選之人—造浪者》開拍 從內容孵化到製作投資 文策院與產業一起為臺劇造浪
+          li
+            a.news(href="https://taicca.tw/article/d39bf2a8")
+              .news_dateBox
+                .news_month 10月
+                .news_day 8
+              .news_year 2021
+              .news_title 文策院攜手金馬、北影與雄影 力挺新銳導演與優秀團隊持續創作、進入國際市場
+          li
+            a.news(href="https://taicca.tw/article/63ea844f")
+              .news_dateBox
+                .news_month 2月
+                .news_day 3
+              .news_year 2021
+              .news_title 文策院攜手國內影視產製公司 宣示百部影視台流造浪
+          li
+            a.news(href="https://taicca.tw/article/913fdf72")
+              .news_dateBox
+                .news_month 1月
+                .news_day 27
+              .news_year 2021
+              .news_title 為台流鋪第一哩路 文策院編劇提案大會 熱烈參與投拍更多台灣原創故事
+          li
+            a.news(href="https://taicca.tw/article/913fdf72")
+              .news_dateBox
+                .news_month 1月
+                .news_day 27
+              .news_year 2021
+              .news_title 為台流鋪第一哩路 文策院編劇提案大會 熱烈參與投拍更多台灣原創故事
+          li
+            a.news(href="https://taicca.tw/article/913fdf72")
+              .news_dateBox
+                .news_month 1月
+                .news_day 27
+              .news_year 2021
+              .news_title 為台流鋪第一哩路 文策院編劇提案大會 熱烈參與投拍更多台灣原創故事
+        .readMoreButton.showMore.active
           .text 顯示更多
+        .readMoreButton.showLess
+          .text 顯示更少
     .container_partner
       a.target#anchorPartner
       .sideTitle
@@ -272,56 +303,6 @@ block content
         img(src="./images/partner_taipei.png")
         img(src="./images/partner_taipeiFF.png")
         img(src="./images/partner_kaohsiungFF.png")
-    //- .container_contact#js_triggerContact
-      a.target#anchorContact
-      .topPrimaryBlock
-      .bottomPrimaryBlock
-        .circleBlank#contactCircleBlank
-      .circleWrapper
-        .halfCircle4#contactCircle4
-        .halfCircle3#contactCircle3
-        .halfCircle2#contactCircle2
-        .halfCircle1#contactCircle1
-        .arrow#contactArrow
-      .circleBlank#contactCircleBlank
-      .taicca#contactTaicca
-      .taiwan
-      .text1
-      .text2
-      .topWrapper
-        .title Contact
-        .subtitle 聯絡我們
-        .detailWrapper
-          .detailBox
-            .text 聯絡窗口
-            .text coproduction@taicca.tw
-          .detailBox
-            .text 聯絡電話
-            .text (02) 2745-8186 分機 316 或 325
-          .detailBox
-            .text 服務時間
-            .text 週一至週五 09:30-12:30、14:00-18:00
-        .iconWrapper
-          img(src="../images/icon_facebook.png")
-          img(src="../images/icon_twitter.png")
-          img(src="../images/icon_email.png")
-      .map
-      .bottomWrapper
-        .textWrapper
-          .text 105402 台北市松山區民生東路三段158號5樓
-          .text 5F, No. 158, Sec 3, Minsheng E. Rd., Songshan Dist., Taipei City 105402, Taiwan
-          .text TEL (02) 2745-8186 FAX (02) 2749-2436
-        .text-contact 聯繫我們
-        .buttonWrapper
-          .buttonBox
-            img(src="../images/icon_facebook.png")
-          .buttonBox
-            img(src="../images/icon_twitter.png")
-          .buttonBox
-            img(src="../images/icon_email.png")
-        .buttonSubscribe
-          .text 訂閱電子報
-        .textWrapper
-          .text-underline 隱私權及安全政策宣示
-          .text Copyright © 2020 TAICCA (Taiwan Creative Content Agency). All rights reserved.
+        img(src="./images/partner_taoyuanFF.png" style={'width': '233px'})
     +contact()
+    +modal()
